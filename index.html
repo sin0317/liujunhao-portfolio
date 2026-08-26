@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刘峻豪 · 视频剪辑 / AIGC 作品集</title>
+<style>
+  :root{
+    --ink:#191817; --muted:#6E6A63; --line:#E8E5DE; --paper:#FFFFFF; --soft:#F7F5F0;
+    --accent:#C2402A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;}
+  .page{max-width:880px;margin:0 auto;padding:64px 32px 80px;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .kicker{font-size:12px;letter-spacing:.35em;color:var(--accent);font-weight:600;margin-bottom:10px;}
+  h1{font-size:44px;font-weight:800;letter-spacing:.02em;line-height:1.2;}
+  .sub{font-size:17px;color:var(--ink);font-weight:600;margin-top:8px;}
+  .bio{margin-top:18px;font-size:14.5px;color:var(--muted);max-width:620px;}
+  .contacts{margin-top:20px;font-size:13.5px;color:var(--ink);display:flex;flex-wrap:wrap;gap:8px 24px;}
+  .contacts span b{font-weight:600;}
+
+  .rule{border:none;border-top:1px solid var(--line);margin:44px 0 0;}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:36px;}
+  .stat{background:var(--soft);border-radius:10px;padding:18px 16px;}
+  .stat .num{font-size:26px;font-weight:800;letter-spacing:.01em;}
+  .stat .lab{font-size:12px;color:var(--muted);margin-top:2px;}
+
+  h2{font-size:20px;font-weight:700;margin:56px 0 6px;display:flex;align-items:baseline;gap:12px;}
+  h2 .en{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:.2em;}
+  .sec-note{font-size:13px;color:var(--muted);margin-bottom:24px;}
+
+  .work{display:grid;grid-template-columns:300px 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line);break-inside:avoid;}
+  .work:first-of-type{border-top:1px solid var(--line);}
+  .cover{aspect-ratio:16/9;border-radius:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;}
+  .cover .cat{font-size:11px;letter-spacing:.3em;opacity:.85;margin-bottom:8px;}
+  .cover .big{font-size:34px;font-weight:800;line-height:1.15;}
+  .cover .small{font-size:12px;opacity:.8;margin-top:8px;}
+  .cover.c-ink{background:#191817;color:#fff;}
+  .cover.c-red{background:var(--accent);color:#fff;}
+  .cover.c-blue{background:#24466B;color:#fff;}
+  .cover.c-sand{background:#8A8578;color:#fff;}
+  .cover.c-empty{background:var(--soft);border:1.5px dashed #C9C5BC;color:var(--muted);}
+
+  .w-no{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.15em;}
+  .w-title{font-size:18px;font-weight:700;margin:4px 0 2px;}
+  .w-meta{font-size:12.5px;color:var(--muted);margin-bottom:10px;}
+  .w-desc{font-size:14px;color:#3B3934;}
+  .w-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .tag{font-size:11.5px;background:var(--soft);color:var(--ink);border-radius:4px;padding:3px 10px;}
+  .w-link{display:inline-block;margin-top:16px;font-size:13px;font-weight:600;border:1px solid var(--accent);color:var(--accent);border-radius:6px;padding:7px 16px;transition:all .15s;}
+  .w-link:hover{background:var(--accent);color:#fff;text-decoration:none;}
+  .w-link.ghost{border-color:#C9C5BC;color:var(--muted);cursor:default;}
+  .w-link.ghost:hover{background:transparent;color:var(--muted);}
+
+  .ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;}
+  .ai-card{background:var(--soft);border-radius:10px;padding:22px;}
+  .ai-card h3{font-size:15px;font-weight:700;}
+  .ai-card p{font-size:13px;color:var(--muted);margin-top:6px;}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .exp-item{padding:16px 0;border-bottom:1px solid var(--line);}
+  .exp-item:last-child{border-bottom:none;}
+  .exp-item .t{font-size:15px;font-weight:700;}
+  .exp-item .d{font-size:12.5px;color:var(--muted);}
+  .exp-item .x{font-size:13.5px;color:#3B3934;margin-top:4px;}
+  .award-item{font-size:13.5px;padding:9px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;}
+  .award-item:last-child{border-bottom:none;}
+  .award-item .yr{color:var(--muted);font-size:12px;white-space:nowrap;}
+
+  .skill-line{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+  .skill{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:6px 16px;}
+
+  footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  .todo{color:var(--accent);}
+
+  @media (max-width:680px){
+    .work{grid-template-columns:1fr;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .cols{grid-template-columns:1fr;}
+    .ai-grid{grid-template-columns:1fr;}
+    h1{font-size:32px;}
+  }
+  @media print{
+    body{font-size:12px;}
+    .page{padding:24px 8px;max-width:100%;}
+    .work{break-inside:avoid;padding:18px 0;}
+    .w-link{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="kicker">PORTFOLIO · 2026</div>
+    <h1>刘峻豪</h1>
+    <div class="sub">视频剪辑 · AIGC 创作者 <span style="font-weight:400;color:var(--muted);font-size:14px;">｜抖音 @SinOfLive</span></div>
+    <p class="bio">从说唱 MV 的作词、混音到剪辑全流程独立完成，节奏感是基本功；在地下八英里赛事 IP 做过 Live 线上内容运营；把即梦 / 可灵 / Coze 深度塞进真实剪辑工作流——我是会用 AI 干活的剪辑，不是只会剪的剪辑。河南大学在读。</p>
+    <div class="contacts">
+      <span><b>电话</b> 139-3022-5656</span>
+      <span><b>邮箱</b> <a href="mailto:1027615061@qq.com">1027615061@qq.com</a></span>
+      <span><b>抖音</b> SinOfLive</span>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="num">180w+</div><div class="lab">单条最高播放</div></div>
+    <div class="stat"><div class="num">7.6w</div><div class="lab">单条点赞</div></div>
+    <div class="stat"><div class="num">3.1w</div><div class="lab">单条转发</div></div>
+    <div class="stat"><div class="num">5000人</div><div class="lab">赛事场馆售罄 · 协助</div></div>
+  </div>
+
+  <hr class="rule">
+
+  <h2>代表作品<span class="en">SELECTED WORKS</span></h2>
+  <p class="sec-note">按数据 → Live 剪辑 → 叙事排序。</p>
+
+  <!-- 01 抖音爆款 -->
+  <div class="work">
+    <div class="cover c-ink">
+      <div class="cat">抖音 · SINOFLIVE</div>
+      <div class="big">1,800,000<br>播放</div>
+    </div>
+    <div>
+      <div class="w-no">01 / 短视频运营</div>
+      <div class="w-title">抖音爆款短视频 · 单条 180w 播放</div>
+      <div class="w-meta">独立运营 @SinOfLive · 粉丝 2200+</div>
+      <p class="w-desc">账号选题、拍摄、剪辑、发布与评论区运营全部独立完成。单条视频播放 180w+、点赞 7.6w、转发 3.1w——在粉丝量不足 3000 的账号上跑出的爆款，验证的是内容钩子与节奏把控，而非平台流量红利。</p>
+      <div class="w-tags"><span class="tag">全流程独立</span><span class="tag">选题策划</span><span class="tag">数据敏感</span></div>
+      <a class="w-link" href="https://www.douyin.com/video/7325731312386575666" target="_blank">观看视频 →</a>
+    </div>
+  </div>
+
+  <!-- 02 地下八英里 -->
+  <div class="work">
+    <div class="cover c-red">
+      <div class="cat">LIVE · 赛事剪辑</div>
+      <div class="big">地下8英里<br>十五年 · 最终章</div>
+      <div class="small">EP10 成片</div>
+    </div>
+    <div>
+      <div class="w-no">02 / Live 内容</div>
+      <div class="w-title">《EP10：地下8英里 十五年 最终章》</div>
+      <div class="w-meta">西安顽态地尚 · Live 内容运营实习 · 2025.11–2026.01</div>
+      <p class="w-desc">负责「地下八英里」Hip-Hop 赛事 IP 的线上内容运营与剪辑：现场多机位素材筛选、快节奏成片剪辑、线上渠道分发。实习期间协助完成 5000 人比赛场馆售罄的赛季落地。</p>
+      <div class="w-tags"><span class="tag">多机位剪辑</span><span class="tag">快节奏</span><span class="tag">赛事 IP 运营</span></div>
+      <a class="w-link" href="https://www.bilibili.com/video/av116962462074953/" target="_blank">观看视频 →</a>
+    </div>
+  </div>
+
+  <!-- 03 画惊千年赴梦华 -->
+  <div class="work">
+    <div class="cover c-blue">
+      <div class="cat">短片 · 国赛铜奖</div>
+      <div class="big">画惊千年<br>赴梦华</div>
+    </div>
+    <div>
+      <div class="w-no">03 / 创意短片</div>
+      <div class="w-title">《画惊千年赴梦华》</div>
+      <div class="w-meta">2025「外研社·国才杯」全国大学生外语能力大赛 · 英语组短视频赛项 · 国赛铜奖</div>
+      <p class="w-desc">团队五人创作的英语短片，从校赛一等奖一路打进国赛拿下铜奖。负责影片剪辑，把控全片叙事节奏与画面情绪。</p>
+      <div class="w-tags"><span class="tag">叙事剪辑</span><span class="tag">国赛获奖</span><span class="tag">团队协作</span></div>
+      <a class="w-link" href="https://www.bilibili.com/video/BV1cFJ9zQEpF/" target="_blank">观看视频 →</a>
+    </div>
+  </div>
+
+  <!-- 04 非遗纪录 -->
+  <div class="work">
+    <div class="cover c-sand">
+      <div class="cat">纪录片 · 独立拍摄剪辑</div>
+      <div class="big">传承之味<br>开封非遗花生糕</div>
+    </div>
+    <div>
+      <div class="w-no">04 / 非遗纪录</div>
+      <div class="w-title">《传承之味》系列 · 花生糕制作技艺传承人</div>
+      <div class="w-meta">河南大学「鲁广雄奖学金」实践成果三等奖 ·「青春豫有引力」二等奖</div>
+      <p class="w-desc">独立负责拍摄与剪辑：走进开封老作坊，用镜头记录花生糕制作技艺与传承人的对话。作品先后获校级社会实践成果奖与省级征集活动奖项。</p>
+      <div class="w-tags"><span class="tag">独立拍摄</span><span class="tag">纪实叙事</span><span class="tag">采访</span></div>
+      <a class="w-link" href="https://www.bilibili.com/video/BV1sLb4eUEoK/" target="_blank">观看视频 →</a>
+    </div>
+  </div>
+
+  <!-- 05 说唱MV 待补 -->
+
+  <h2>AIGC 工作流<span class="en">AI × EDITING</span></h2>
+  <p class="sec-note">不是「会用 AI 工具」，而是把 AI 嵌进生产环节的真实工作流。</p>
+  <div class="ai-grid">
+    <div class="ai-card">
+      <h3>即梦 AI × 可灵 AI · 素材生产</h3>
+      <p>用文生图 / 图生视频补齐实拍拿不到的空镜与转场素材，生成的片段直接进 Pr 时间线，缩短前期素材准备周期。</p>
+    </div>
+    <div class="ai-card">
+      <h3>Coze · 自动化剪辑工作流</h3>
+      <p>基于 Coze 搭建剪辑辅助工作流：批量字幕处理、素材整理与粗剪辅助，把重复劳动交给 Agent。</p>
+    </div>
+  </div>
+
+  <h2>经历与奖项<span class="en">EXPERIENCE & AWARDS</span></h2>
+  <div class="cols">
+    <div>
+      <div class="exp-item">
+        <div class="t">西安顽态地尚影视文化传播有限公司</div>
+        <div class="d">Live 内容运营 · 实习 · 2025.11–2026.01</div>
+        <div class="x">「地下八英里」赛事 IP 线上内容运营：内容剪辑、渠道分发，协助 5000 人比赛场馆售罄。</div>
+      </div>
+      <div class="exp-item">
+        <div class="t">抖音账号 @SinOfLive</div>
+        <div class="d">独立运营 · 至今</div>
+        <div class="x">粉丝 2200+，单条爆款播放 180w+、点赞 7.6w、转发 3.1w。</div>
+      </div>
+    </div>
+    <div>
+      <div class="award-item"><span>「外研社·国才杯」全国大学生外语能力大赛 · 国赛铜奖</span><span class="yr">2025</span></div>
+      <div class="award-item"><span>河南大学英语文化节英语短视频大赛 · 一等奖</span><span class="yr">2025</span></div>
+      <div class="award-item"><span>「青春豫有引力」作品征集 · 二等奖</span><span class="yr">2024</span></div>
+      <div class="award-item"><span>「鲁广雄奖学金」暑期社会实践优秀成果 · 三等奖</span><span class="yr">2024</span></div>
+      <div class="award-item"><span>「豫有引力青年说」讲思政课公开课 · 三等奖</span><span class="yr">2024</span></div>
+    </div>
+  </div>
+
+  <h2>工具链<span class="en">TOOLKIT</span></h2>
+  <div class="skill-line">
+    <span class="skill">Premiere Pro</span><span class="skill">After Effects</span><span class="skill">剪映专业版</span><span class="skill">Logic Pro X</span><span class="skill">即梦 AI</span><span class="skill">可灵 AI</span><span class="skill">Coze</span>
+  </div>
+
+  <footer>
+    <span>刘峻豪 · 作品集 · 更新于 2026.08</span>
+    <span>139-3022-5656 · 1027615061@qq.com</span>
+  </footer>
+
+</div>
+</body>
+</html>
