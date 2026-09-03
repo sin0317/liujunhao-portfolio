@@ -30,3 +30,35 @@
 ## 联系方式
 - 微信：mercylago01
 - 邮箱：1027615061@qq.com
+
+## 🌐 English
+
+**Liu Junhao · Video Editing / AIGC Portfolio**
+
+Video editor and AIGC content creator, Pharmacy student at Henan University (Class of 2027). Seeking video editing / artist PR internships (remote-friendly, on-site available).
+
+### About
+Independently produces rap MV (writing, composing, mixing, editing end-to-end), short videos, and AIGC commercial films. Runs a Douyin channel (~3k followers, a single video near 1M views). Strong aesthetics and execution; can deliver promo assets solo (shoot / edit / color).
+
+### Skills
+- Editing / Color: Premiere Pro, After Effects, Jianying, DaVinci Resolve
+- Music: Logic Pro X (write / compose / mix)
+- AIGC: Jimeng AI, Kling AI, Coze
+- Ops: short-video scripting / cross-platform distribution (A/B ~+30%)
+
+### Featured
+- *Dream of Bianliang* (AIGC film): AI-revived *Along the River During the Qingming Festival* x real-footage modern Kaifeng, match-cut.
+- *Underground 8 Miles* Hip-Hop IP: 5,000-seat arena stage management; built 2,500+ community (20%+ active); sold out; a single video ~1M views.
+- Douyin viral short: ~1M views.
+
+### Highlights
+- Live Content Ops, Xi'an Wantai Dishang Film (2025.11 - 2026.01).
+- Licensed Performance Agent certificate.
+
+### Honors
+- 2025 FLTRP · ETIC Cup National English Short-Video Bronze.
+- Henan University English Short-Video Competition First Prize.
+
+### Contact
+- WeChat: mercylago01
+- Email: 1027615061@qq.com
