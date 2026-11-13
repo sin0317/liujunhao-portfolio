@@ -79,3 +79,14 @@ Operations-focused candidate with hands-on community growth (2,500+ members, 20%
 ### Contact
 - WeChat: mercylago01
 - Email: 1027615061@qq.com
+
+---
+
+## 关于我（说明书体）
+
+`/about/` 是一份不同形式的自我介绍——把个人主页写成一份**药品说明书**：成分、适应症、不良反应、禁忌。
+
+药品说明书是少数被强制要求写缺点的文件，用这个形式做自我介绍，「诚实」就成了结构的一部分。
+
+- 线上：<https://sin0317.github.io/liujunhao-portfolio/about/>
+- 源码：`about/index.html`（单文件，零依赖）

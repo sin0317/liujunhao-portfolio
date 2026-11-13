@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sin · 说明书</title>
+<meta name="description" content="刘峻豪（sin）的个人说明书：药学出身，做过内容，现在做 AI 产品。含适应症、不良反应与禁忌。">
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --paper-deep:#EFEBE2;
+    --ink:#1B1A17;
+    --ink-soft:#4C4842;
+    --ink-faint:#8A8478;
+    --rule:#D9D3C6;
+    --alert:#A6362A;
+    --seal:#7A2E24;
+    --serif:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",SimSun,Georgia,serif;
+    --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+    --mono:"SF Mono",Consolas,"Courier New",monospace;
+    --measure:41rem;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.85;
+    letter-spacing:.01em;
+    background-image:radial-gradient(circle at 20% 10%,rgba(166,54,42,.035),transparent 45%),
+                     radial-gradient(circle at 85% 80%,rgba(27,26,23,.03),transparent 40%);
+  }
+  ::selection{background:#1B1A17;color:var(--paper)}
+
+  .sheet{max-width:var(--measure);margin:0 auto;padding:clamp(2rem,6vw,5rem) clamp(1.2rem,4vw,2rem) 6rem}
+
+  /* ── 报头 ── */
+  .masthead{border-bottom:2px solid var(--ink);padding-bottom:1.4rem;margin-bottom:.4rem;position:relative}
+  .barcode{
+    position:absolute;top:.2rem;right:0;width:96px;height:34px;
+    background:repeating-linear-gradient(90deg,
+      var(--ink) 0 1px, transparent 1px 3px,
+      var(--ink) 3px 5px, transparent 5px 6px,
+      var(--ink) 6px 9px, transparent 9px 10px,
+      var(--ink) 10px 11px, transparent 11px 14px,
+      var(--ink) 14px 16px, transparent 16px 17px);
+    opacity:.82;
+  }
+  .barcode::after{
+    content:"2027·BS·001";position:absolute;left:50%;transform:translateX(-50%);bottom:-1.1rem;
+    font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:#6E685D;white-space:nowrap;
+  }
+  @media (max-width:34rem){.barcode{width:68px;height:26px;opacity:.7}}
+  .stamp{
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;
+    color:var(--alert);text-transform:uppercase;margin:0 0 1.1rem;
+  }
+  h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(2.1rem,7vw,3.4rem);line-height:1.12;
+    letter-spacing:.02em;margin:0 0 .5rem;
+  }
+  h1 .sub{display:block;font-size:clamp(.9rem,2.6vw,1.05rem);font-weight:400;color:var(--ink-soft);letter-spacing:.16em;margin-top:.9rem}
+  .masthead-meta{
+    display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;
+    font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);
+    border-top:1px solid var(--rule);padding-top:.9rem;margin-top:1.4rem;
+  }
+
+  /* ── 目录 ── */
+  .toc{margin:2.6rem 0 3.2rem;font-family:var(--serif)}
+  .toc-title{font-size:.74rem;letter-spacing:.3em;color:var(--ink-faint);margin-bottom:1rem;font-family:var(--sans)}
+  .toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+  .toc li{counter-increment:t;margin:0}
+  .toc a{
+    display:flex;align-items:baseline;gap:.5rem;
+    color:var(--ink);text-decoration:none;padding:.42rem 0;
+    border-bottom:1px solid transparent;transition:color .18s ease,border-color .18s ease;
+  }
+  .toc a:hover,.toc a:focus-visible{color:var(--alert);border-bottom-color:var(--rule)}
+  .toc .label{white-space:nowrap}
+  .toc .dots{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-.32em)}
+  .toc .no{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);min-width:1.6em;text-align:right}
+
+  /* ── 条目 ── */
+  section{margin:0 0 clamp(2.8rem,7vw,4.4rem)}
+  h2{
+    font-family:var(--serif);font-size:clamp(1.22rem,3.4vw,1.5rem);font-weight:600;
+    margin:0 0 1.2rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;
+  }
+  h2::before{content:"【";color:var(--alert);font-weight:400}
+  h2::after{content:"】";color:var(--alert);font-weight:400}
+  h2 .en{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;color:var(--ink-faint);text-transform:uppercase;font-weight:400}
+
+  p{margin:0 0 1.05rem}
+  p:last-child{margin-bottom:0}
+  strong{font-weight:600}
+  em{font-style:normal;background:linear-gradient(transparent 62%,rgba(166,54,42,.16) 62%);padding:0 .1em}
+
+  /* 条目内的定义表：说明书都是表 */
+  .rows{margin:1.3rem 0 0;border-top:1px solid var(--rule)}
+  .row{display:grid;grid-template-columns:6.2rem 1fr;gap:0 1.4rem;padding:.85rem 0;border-bottom:1px solid var(--rule)}
+  .row dt{font-family:var(--serif);font-size:.86rem;color:var(--ink-soft);letter-spacing:.04em}
+  .row dd{margin:0}
+  @media (max-width:34rem){.row{grid-template-columns:1fr;gap:.2rem}.row dt{color:var(--ink-faint);font-size:.78rem;letter-spacing:.14em}}
+
+  /* 清单 */
+  .list{list-style:none;margin:1rem 0 0;padding:0}
+  .list li{position:relative;padding-left:1.5rem;margin-bottom:.72rem}
+  .list li::before{content:"—";position:absolute;left:0;color:var(--alert);opacity:.75}
+
+  /* 不良反应：唯一用红框的区块 */
+  .warn{border:1px solid var(--alert);padding:clamp(1.1rem,3.5vw,1.7rem);margin-top:1.2rem;position:relative;background:rgba(166,54,42,.028)}
+  .warn::before{
+    content:"慎用";position:absolute;top:-.72rem;left:1.1rem;background:var(--paper);
+    padding:0 .5rem;font-family:var(--serif);font-size:.72rem;letter-spacing:.28em;color:var(--alert);
+  }
+  .warn .list li::before{content:"×";color:var(--alert)}
+
+  /* 证据条目 */
+  .item{padding:1.15rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;gap:.3rem 1.2rem;align-items:baseline}
+  .item:first-of-type{border-top:1px solid var(--rule)}
+  .item h3{margin:0;font-family:var(--serif);font-size:1rem;font-weight:600}
+  .item .what{margin:.15rem 0 0;font-size:.9rem;color:var(--ink-soft);grid-column:1/-1}
+  .item .tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--ink-faint);white-space:nowrap;border:1px solid var(--rule);padding:.1rem .45rem;border-radius:1px}
+  .item .tag.live{color:var(--alert);border-color:rgba(166,54,42,.45)}
+
+  /* 落款 */
+  .signature{margin-top:clamp(3rem,8vw,5rem);padding-top:1.6rem;border-top:2px solid var(--ink)}
+  .signature .seal{
+    display:inline-block;border:1.5px solid var(--seal);color:var(--seal);
+    font-family:var(--serif);letter-spacing:.3em;font-size:.78rem;
+    padding:.5rem .8rem .5rem 1.05rem;transform:rotate(-2deg);
+  }
+  .signature p{margin-top:1.2rem;font-size:.86rem;color:var(--ink-soft)}
+  footer{margin-top:2.4rem;font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);line-height:2}
+
+  /* 动效 */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    *{scroll-behavior:auto!important}
+  }
+  html{scroll-behavior:smooth}
+  a:focus-visible{outline:2px solid var(--alert);outline-offset:3px}
+
+  @media print{
+    body{background:#fff;font-size:11pt}
+    .toc,.reveal{opacity:1!important;transform:none!important}
+    section{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="masthead">
+    <div class="barcode" aria-hidden="true"></div>
+    <p class="stamp">处方级自我介绍 · 2026 年版</p>
+    <h1>sin
+      <span class="sub">刘峻豪 · 河南大学药学 · 2027 届</span>
+    </h1>
+    <div class="masthead-meta">
+      <span>剂型：一人公司</span>
+      <span>规格：4 款产品 / 5 笔真实订单</span>
+      <span>有效期至：2027 年 7 月</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="目录">
+    <div class="toc-title">目 录</div>
+    <ol>
+      <li><a href="#name"><span class="label">药品名称</span><span class="dots"></span><span class="no">01</span></a></li>
+      <li><a href="#ingredients"><span class="label">成份</span><span class="dots"></span><span class="no">02</span></a></li>
+      <li><a href="#indications"><span class="label">适应症</span><span class="dots"></span><span class="no">03</span></a></li>
+      <li><a href="#adverse"><span class="label">不良反应</span><span class="dots"></span><span class="no">04</span></a></li>
+      <li><a href="#contra"><span class="label">禁忌</span><span class="dots"></span><span class="no">05</span></a></li>
+      <li><a href="#evidence"><span class="label">批准文号与证据</span><span class="dots"></span><span class="no">06</span></a></li>
+      <li><a href="#storage"><span class="label">贮藏</span><span class="dots"></span><span class="no">07</span></a></li>
+    </ol>
+  </nav>
+
+  <section id="name" class="reveal">
+    <h2>药品名称 <span class="en">Name</span></h2>
+    <p>通用名 <strong>sin</strong>，曾用名 刘峻豪。念作「辛」，用了很多年，比本名顺口。</p>
+    <p>这不是简历。简历回答「我取得过什么」，说明书回答「我是什么、怎么用、什么时候不能用」。</p>
+    <p>写它的原因是：我这四年换过三次载体——<em>药学、内容、AI 产品</em>——一份按时间排列的履历会把这件事说成「不专注」，只有按性质写才说得清。</p>
+  </section>
+
+  <section id="ingredients" class="reveal">
+    <h2>成份 <span class="en">Ingredients</span></h2>
+    <p>每一份都按含量排序，不是按重要性。</p>
+    <dl class="rows">
+      <div class="row">
+        <dt>药学训练</dt>
+        <dd>本科四年。毕业论文做左氧氟沙星注射液不良反应的 1701 例文献分析，PRISMA 四级筛选，双人独立提取，一致性 Kappa 0.828。<br>这段经历留下的不是药理知识，是三个习惯：<strong>先查证据再下结论</strong>、<strong>把口径写清楚</strong>、<strong>不接受「差不多」</strong>。</dd>
+      </div>
+      <div class="row">
+        <dt>内容制作</dt>
+        <dd>四年剪辑、摄影、AIGC 短片。做过音乐厂牌的内容运营，从 0 做到 2500+ 人社群、5000 人场馆售罄。<br>这段教会我一件药学不会教的事：<strong>东西做得好不好，不由你判断，由看的人判断</strong>。</dd>
+      </div>
+      <div class="row">
+        <dt>工程与产品</dt>
+        <dd>自学 Node.js、Python、前端。做了 4 款能收钱的产品，写过一个带 41 套回归测试、1753 项断言的项目。<br>这段解决的是前两段留下的问题：<strong>怎么让别人不靠我，也能把事情做完</strong>。</dd>
+      </div>
+      <div class="row">
+        <dt>辅料</dt>
+        <dd>Hip-Hop（听了十年，做过现场）· 剪辑与调色 · 写说明书这件事本身</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="indications" class="reveal">
+    <h2>适应症 <span class="en">Indications</span></h2>
+    <p>下面这些情况，我大概率有用；不在列表里的，可以直接问我有没有。</p>
+    <ul class="list">
+      <li><strong>一堆散材料，要变成能跑的东西。</strong>课程笔记变题库、一首歌变一支 MV、一段录音变逐字稿。我做过的四款产品都是这个动作。</li>
+      <li><strong>流程里有人反复做同一件事。</strong>重复三遍以上的动作，我第一反应是把它写成脚本或技能，而不是继续忍着做。</li>
+      <li><strong>要给 AI 用，但输出不稳定的活。</strong>我擅长把「看运气」的生成，压成「有验收标准」的流水线——包括允许它失败时怎么体面地降级。</li>
+      <li><strong>需要有人在审美和工程之间翻译。</strong>我两边都待过，知道设计师说的是什么，也知道实现的时候哪一步会塌。</li>
+    </ul>
+  </section>
+
+  <section id="adverse" class="reveal">
+    <h2>不良反应 <span class="en">Adverse Reactions</span></h2>
+    <p>说明书是少数被强制要求写缺点的东西。这一段我按发生率从高到低写，都是真的。</p>
+    <div class="warn">
+      <ul class="list">
+        <li><strong>定价偏低（常见）。</strong>四款产品最贵的才 ¥50。我习惯性按「学生价」给自己标价，实际上替代的是几百上千的外包费用。这是一个商业判断错误，不是谦虚。</li>
+        <li><strong>容易在工具上过度投入（常见）。</strong>为了整理资料，我给自己搭了一套带 243 个技能索引、130 份原文的知识库。有用，但投入产出比不总是划算。</li>
+        <li><strong>做比说快（常见）。</strong>东西能一天做出来，但要三天才写清它为什么好。写这份说明书本身，就是在治这个毛病。</li>
+        <li><strong>不擅长推销（偶见）。</strong>5 笔订单全靠自然流量，没做过一次推广。这意味着我造出来的东西，可能根本没被该看见的人看见。</li>
+        <li><strong>对「差不多」过敏（偶见）。</strong>会为了让测试全绿多花两小时，有时值得，有时不值得，我判断得不好。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contra" class="reveal">
+    <h2>禁忌 <span class="en">Contraindications</span></h2>
+    <p>以下情况请勿使用本产品，用了双方都难受。</p>
+    <ul class="list">
+      <li><strong>只需要一双手、不需要判断的活。</strong>我能做，但会做得不开心，而且你会付多余的钱。</li>
+      <li><strong>要求把 AI 生成结果直接当结论交付。</strong>我会拒绝，或者会花时间给你证明它哪里不可靠。</li>
+      <li><strong>要写进简历、但拿不出证据的成绩。</strong>这条是硬的：我自己的材料里，竞赛只写了一个有结果的奖项，其余全部标成「参赛作品」。</li>
+      <li><strong>流程已经定死、且不允许改流程的岗位。</strong>不是不爱坐班——是看到明明能省掉的步骤还在一遍遍走，我会忍不住说出来，这会让管流程的人不舒服。</li>
+    </ul>
+  </section>
+
+  <section id="evidence" class="reveal">
+    <h2>批准文号与证据 <span class="en">Evidence</span></h2>
+    <p>说明书的价值在于可被核验。下面每一项都能点开或者当场演示，写「已产生付费」的都有账单截图。</p>
+
+    <div class="item">
+      <h3>期末刷题站</h3><span class="tag live">已上线 · 有真实付费</span>
+      <p class="what">把课程笔记和往年试卷直接变成可刷的题。核心是一条约束：<strong>选择题只认原卷，机器绝不自己编干扰项</strong>，命不中降级为填空。20 天 52 个版本，41 套回归测试 / 1753 项断言。</p>
+    </div>
+    <div class="item">
+      <h3>数字人口播片流水线</h3><span class="tag live">已产生付费</span>
+      <p class="what">选题 → 文案 → 音色复刻 → 口型 → 动效，全流程多模型编排。四款产品里客单价最高的一款。</p>
+    </div>
+    <div class="item">
+      <h3>像素说唱 MV 生成器</h3><span class="tag live">已产生付费</span>
+      <p class="what">发歌名 + mp3，20 分钟出竖屏 8bit 歌词 MV。逐字高亮、游戏化 HUD、切镜对齐鼓点。一份需求进，五个交付物出，中间不提问。</p>
+    </div>
+    <div class="item">
+      <h3>MemPort 忆港</h3><span class="tag live">已产生付费</span>
+      <p class="what">给 Agent 用的跨工具记忆层：事实、偏好、决策三类抽取，BM25 + 时间衰减检索。让 Claude Code / Codex / Cursor 共用同一份记忆。</p>
+    </div>
+    <div class="item">
+      <h3>左氧氟沙星注射液 ADR 文献分析</h3><span class="tag">毕业论文</span>
+      <p class="what">1701 例、19 篇一手研究，PRISMA 四级筛选，双人独立提取 Kappa 0.828。21 份原始 PDF 全部留存可查，包括两篇因二次聚合被排除的文献——保留它们是为了证明「排除」这个动作真的做过。</p>
+    </div>
+    <div class="item">
+      <h3>个人知识库</h3><span class="tag live">运行中</span>
+      <p class="what">130 份原文、34 篇结构化笔记、243 个技能索引，全部带时效标记与来源分级。设计的出发点是：<strong>我怎么让自己三个月后还能复用今天的判断</strong>。</p>
+    </div>
+    <div class="item">
+      <h3>2025 外研社·国才杯</h3><span class="tag">国赛英语组短视频 · 铜奖</span>
+      <p class="what">这是目前唯一有结果的赛事。其他参加过的比赛，一律只写「参赛作品」。</p>
+    </div>
+  </section>
+
+  <section id="storage" class="reveal">
+    <h2>贮藏 <span class="en">Storage</span></h2>
+    <p>现在在做两件事：</p>
+    <ul class="list">
+      <li><strong>把产品从「能跑」做到「有人持续用」。</strong>手上四款都越过了「有人付钱」这条线，但都还停在个位数订单。下一步不是做第五款，是让前四款中的一款真正长起来。</li>
+      <li><strong>把判断变成资产。</strong>一个人做的公司，最大的风险是「我病一周，业务停摆」。写文档、建流程、把隐性判断显性化——这是我目前认为最值钱的投入。</li>
+    </ul>
+    <p style="margin-top:1.4rem">2027 年 7 月可全职入职。想找的方向是：内容生产管线、AI 产品、需要一个人同时懂审美和实现的岗位。</p>
+  </section>
+
+  <div class="signature reveal">
+    <span class="seal">峻 豪</span>
+    <p>本说明书不含任何未经验证的成就声明。<br>写错的部分欢迎指出，我会改——这条不是客套，我的知识库里就有一份专门记录「哪些话不能写」的红线表。</p>
+  </div>
+
+  <footer>
+    最后更新 2026-11-13 ｜ 纯静态页面，无框架、无追踪、无第三方请求<br>
+    内容可核验，口径可追问。
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){ e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {rootMargin:'0px 0px -12% 0px', threshold:0.08});
+  els.forEach(function(e){ io.observe(e); });
+
+  // 目录高亮
+  var links = [].slice.call(document.querySelectorAll('.toc a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      var i = secs.indexOf(en.target);
+      if (i < 0) return;
+      links.forEach(function(l){ l.style.color=''; l.style.borderBottomColor='transparent'; });
+      links[i].style.color='var(--alert)';
+      links[i].style.borderBottomColor='var(--rule)';
+    });
+  }, {rootMargin:'-30% 0px -55% 0px'});
+  secs.forEach(function(s){ if(s) spy.observe(s); });
+})();
+</script>
+</body>
+</html>
