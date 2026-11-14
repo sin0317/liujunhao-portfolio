@@ -1,0 +1,24 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-14T04:01:00.538Z"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-14T04:01:28.860Z"
+      }
+    ]
+  }
+}
