@@ -5,43 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>刘峻豪 · 视频剪辑 / AIGC 作品集</title>
 <meta name="description" content="刘峻豪（sin）作品集：短视频运营、Live 赛事剪辑、AIGC 短片与 AI 产品实践。">
-<style>
-  :root{
-    --bg:#0D0D0C;
-    --panel:#161615;
-    --panel-2:#1D1C1A;
-    --ink:#EDE9E1;
-    --dim:#9A9488;
-    --faint:#8B857A;
-    --line:#2B2925;
-    --accent:#E0553C;
-    --accent-dim:#8F3A2C;
+<style>  :root{
+    --bg:#F5F3ED;
+    --panel:#EDEAE2;
+    --panel-2:#E5E1D7;
+    --ink:#15140F;
+    --dim:#5C574D;
+    --faint:#7C766A;
+    --line:#D9D3C5;
+    --line-soft:#E4DFD4;
+    --accent:#AE3A24;
+    --accent-dim:#C4785F;
     --sans:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
     --mono:"SF Mono","JetBrains Mono",Consolas,"Courier New",monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    background:#0D0D0C;color:#EDE9E1;font-family:var(--sans);
+    background:#F5F3ED;color:#15140F;font-family:var(--sans);
     line-height:1.72;-webkit-font-smoothing:antialiased;
   }
-  ::selection{background:var(--accent);color:#120E0C}
+  ::selection{background:#15140F;color:#F5F3ED}
   a{color:inherit;text-decoration:none}
   .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
 
-  /* ── 顶部标尺：整站的签名元素 ── */
+  /* ── 顶部标尺 ── */
   .ruler{
     position:relative;height:34px;border-bottom:1px solid var(--line);
     background:
       repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 24px),
-      repeating-linear-gradient(90deg,#3A3733 0 1px,transparent 1px 120px);
+      repeating-linear-gradient(90deg,#B8B1A2 0 1px,transparent 1px 120px);
     background-size:100% 8px,100% 14px;
     background-position:0 100%,0 100%;
     background-repeat:repeat-x;
   }
   .ruler::after{
     content:"00:00:00:00";position:absolute;left:clamp(20px,5vw,48px);top:2px;
-    font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--faint);
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);
   }
   .topbar{display:flex;justify-content:space-between;align-items:center;padding-top:18px}
   .brand{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--dim)}
@@ -61,11 +61,11 @@
   }
   .role .dot{width:4px;height:4px;border-radius:50%;background:var(--accent-dim);display:inline-block}
   .role .sub{color:var(--dim);font-weight:400;font-family:var(--mono);font-size:.82em;letter-spacing:.04em}
-  .bio{margin-top:26px;max-width:60ch;font-size:clamp(.92rem,1.9vw,.98rem);color:#C9C3B8}
+  .bio{margin-top:26px;max-width:60ch;font-size:clamp(.92rem,1.9vw,.98rem);color:#403C34}
   .bio strong{color:var(--ink);font-weight:600}
   .contacts{
     margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 26px;
-    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    font-family:var(--mono);font-size:12px;letter-spacing:.04em;
   }
   .contacts a{border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
   .contacts a:hover{border-color:var(--accent);color:var(--accent)}
@@ -75,7 +75,7 @@
   /* ── 数据 ── */
   .stats{
     display:grid;grid-template-columns:repeat(4,1fr);
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--line);
   }
   .stat{padding:26px 0 24px;padding-right:18px;border-right:1px solid var(--line)}
   .stat:last-child{border-right:none}
@@ -84,14 +84,14 @@
   .stat .lab{font-size:12px;color:var(--dim);margin-top:9px;letter-spacing:.04em}
 
   /* ── 章节 ── */
-  section{margin-top:clamp(64px,10vw,110px)}
+  section{margin-top:clamp(54px,7.6vw,88px)}
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:14px}
   h2{font-size:clamp(1.15rem,2.8vw,1.45rem);font-weight:700;letter-spacing:.01em}
-  h2 .en{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:var(--faint);margin-top:7px;font-weight:400}
-  .tc{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.1em;white-space:nowrap}
+  h2 .en{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--faint);margin-top:7px;font-weight:400}
+  .tc{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.08em;white-space:nowrap}
   .sec-note{font-size:13px;color:var(--dim);margin-top:16px;max-width:62ch}
 
-  /* ── 作品：片段 ── */
+  /* ── 作品：看片台上的画格 ── */
   .clip{
     display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(22px,4vw,44px);
     padding:clamp(28px,4vw,42px) 0 clamp(34px,4.5vw,48px);border-bottom:1px solid var(--line);
@@ -99,113 +99,117 @@
   .clip:first-of-type{border-top:none}
   .frame{
     position:relative;aspect-ratio:16/9;overflow:hidden;
-    background:#1A1917;
-    border:1px solid var(--line);
+    background:#FBF9F5;border:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(21,20,15,.04),0 12px 28px -18px rgba(21,20,15,.35);
   }
   .frame::before{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(142deg,var(--tint-a) 0%,var(--tint-b) 58%,var(--tint-b) 100%);
+    background:linear-gradient(142deg,var(--tint-a) 0%,var(--tint-b) 62%,var(--tint-b) 100%);
   }
   .frame::after{
     content:"";position:absolute;inset:0;pointer-events:none;
-    box-shadow:inset 0 0 90px rgba(0,0,0,.7);
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-    mix-blend-mode:overlay;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 0 70px rgba(21,20,15,.06);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
   }
   .frame .inner{
     position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
     align-items:center;text-align:center;padding:22px;z-index:1;
   }
   .frame .tc-top{
-    position:absolute;top:9px;left:10px;font-family:var(--mono);font-size:12px;
-    letter-spacing:.12em;color:rgba(237,233,225,.5);
+    position:absolute;top:12px;left:24px;font-family:var(--mono);font-size:12px;
+    letter-spacing:.1em;color:rgba(21,20,15,.66);
   }
   .frame .rec{
-    position:absolute;top:9px;right:10px;font-family:var(--mono);font-size:12px;
-    letter-spacing:.12em;color:var(--accent);display:flex;align-items:center;gap:5px;
+    position:absolute;top:12px;right:24px;font-family:var(--mono);font-size:12px;
+    letter-spacing:.1em;color:var(--accent);display:flex;align-items:center;gap:5px;
   }
   .frame .rec::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
-  .frame .big{font-size:clamp(1.15rem,2.6vw,1.55rem);font-weight:800;line-height:1.18;letter-spacing:.01em}
-  .frame .num-big{font-family:var(--mono);font-size:clamp(1.5rem,3.4vw,2rem);font-weight:600;letter-spacing:-.03em}
-  .frame .small{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:rgba(237,233,225,.62);margin-top:10px}
+  .frame .big{font-size:clamp(1.15rem,2.6vw,1.55rem);font-weight:800;line-height:1.18;letter-spacing:.01em;color:var(--ink)}
+  .frame .num-big{font-family:var(--mono);font-size:clamp(1.5rem,3.4vw,2rem);font-weight:600;letter-spacing:-.03em;color:var(--ink)}
+  .frame .small{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:rgba(21,20,15,.72);margin-top:10px}
+  .frame .marks{position:absolute;inset:9px;z-index:2;pointer-events:none}
+  .frame .marks::before,.frame .marks::after{content:"";position:absolute;width:9px;height:9px;border:1px solid rgba(21,20,15,.38)}
+  .frame .marks::before{top:0;left:0;border-right:none;border-bottom:none}
+  .frame .marks::after{bottom:0;right:0;border-left:none;border-top:none}
   .frame .bar{
-    position:absolute;left:0;right:0;bottom:0;height:22px;
-    border-top:1px solid rgba(237,233,225,.12);
-    font-family:var(--mono);font-size:12px;color:rgba(237,233,225,.45);
+    position:absolute;left:0;right:0;bottom:0;height:24px;
+    border-top:1px solid rgba(21,20,15,.12);background:rgba(251,249,245,.7);
+    font-family:var(--mono);font-size:12px;color:rgba(21,20,15,.72);
     display:flex;align-items:center;justify-content:space-between;padding:0 10px;
   }
 
   .clip-body{min-width:0;padding-bottom:6px}
-  .clip-no{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--accent)}
+  .clip-no{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent)}
   .clip-title{font-size:clamp(1.05rem,2.4vw,1.22rem);font-weight:700;margin:8px 0 6px;line-height:1.4}
   .clip-meta{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-bottom:14px}
-  .clip-desc{font-size:14px;color:#BEB8AC;line-height:1.78}
+  .clip-desc{font-size:14px;color:#3E3A32;line-height:1.78}
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .tag{
-    font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--dim);
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim);
     border:1px solid var(--line);padding:4px 9px;border-radius:2px;
   }
   .btn{
     display:inline-flex;align-items:center;gap:8px;margin-top:20px;
-    font-family:var(--mono);font-size:12px;letter-spacing:.08em;
-    border:1px solid var(--accent-dim);color:var(--accent);
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    border:1px solid var(--accent);color:var(--accent);
     padding:9px 15px;border-radius:2px;transition:background .2s,color .2s,border-color .2s;
   }
-  .btn:hover{background:var(--accent);color:#120E0C;border-color:var(--accent)}
+  .btn:hover{background:var(--accent);color:#FBF9F5;border-color:var(--accent)}
   .btn.ghost{border-color:var(--line);color:var(--dim)}
-  .btn.ghost:hover{background:var(--panel-2);color:var(--ink);border-color:var(--line)}
+  .btn.ghost:hover{background:var(--panel);color:var(--ink);border-color:var(--line)}
 
-  /* ── AI 产品 ── */
+  /* ── 产品卡 ── */
   .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
   .card{
-    background:#0D0D0C;border:1px solid var(--line);padding:clamp(24px,3.4vw,32px);
+    background:#FBF9F5;border:1px solid var(--line);padding:clamp(24px,3.4vw,32px);
     display:flex;flex-direction:column;transition:background .2s,border-color .2s;
   }
-  .card:hover{background:var(--panel)}
+  .card:hover{background:var(--panel);border-color:var(--accent-dim)}
   .card h3{font-size:14.5px;font-weight:700;line-height:1.5}
   .card h3 span{color:var(--faint);font-weight:400;font-size:.86em}
-  .card p{font-size:13.5px;color:var(--dim);margin-top:9px;flex:1;line-height:1.75}
-  .card .go{margin-top:16px;margin-bottom:4px;font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.06em}
+  .card p{font-size:13.5px;color:#3E3A32;margin-top:9px;flex:1;line-height:1.75}
+  .card .go{margin-top:16px;margin-bottom:4px;font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.05em}
   .card:hover .go{text-decoration:underline}
 
   /* ── 列表 ── */
   .list-group{margin-top:34px}
   .lg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
   .lg-head h3{font-size:13.5px;font-weight:700}
-  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);border:1px solid var(--accent-dim);padding:2px 7px;border-radius:2px}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);border:1px solid var(--accent-dim);padding:2px 7px;border-radius:2px}
   .rows{border-top:1px solid var(--line)}
   .row{
     display:grid;grid-template-columns:1fr auto;gap:4px 18px;
-    padding:15px 2px;border-bottom:1px solid var(--line);transition:background .18s;
+    padding:15px 2px;border-bottom:1px solid var(--line-soft);transition:background .18s;
   }
   .row:hover{background:var(--panel)}
   .row .t{font-size:13.6px;font-weight:600;grid-column:1}
   .row .x{font-size:12.5px;color:var(--dim);grid-column:1;line-height:1.7}
-  .row .m{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap;grid-row:1;grid-column:2;text-align:right;letter-spacing:.06em}
+  .row .m{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap;grid-row:1;grid-column:2;text-align:right;letter-spacing:.05em}
   .row .open{grid-row:2;grid-column:2;font-family:var(--mono);font-size:12px;color:var(--accent);text-align:right;white-space:nowrap}
   .row:hover .open{text-decoration:underline}
 
   /* ── 两栏 ── */
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);margin-top:28px}
-  .exp{padding:16px 0;border-bottom:1px solid var(--line)}
+  .exp{padding:16px 0;border-bottom:1px solid var(--line-soft)}
   .exp:last-child{border-bottom:none}
   .exp .t{font-size:14px;font-weight:700}
-  .exp .d{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.05em;margin-top:3px}
+  .exp .d{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-top:3px}
   .exp .x{font-size:13px;color:var(--dim);margin-top:7px;line-height:1.7}
-  .award{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;color:#BEB8AC}
+  .award{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-soft);font-size:13px;color:#3E3A32}
   .award:last-child{border-bottom:none}
   .award .yr{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap}
 
   .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
-  .skill{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--dim);border:1px solid var(--line);padding:6px 13px;border-radius:2px}
+  .skill{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim);border:1px solid var(--line);padding:6px 13px;border-radius:2px;background:#FBF9F5}
 
   .note{font-size:12.5px;color:var(--faint);margin-top:22px;line-height:1.8;max-width:70ch}
   .note code{font-family:var(--mono);font-size:12px;color:var(--dim);background:var(--panel);padding:1px 5px}
 
   footer{
-    margin-top:clamp(64px,10vw,110px);border-top:1px solid var(--line);
+    margin-top:clamp(64px,10vw,110px);border-top:1px solid var(--ink);
     padding:24px 0 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-    font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--faint);
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);
   }
 
   @media (max-width:760px){
@@ -222,9 +226,9 @@
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   @media print{
-    body{background:#fff;color:#111}
-    .frame{filter:grayscale(1)}
+    body{background:#fff;color:#000}
     .btn{display:none}
+    .frame{box-shadow:none}
   }
 </style>
 </head>
@@ -308,13 +312,14 @@
     <p class="sec-note">按数据 → Live 剪辑 → 叙事排序。</p>
 
     <div class="clip">
-      <div class="frame" style="--tint-a:#3A2A22;--tint-b:#15110F">
+      <div class="frame" style="--tint-a:#E7DED2;--tint-b:#F7F3EA">
         <div class="tc-top">00:00:00:00</div>
         <div class="rec">ON AIR</div>
         <div class="inner">
           <div class="num-big">1,800,000</div>
           <div class="small">PLAYS</div>
         </div>
+        <i class="marks" aria-hidden="true"></i>
         <div class="bar"><span>抖音 · SINOFLIVE</span><span>00:01:12</span></div>
       </div>
       <div class="clip-body">
@@ -328,13 +333,14 @@
     </div>
 
     <div class="clip">
-      <div class="frame" style="--tint-a:#4A1F17;--tint-b:#160E0C">
+      <div class="frame" style="--tint-a:#E3DAD3;--tint-b:#F7F3EE">
         <div class="tc-top">00:00:00:00</div>
         <div class="rec">LIVE</div>
         <div class="inner">
           <div class="big">地下8英里<br>十五年 · 最终章</div>
           <div class="small">EP10 · FINAL</div>
         </div>
+        <i class="marks" aria-hidden="true"></i>
         <div class="bar"><span>LIVE · 赛事剪辑</span><span>00:24:06</span></div>
       </div>
       <div class="clip-body">
@@ -348,13 +354,14 @@
     </div>
 
     <div class="clip">
-      <div class="frame" style="--tint-a:#1E3247;--tint-b:#0F151C">
+      <div class="frame" style="--tint-a:#D6DFE7;--tint-b:#F0F4F7">
         <div class="tc-top">00:00:00:00</div>
         <div class="rec">AWARD</div>
         <div class="inner">
           <div class="big">画惊千年<br>赴梦华</div>
           <div class="small">国赛铜奖 · 2025</div>
         </div>
+        <i class="marks" aria-hidden="true"></i>
         <div class="bar"><span>短片 · 国赛铜奖</span><span>00:05:30</span></div>
       </div>
       <div class="clip-body">
@@ -368,13 +375,14 @@
     </div>
 
     <div class="clip">
-      <div class="frame" style="--tint-a:#3D3626;--tint-b:#151310">
+      <div class="frame" style="--tint-a:#E5DFCF;--tint-b:#F7F4EC">
         <div class="tc-top">00:00:00:00</div>
         <div class="rec">DOC</div>
         <div class="inner">
           <div class="big">传承之味</div>
           <div class="small">开封非遗 · 花生糕</div>
         </div>
+        <i class="marks" aria-hidden="true"></i>
         <div class="bar"><span>纪录片 · 独立拍摄剪辑</span><span>00:08:14</span></div>
       </div>
       <div class="clip-body">
