@@ -139,6 +139,11 @@
     display:flex;align-items:center;justify-content:space-between;padding:0 10px;
   }
 
+  /* 可播放画格：去掉装饰层，直接放视频 */
+  .frame.video{background:#000;box-shadow:0 1px 0 rgba(21,20,15,.04),0 14px 30px -18px rgba(21,20,15,.6)}
+  .frame.video::before,.frame.video::after{display:none}
+  .frame.video video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+
   .clip-body{min-width:0;padding-bottom:6px}
   .clip-no{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent)}
   .clip-title{font-size:clamp(1.05rem,2.4vw,1.22rem);font-weight:700;margin:8px 0 6px;line-height:1.4}
@@ -309,7 +314,7 @@
       <h2>代表作品<span class="en">SELECTED WORKS</span></h2>
       <span class="tc">REEL 02 / 05 CLIPS</span>
     </div>
-    <p class="sec-note">按数据 → Live 剪辑 → 叙事 → 数字人排序。</p>
+    <p class="sec-note">按数据 → Live 剪辑 → 叙事 → 产品口播排序。</p>
 
     <div class="clip">
       <div class="frame" style="--tint-a:#E7DED2;--tint-b:#F7F3EA">
@@ -396,23 +401,19 @@
     </div>
 
     <div class="clip">
-      <div class="frame" style="--tint-a:#E9E2D4;--tint-b:#F8F5ED">
-        <div class="tc-top">00:00:00:00</div>
-        <div class="rec">AVATAR</div>
-        <div class="inner">
-          <div class="big">数字人<br>口播片</div>
-          <div class="small">本人形象 · 复刻音色</div>
-        </div>
-        <i class="marks" aria-hidden="true"></i>
-        <div class="bar"><span>数字人 · 本人出镜</span><span>00:00:55</span></div>
+      <div class="frame video">
+        <video controls playsinline preload="metadata"
+               poster="works/memport-oral-720p.jpg"
+               src="works/memport-oral-720p.mp4"
+               aria-label="忆港 MemPort 产品口播片，49 秒"></video>
       </div>
       <div class="clip-body">
-        <div class="clip-no">05 / 数字人</div>
-        <div class="clip-title">数字人口播片 · 我自己的形象和声音</div>
-        <div class="clip-meta">微信视频号 · MiniMax 音色复刻 + DIT 对口型 + Remotion 动效字幕</div>
-        <p class="clip-desc">用自己复刻的音色和自己的数字人形象做的口播片。一条流水线跑完六步：选题 → 文案（人工审核后才放行）→ 音色复刻 → 数字人口型 → 分镜动效与字幕 → 成片，交付 1080×1920 / 30fps、响度统一压到 -15 LUFS。这套流程已上架 SkillPay，换个人物、换套文案就能出下一支——不是「会用 AI 生成视频」，是把生成环节接成了一条能重复跑的生产线。</p>
-        <div class="tags"><span class="tag">数字人</span><span class="tag">音色复刻</span><span class="tag">单人全流程</span></div>
-        <a class="btn" href="https://weixin.qq.com/sph/ARUJYEBdKI" target="_blank" rel="noopener">视频号观看 →</a>
+        <div class="clip-no">05 / 产品口播</div>
+        <div class="clip-title">忆港 MemPort · 产品口播片</div>
+        <div class="clip-meta">本人形象与声音 · 1920×1080 / 49 秒 · 口播 + 界面实录 · 站内可直接播放</div>
+        <p class="clip-desc">给自己做的 AI 记忆产品拍的一支口播片。三段结构：先用「换一个 AI 就要重新讲一遍自己」把痛点说穿，再切界面实录演示那六个 MCP 工具怎么把事实、偏好、项目分别存下来，最后用「免费 600 次 / 月」收尾。脚本、口播、录制、剪辑、动态排版字幕到双比例封面一人做完，交付 1080p 原片。</p>
+        <div class="tags"><span class="tag">本人出镜</span><span class="tag">口播脚本</span><span class="tag">界面实录</span><span class="tag">剪辑包装</span></div>
+        <a class="btn" href="https://weixin.qq.com/sph/ARUJYEBdKI" target="_blank" rel="noopener">视频号已发布版本 →</a>
       </div>
     </div>
   </section>
