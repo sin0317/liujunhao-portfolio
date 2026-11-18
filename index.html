@@ -3,105 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>刘峻豪 · 视频剪辑 / AIGC 作品集</title>
-<meta name="description" content="刘峻豪（sin）作品集：短视频运营、Live 赛事剪辑、AIGC 短片与 AI 产品实践。">
-<style>  :root{
-    --bg:#F5F3ED;
-    --panel:#EDEAE2;
-    --panel-2:#E5E1D7;
+<title>刘峻豪 sin · 视频剪辑 / AIGC / AI 产品实践</title>
+<meta name="description" content="刘峻豪（sin）作品集：短视频运营、Live 赛事剪辑、AIGC 短片与 AI 产品实践。会用 AI 干活的内容创作者，也是能把散材料做成产品的实践者。">
+<meta name="theme-color" content="#F4F1EA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F4F1EA'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23AE3A24'/%3E%3C/svg%3E">
+<meta property="og:title" content="刘峻豪 sin · 视频剪辑 / AIGC / AI 产品实践">
+<meta property="og:description" content="单条 180w+ 播放、地下 8 英里赛事内容运营、4 个可体验 AI 产品。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sin0317.github.io/liujunhao-portfolio/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "刘峻豪",
+  "alternateName": "sin",
+  "url": "https://sin0317.github.io/liujunhao-portfolio/",
+  "email": "mailto:1027615061@qq.com",
+  "telephone": "+86-139-3022-5656",
+  "jobTitle": "视频剪辑 / AIGC / AI 产品实践",
+  "affiliation": "河南大学",
+  "sameAs": [
+    "https://github.com/sin0317"
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#F4F1EA;
+    --bg-soft:#FBF9F4;
+    --panel:#ECE8DD;
+    --panel-2:#E4DFD2;
     --ink:#15140F;
-    --dim:#5C574D;
-    --faint:#7C766A;
-    --line:#D9D3C5;
-    --line-soft:#E4DFD4;
+    --ink-2:#3D392F;
+    --dim:#625D52;
+    --faint:#857F72;
+    --line:#D7D0BF;
+    --line-soft:#E5DFCF;
     --accent:#AE3A24;
-    --accent-dim:#C4785F;
+    --accent-2:#D9573B;
+    --accent-dim:#C47A62;
+    --shadow:0 24px 60px -42px rgba(21,20,15,.55);
+    --serif:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,Georgia,serif;
     --sans:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
     --mono:"SF Mono","JetBrains Mono",Consolas,"Courier New",monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    background:#F5F3ED;color:#15140F;font-family:var(--sans);
-    line-height:1.72;-webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(circle at 18% 0%,rgba(174,58,36,.075),transparent 34%),
+      radial-gradient(circle at 92% 18%,rgba(21,20,15,.045),transparent 30%),
+      linear-gradient(180deg,#F7F4ED 0%,var(--bg) 38%,#EFEADF 100%);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
   }
-  ::selection{background:#15140F;color:#F5F3ED}
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.34;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+  ::selection{background:var(--ink);color:var(--bg-soft)}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  .skip-link{position:absolute;left:16px;top:-48px;z-index:100;background:var(--ink);color:var(--bg-soft);padding:8px 12px;font-family:var(--mono);font-size:12px;transition:top .2s}
+  .skip-link:focus{top:12px}
+  .scroll-progress{position:fixed;left:0;top:0;height:2px;width:0;background:var(--accent);z-index:90}
 
-  /* ── 顶部标尺 ── */
+  /* ── 顶部时间码 / 导航 ── */
   .ruler{
     position:relative;height:34px;border-bottom:1px solid var(--line);
     background:
       repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 24px),
-      repeating-linear-gradient(90deg,#B8B1A2 0 1px,transparent 1px 120px);
+      repeating-linear-gradient(90deg,#B9B1A0 0 1px,transparent 1px 120px);
     background-size:100% 8px,100% 14px;
     background-position:0 100%,0 100%;
     background-repeat:repeat-x;
   }
   .ruler::after{
-    content:"00:00:00:00";position:absolute;left:clamp(20px,5vw,48px);top:2px;
+    content:attr(data-tc);position:absolute;left:clamp(20px,5vw,48px);top:2px;
     font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);
   }
-  .topbar{display:flex;justify-content:space-between;align-items:center;padding-top:18px}
-  .brand{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--dim)}
+  .nav{
+    position:sticky;top:0;z-index:80;
+    background:rgba(244,241,234,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(215,208,191,.82);
+  }
+  .nav-inner{min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--dim);white-space:nowrap}
   .brand b{color:var(--accent);font-weight:600}
-  .topmeta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);display:flex;gap:18px}
+  .nav-links{display:flex;align-items:center;gap:clamp(14px,2.4vw,28px);font-size:13px;color:var(--dim)}
+  .nav-links a{position:relative;padding:6px 0;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--accent);transition:right .24s ease}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  .nav-links a:hover::after,.nav-links a.active::after{right:0}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    border:1px solid var(--ink);color:var(--ink);padding:8px 12px;border-radius:2px;
+    transition:background .2s,color .2s,border-color .2s;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--bg-soft)}
 
   /* ── Hero ── */
-  header.hero{padding:clamp(48px,9vw,96px) 0 clamp(36px,6vw,60px)}
+  .hero{position:relative;padding:clamp(54px,9vw,104px) 0 clamp(38px,6vw,64px);overflow:hidden}
+  .hero::before{
+    content:"SIN";position:absolute;right:-.08em;top:-.24em;
+    font-family:var(--serif);font-size:clamp(10rem,28vw,24rem);font-weight:700;line-height:1;
+    color:transparent;-webkit-text-stroke:1px rgba(21,20,15,.075);letter-spacing:-.08em;pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);
+    margin-bottom:18px;text-transform:uppercase;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
   h1{
-    font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;line-height:1.02;
-    letter-spacing:-.015em;
+    max-width:9ch;
+    font-family:var(--serif);
+    font-size:clamp(3.1rem,8vw,6.4rem);font-weight:700;line-height:.98;
+    letter-spacing:-.045em;
   }
   h1 em{font-style:normal;color:var(--accent)}
-  .role{
-    margin-top:18px;font-size:clamp(.95rem,2.2vw,1.12rem);font-weight:600;
-    display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;
+  .hero-sub{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-weight:600;font-size:clamp(.98rem,2.2vw,1.16rem)}
+  .hero-sub .dot{width:4px;height:4px;border-radius:50%;background:var(--accent-dim);display:inline-block}
+  .hero-sub .sub{color:var(--dim);font-weight:400;font-family:var(--mono);font-size:.82em;letter-spacing:.04em}
+  .bio{margin-top:26px;max-width:64ch;font-size:clamp(.94rem,1.9vw,1.02rem);color:var(--ink-2)}
+  .bio strong{color:var(--ink);font-weight:700;background:linear-gradient(transparent 66%,rgba(174,58,36,.14) 66%);padding:0 .08em}
+  .hero-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:42px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    border:1px solid var(--accent);color:var(--accent);
+    padding:10px 16px;border-radius:2px;background:transparent;cursor:pointer;
+    transition:transform .2s,background .2s,color .2s,border-color .2s,box-shadow .2s;
   }
-  .role .dot{width:4px;height:4px;border-radius:50%;background:var(--accent-dim);display:inline-block}
-  .role .sub{color:var(--dim);font-weight:400;font-family:var(--mono);font-size:.82em;letter-spacing:.04em}
-  .bio{margin-top:26px;max-width:60ch;font-size:clamp(.92rem,1.9vw,.98rem);color:#403C34}
-  .bio strong{color:var(--ink);font-weight:600}
-  .contacts{
-    margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 26px;
-    font-family:var(--mono);font-size:12px;letter-spacing:.04em;
-  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px -18px rgba(174,58,36,.55)}
+  .btn.primary{background:var(--accent);color:var(--bg-soft);border-color:var(--accent)}
+  .btn.primary:hover{background:var(--ink);border-color:var(--ink);color:var(--bg-soft)}
+  .btn.ghost{border-color:var(--line);color:var(--dim)}
+  .btn.ghost:hover{background:var(--panel);color:var(--ink);border-color:var(--accent-dim);box-shadow:none}
+  .contacts{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim)}
   .contacts a{border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
   .contacts a:hover{border-color:var(--accent);color:var(--accent)}
-  .contacts span{color:var(--dim)}
   .contacts b{color:var(--faint);font-weight:400;margin-right:7px}
+  .copy-mail{border:none;background:transparent;padding:0;color:var(--dim);font:inherit;cursor:pointer;border-bottom:1px solid var(--line)}
+  .copy-mail:hover{color:var(--accent);border-color:var(--accent)}
+  .copy-tip{color:var(--accent);min-width:5em}
 
   /* ── 数据 ── */
   .stats{
     display:grid;grid-template-columns:repeat(4,1fr);
-    border-top:1px solid var(--ink);border-bottom:1px solid var(--line);
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(251,249,244,.56),rgba(251,249,244,0));
   }
-  .stat{padding:26px 0 24px;padding-right:18px;border-right:1px solid var(--line)}
+  .stat{position:relative;padding:26px 18px 24px 0;border-right:1px solid var(--line)}
   .stat:last-child{border-right:none}
+  .stat::after{content:"";position:absolute;left:0;top:-2px;height:2px;width:0;background:var(--accent);transition:width .45s ease}
+  .stat:hover::after{width:100%}
   .stat .num{font-family:var(--mono);font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:600;letter-spacing:-.02em;line-height:1}
   .stat .num i{font-style:normal;color:var(--accent);font-size:.7em;vertical-align:.12em;margin-left:2px}
   .stat .lab{font-size:12px;color:var(--dim);margin-top:9px;letter-spacing:.04em}
 
   /* ── 章节 ── */
-  section{margin-top:clamp(54px,7.6vw,88px)}
+  main section{margin-top:clamp(58px,7.8vw,92px);scroll-margin-top:84px}
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:14px}
-  h2{font-size:clamp(1.15rem,2.8vw,1.45rem);font-weight:700;letter-spacing:.01em}
-  h2 .en{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--faint);margin-top:7px;font-weight:400}
+  h2{font-family:var(--serif);font-size:clamp(1.35rem,3vw,1.8rem);font-weight:700;letter-spacing:-.02em}
+  h2 .en{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.24em;color:var(--faint);margin-top:7px;font-weight:400}
   .tc{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.08em;white-space:nowrap}
-  .sec-note{font-size:13px;color:var(--dim);margin-top:16px;max-width:62ch}
+  .sec-note{font-size:13.5px;color:var(--dim);margin-top:16px;max-width:66ch}
+
+  /* ── 产品卡 ── */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  .card{
+    position:relative;overflow:hidden;
+    background:rgba(251,249,244,.76);border:1px solid var(--line);padding:clamp(22px,3vw,28px);
+    display:flex;flex-direction:column;min-height:224px;
+    transition:transform .22s,background .22s,border-color .22s,box-shadow .22s;
+  }
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .24s}
+  .card:hover{transform:translateY(-3px);background:var(--bg-soft);border-color:var(--accent-dim);box-shadow:var(--shadow)}
+  .card:hover::before{transform:scaleY(1)}
+  .card .status{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--accent);margin-bottom:14px}
+  .card h3{font-size:15px;font-weight:800;line-height:1.45}
+  .card h3 span{color:var(--faint);font-weight:400;font-size:.88em}
+  .card p{font-size:13.5px;color:var(--ink-2);margin-top:10px;flex:1;line-height:1.75}
+  .card .go{margin-top:16px;margin-bottom:2px;font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.05em}
+  .card:hover .go{text-decoration:underline}
 
   /* ── 作品：看片台上的画格 ── */
   .clip{
-    display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(22px,4vw,44px);
-    padding:clamp(28px,4vw,42px) 0 clamp(34px,4.5vw,48px);border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:clamp(22px,4vw,44px);
+    padding:clamp(30px,4.2vw,44px) 0 clamp(36px,4.8vw,52px);border-bottom:1px solid var(--line);
   }
   .clip:first-of-type{border-top:none}
   .frame{
     position:relative;aspect-ratio:16/9;overflow:hidden;
-    background:#FBF9F5;border:1px solid var(--line);
-    box-shadow:0 1px 0 rgba(21,20,15,.04),0 12px 28px -18px rgba(21,20,15,.35);
+    background:var(--bg-soft);border:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(21,20,15,.04),0 18px 38px -28px rgba(21,20,15,.42);
+    transition:transform .24s,box-shadow .24s,border-color .24s;
   }
+  .clip:hover .frame{transform:translateY(-3px);border-color:var(--accent-dim);box-shadow:0 26px 54px -34px rgba(21,20,15,.58)}
   .frame::before{
     content:"";position:absolute;inset:0;
     background:linear-gradient(142deg,var(--tint-a) 0%,var(--tint-b) 62%,var(--tint-b) 100%);
@@ -112,114 +219,80 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
     mix-blend-mode:multiply;
   }
-  .frame .inner{
-    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
-    align-items:center;text-align:center;padding:22px;z-index:1;
-  }
-  .frame .tc-top{
-    position:absolute;top:12px;left:24px;font-family:var(--mono);font-size:12px;
-    letter-spacing:.1em;color:rgba(21,20,15,.66);
-  }
-  .frame .rec{
-    position:absolute;top:12px;right:24px;font-family:var(--mono);font-size:12px;
-    letter-spacing:.1em;color:var(--accent);display:flex;align-items:center;gap:5px;
-  }
-  .frame .rec::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
-  .frame .big{font-size:clamp(1.15rem,2.6vw,1.55rem);font-weight:800;line-height:1.18;letter-spacing:.01em;color:var(--ink)}
-  .frame .num-big{font-family:var(--mono);font-size:clamp(1.5rem,3.4vw,2rem);font-weight:600;letter-spacing:-.03em;color:var(--ink)}
+  .frame .inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px;z-index:1}
+  .frame .tc-top{position:absolute;top:12px;left:24px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:rgba(21,20,15,.66)}
+  .frame .rec{position:absolute;top:12px;right:24px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);display:flex;align-items:center;gap:5px}
+  .frame .rec::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(174,58,36,.12)}
+  .frame .big{font-family:var(--serif);font-size:clamp(1.25rem,2.8vw,1.72rem);font-weight:700;line-height:1.18;letter-spacing:.01em;color:var(--ink)}
+  .frame .num-big{font-family:var(--mono);font-size:clamp(1.55rem,3.6vw,2.15rem);font-weight:600;letter-spacing:-.03em;color:var(--ink)}
   .frame .small{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:rgba(21,20,15,.72);margin-top:10px}
   .frame .marks{position:absolute;inset:9px;z-index:2;pointer-events:none}
   .frame .marks::before,.frame .marks::after{content:"";position:absolute;width:9px;height:9px;border:1px solid rgba(21,20,15,.38)}
   .frame .marks::before{top:0;left:0;border-right:none;border-bottom:none}
   .frame .marks::after{bottom:0;right:0;border-left:none;border-top:none}
-  .frame .bar{
-    position:absolute;left:0;right:0;bottom:0;height:24px;
-    border-top:1px solid rgba(21,20,15,.12);background:rgba(251,249,245,.7);
-    font-family:var(--mono);font-size:12px;color:rgba(21,20,15,.72);
-    display:flex;align-items:center;justify-content:space-between;padding:0 10px;
-  }
-
-  /* 可播放画格：去掉装饰层，直接放视频 */
-  .frame.video{background:#000;box-shadow:0 1px 0 rgba(21,20,15,.04),0 14px 30px -18px rgba(21,20,15,.6)}
+  .frame .bar{position:absolute;left:0;right:0;bottom:0;height:24px;border-top:1px solid rgba(21,20,15,.12);background:rgba(251,249,244,.76);font-family:var(--mono);font-size:12px;color:rgba(21,20,15,.72);display:flex;align-items:center;justify-content:space-between;padding:0 10px}
+  .frame.video{background:#000;box-shadow:0 1px 0 rgba(21,20,15,.04),0 18px 38px -22px rgba(21,20,15,.64)}
   .frame.video::before,.frame.video::after{display:none}
   .frame.video video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
-
   .clip-body{min-width:0;padding-bottom:6px}
   .clip-no{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent)}
-  .clip-title{font-size:clamp(1.05rem,2.4vw,1.22rem);font-weight:700;margin:8px 0 6px;line-height:1.4}
+  .clip-title{font-size:clamp(1.12rem,2.5vw,1.34rem);font-weight:800;margin:8px 0 6px;line-height:1.4}
   .clip-meta{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-bottom:14px}
-  .clip-desc{font-size:14px;color:#3E3A32;line-height:1.78}
+  .clip-desc{font-size:14px;color:var(--ink-2);line-height:1.8}
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-  .tag{
-    font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim);
-    border:1px solid var(--line);padding:4px 9px;border-radius:2px;
-  }
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;margin-top:20px;
-    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
-    border:1px solid var(--accent);color:var(--accent);
-    padding:9px 15px;border-radius:2px;transition:background .2s,color .2s,border-color .2s;
-  }
-  .btn:hover{background:var(--accent);color:#FBF9F5;border-color:var(--accent)}
-  .btn.ghost{border-color:var(--line);color:var(--dim)}
-  .btn.ghost:hover{background:var(--panel);color:var(--ink);border-color:var(--line)}
-
-  /* ── 产品卡 ── */
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
-  .card{
-    background:#FBF9F5;border:1px solid var(--line);padding:clamp(24px,3.4vw,32px);
-    display:flex;flex-direction:column;transition:background .2s,border-color .2s;
-  }
-  .card:hover{background:var(--panel);border-color:var(--accent-dim)}
-  .card h3{font-size:14.5px;font-weight:700;line-height:1.5}
-  .card h3 span{color:var(--faint);font-weight:400;font-size:.86em}
-  .card p{font-size:13.5px;color:#3E3A32;margin-top:9px;flex:1;line-height:1.75}
-  .card .go{margin-top:16px;margin-bottom:4px;font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.05em}
-  .card:hover .go{text-decoration:underline}
+  .tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim);border:1px solid var(--line);padding:4px 9px;border-radius:2px;background:rgba(251,249,244,.54)}
 
   /* ── 列表 ── */
   .list-group{margin-top:34px}
   .lg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-  .lg-head h3{font-size:13.5px;font-weight:700}
+  .lg-head h3{font-size:14px;font-weight:800}
   .chip{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);border:1px solid var(--accent-dim);padding:2px 7px;border-radius:2px}
   .rows{border-top:1px solid var(--line)}
-  .row{
-    display:grid;grid-template-columns:1fr auto;gap:4px 18px;
-    padding:15px 2px;border-bottom:1px solid var(--line-soft);transition:background .18s;
-  }
-  .row:hover{background:var(--panel)}
-  .row .t{font-size:13.6px;font-weight:600;grid-column:1}
-  .row .x{font-size:12.5px;color:var(--dim);grid-column:1;line-height:1.7}
+  .row{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:16px 2px;border-bottom:1px solid var(--line-soft);transition:background .18s,padding-left .18s}
+  .row:hover{background:rgba(236,232,221,.72);padding-left:10px}
+  .row .t{font-size:13.8px;font-weight:700;grid-column:1}
+  .row .x{font-size:12.8px;color:var(--dim);grid-column:1;line-height:1.72}
   .row .m{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap;grid-row:1;grid-column:2;text-align:right;letter-spacing:.05em}
   .row .open{grid-row:2;grid-column:2;font-family:var(--mono);font-size:12px;color:var(--accent);text-align:right;white-space:nowrap}
   .row:hover .open{text-decoration:underline}
 
   /* ── 两栏 ── */
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);margin-top:28px}
-  .exp{padding:16px 0;border-bottom:1px solid var(--line-soft)}
+  .exp{padding:18px 0;border-bottom:1px solid var(--line-soft)}
+  .exp:first-child{padding-top:4px}
   .exp:last-child{border-bottom:none}
-  .exp .t{font-size:14px;font-weight:700}
+  .exp .t{font-size:14px;font-weight:800}
   .exp .d{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-top:3px}
-  .exp .x{font-size:13px;color:var(--dim);margin-top:7px;line-height:1.7}
-  .award{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-soft);font-size:13px;color:#3E3A32}
+  .exp .x{font-size:13px;color:var(--dim);margin-top:7px;line-height:1.72}
+  .award{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-2)}
+  .award:first-child{padding-top:4px}
   .award:last-child{border-bottom:none}
   .award .yr{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap}
-
   .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
-  .skill{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim);border:1px solid var(--line);padding:6px 13px;border-radius:2px;background:#FBF9F5}
-
-  .note{font-size:12.5px;color:var(--faint);margin-top:22px;line-height:1.8;max-width:70ch}
+  .skill{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim);border:1px solid var(--line);padding:7px 13px;border-radius:2px;background:rgba(251,249,244,.66);transition:border-color .2s,color .2s,transform .2s}
+  .skill:hover{border-color:var(--accent-dim);color:var(--ink);transform:translateY(-1px)}
+  .note{font-size:12.5px;color:var(--faint);margin-top:22px;line-height:1.8;max-width:72ch}
   .note code{font-family:var(--mono);font-size:12px;color:var(--dim);background:var(--panel);padding:1px 5px}
 
   footer{
-    margin-top:clamp(64px,10vw,110px);border-top:1px solid var(--ink);
-    padding:24px 0 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    margin-top:clamp(70px,10vw,116px);border-top:2px solid var(--ink);
+    padding:26px 0 64px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);
   }
+  footer a{color:var(--dim);border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--accent);border-color:var(--accent)}
 
-  @media (max-width:760px){
-    .topmeta{display:none}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .72s cubic-bezier(.16,1,.3,1),transform .72s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-delay="1"]{transition-delay:.08s}.reveal[data-delay="2"]{transition-delay:.14s}.reveal[data-delay="3"]{transition-delay:.2s}
+
+  @media (max-width:920px){
+    .cards{grid-template-columns:1fr 1fr}
     .clip{grid-template-columns:1fr;gap:20px}
+  }
+  @media (max-width:760px){
+    .nav-links{display:none}
+    .hero::before{font-size:12rem;right:-.22em;top:-.12em}
     .stats{grid-template-columns:1fr 1fr}
     .stat{border-right:none;border-bottom:1px solid var(--line);padding:20px 0}
     .stat:nth-child(odd){border-right:1px solid var(--line);padding-right:16px}
@@ -229,379 +302,483 @@
     .row .m{grid-row:auto;grid-column:1;text-align:left}
     .row .open{grid-row:auto;grid-column:1;text-align:left}
   }
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+    .reveal{opacity:1;transform:none}
+  }
   @media print{
     body{background:#fff;color:#000}
-    .btn{display:none}
-    .frame{box-shadow:none}
+    body::before,.nav,.scroll-progress,.ruler,.btn,.copy-mail{display:none!important}
+    .frame{box-shadow:none;break-inside:avoid}
+    section{break-inside:avoid}
+    .reveal{opacity:1!important;transform:none!important}
   }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="ruler" data-tc="TC 00:00:00:00" aria-hidden="true"></div>
 
-<div class="ruler" aria-hidden="true"></div>
-
-<div class="wrap">
-
-  <div class="topbar">
-    <div class="brand"><b>●</b> SINOFLIVE / PORTFOLIO</div>
-    <div class="topmeta">
-      <span>2026</span>
-      <span>16:9</span>
-      <span>24 FPS</span>
+<nav class="nav" aria-label="页面导航">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="回到顶部"><b>●</b> SINOFLIVE / PORTFOLIO</a>
+    <div class="nav-links">
+      <a href="#products">AI 产品</a>
+      <a href="#works">代表作品</a>
+      <a href="#full">完整作品</a>
+      <a href="#aigc">AIGC</a>
+      <a href="about/">说明书</a>
     </div>
+    <a class="nav-cta" href="mailto:1027615061@qq.com">联系我 →</a>
   </div>
+</nav>
 
+<div class="wrap" id="top">
   <header class="hero">
+    <div class="eyebrow">Open for internship · 2027 届</div>
     <h1>刘峻豪<em>.</em></h1>
-    <div class="role">
+    <div class="hero-sub">
       <span>视频剪辑</span><span class="dot"></span>
       <span>AIGC</span><span class="dot"></span>
       <span>AI 产品实践</span>
-      <span class="sub">抖音 @SinOfLive</span>
+      <span class="sub">抖音 @SinOfLive · 河南大学在读</span>
     </div>
     <p class="bio">
-      从说唱 MV 的作词、混音到剪辑全流程独立完成，<strong>节奏感是基本功</strong>；在地下八英里赛事 IP 做过 Live 线上内容运营；把即梦 / 可灵 / Coze 深度塞进真实剪辑工作流——<strong>我是会用 AI 干活的剪辑，不是只会剪的剪辑</strong>。河南大学在读。
+      从说唱 MV 的作词、混音到剪辑全流程独立完成，<strong>节奏感是基本功</strong>；在地下八英里赛事 IP 做过 Live 线上内容运营；把即梦 / 可灵 / Coze 深度塞进真实剪辑工作流——<strong>我是会用 AI 干活的剪辑，不是只会剪的剪辑</strong>。
     </p>
-    <div class="contacts">
+    <div class="hero-actions">
+      <a class="btn primary" href="mailto:1027615061@qq.com">发邮件聊聊 →</a>
+      <a class="btn" href="#works">看精选作品</a>
+      <a class="btn ghost" href="about/">读我的说明书</a>
+    </div>
+    <div class="contacts" aria-label="联系方式">
       <span><b>TEL</b>139-3022-5656</span>
-      <span><b>MAIL</b><a href="mailto:1027615061@qq.com">1027615061@qq.com</a></span>
+      <span><b>MAIL</b><button class="copy-mail" type="button" data-email="1027615061@qq.com">1027615061@qq.com</button></span>
       <span><b>DY</b>SinOfLive</span>
+      <span class="copy-tip" aria-live="polite"></span>
     </div>
   </header>
 
-  <div class="stats">
+  <div class="stats reveal" aria-label="关键数据">
     <div class="stat"><div class="num">180<i>w+</i></div><div class="lab">单条最高播放</div></div>
     <div class="stat"><div class="num">7.6<i>w</i></div><div class="lab">单条点赞</div></div>
     <div class="stat"><div class="num">3.1<i>w</i></div><div class="lab">单条转发</div></div>
     <div class="stat"><div class="num">5000<i>人</i></div><div class="lab">赛事场馆售罄 · 协助</div></div>
   </div>
 
-  <!-- ── AI 产品 ── -->
-  <section>
-    <div class="sec-head">
-      <h2>AI 产品<span class="en">AI PRODUCTS</span></h2>
-      <span class="tc">REEL 01 / 04 ITEMS</span>
-    </div>
-    <p class="sec-note">从内容创作者长出来的产品能力：自己搭、自己上线、自己卖。点击卡片可体验。</p>
-    <div class="cards">
-      <a class="card" href="https://memport-memory.app.workbuddy.host/?sharecode=O25VJSU3QC" target="_blank" rel="noopener">
-        <h3>MemPort 忆港 <span>· Agent 跨工具记忆层</span></h3>
-        <p>PAYATHON 2026 作品：MCP 原生接入 Claude Code / Cursor 等多 Agent，混合检索 + 上下文打包，换工具不用重新自我介绍。已上线。</p>
-        <div class="go">在线体验 →</div>
-      </a>
-      <a class="card" href="https://finals-quiz.app.workbuddy.host/?sharecode=LKWARVTOI6" target="_blank" rel="noopener">
-        <h3>期末刷题站 <span>· AI 刷题平台</span></h3>
-        <p>原卷解析 + 笔记自动出题，覆盖错题本、题集广场与考前冲刺报告；接观猹账号登录与观猹支付，跑通「免费试用 → ¥9.9 买断」付费闭环。已上线。</p>
-        <div class="go">在线体验 →</div>
-      </a>
-      <a class="card" href="https://github.com/sin0317" target="_blank" rel="noopener">
-        <h3>观点擂台 <span>· 知乎观点卡牌对战</span></h3>
-        <p>知乎黑客松 2026 参赛作品：24 小时全栈开发的卡牌对战应用，72 张观点卡牌，预留 LLM 接口、默认离线 mock 运行。已开源。</p>
-        <div class="go">GitHub →</div>
-      </a>
-      <a class="card" href="https://skillpay.alipay.com/shelf/product?productId=P0806000211809850&amp;merchantId=2088342180612670" target="_blank" rel="noopener">
-        <h3>SkillPay 在售 AI 工具 <span>× 2</span></h3>
-        <p>在支付宝 SkillPay 上架并售卖：8bit 像素说唱 MV 生成器（¥20 买断）、数字人口播片全流程（¥50 买断），已通过 AI 付安全扫描。</p>
-        <div class="go">支付宝内可购 →</div>
-      </a>
-    </div>
-  </section>
+  <main id="main">
+    <!-- ── AI 产品 ── -->
+    <section id="products" class="reveal">
+      <div class="sec-head">
+        <h2>AI 产品<span class="en">AI PRODUCTS</span></h2>
+        <span class="tc">REEL 01 / 04 ITEMS</span>
+      </div>
+      <p class="sec-note">从内容创作者长出来的产品能力：自己搭、自己上线、自己卖。点击卡片可体验。</p>
+      <div class="cards">
+        <a class="card reveal" href="https://memport-memory.app.workbuddy.host/?sharecode=O25VJSU3QC" target="_blank" rel="noopener">
+          <div class="status">LIVE · PAYATHON 2026</div>
+          <h3>MemPort 忆港 <span>· Agent 跨工具记忆层</span></h3>
+          <p>MCP 原生接入 Claude Code / Cursor 等多 Agent，混合检索 + 上下文打包，换工具不用重新自我介绍。已上线。</p>
+          <div class="go">在线体验 →</div>
+        </a>
+        <a class="card reveal" data-delay="1" href="https://finals-quiz.app.workbuddy.host/?sharecode=LKWARVTOI6" target="_blank" rel="noopener">
+          <div class="status">LIVE · 已跑通付费</div>
+          <h3>期末刷题站 <span>· AI 刷题平台</span></h3>
+          <p>原卷解析 + 笔记自动出题，覆盖错题本、题集广场与考前冲刺报告；跑通「免费试用 → ¥9.9 买断」付费闭环。</p>
+          <div class="go">在线体验 →</div>
+        </a>
+        <a class="card reveal" data-delay="2" href="https://github.com/sin0317" target="_blank" rel="noopener">
+          <div class="status">OPEN SOURCE</div>
+          <h3>观点擂台 <span>· 知乎观点卡牌对战</span></h3>
+          <p>知乎黑客松 2026 参赛作品：24 小时全栈开发的卡牌对战应用，72 张观点卡牌，预留 LLM 接口、默认离线 mock 运行。</p>
+          <div class="go">GitHub →</div>
+        </a>
+        <a class="card reveal" data-delay="3" href="https://skillpay.alipay.com/shelf/product?productId=P0806000211809850&amp;merchantId=2088342180612670" target="_blank" rel="noopener">
+          <div class="status">ON SALE × 2</div>
+          <h3>SkillPay 在售 AI 工具 <span>× 2</span></h3>
+          <p>在支付宝 SkillPay 上架并售卖：8bit 像素说唱 MV 生成器（¥20 买断）、数字人口播片全流程（¥50 买断），已通过 AI 付安全扫描。</p>
+          <div class="go">支付宝内可购 →</div>
+        </a>
+      </div>
+    </section>
 
-  <!-- ── 代表作品 ── -->
-  <section>
-    <div class="sec-head">
-      <h2>代表作品<span class="en">SELECTED WORKS</span></h2>
-      <span class="tc">REEL 02 / 05 CLIPS</span>
-    </div>
-    <p class="sec-note">按数据 → Live 剪辑 → 叙事 → 数字人排序。</p>
+    <!-- ── 代表作品 ── -->
+    <section id="works" class="reveal">
+      <div class="sec-head">
+        <h2>代表作品<span class="en">SELECTED WORKS</span></h2>
+        <span class="tc">REEL 02 / 05 CLIPS</span>
+      </div>
+      <p class="sec-note">按数据 → Live 剪辑 → 叙事 → 数字人排序。每个作品只保留一个最能证明能力的点。</p>
 
-    <div class="clip">
-      <div class="frame" style="--tint-a:#E7DED2;--tint-b:#F7F3EA">
-        <div class="tc-top">00:00:00:00</div>
-        <div class="rec">ON AIR</div>
-        <div class="inner">
-          <div class="num-big">1,800,000</div>
-          <div class="small">PLAYS</div>
+      <article class="clip reveal">
+        <div class="frame" style="--tint-a:#E7DED2;--tint-b:#F7F3EA">
+          <div class="tc-top">00:00:00:00</div>
+          <div class="rec">ON AIR</div>
+          <div class="inner">
+            <div class="num-big">1,800,000</div>
+            <div class="small">PLAYS</div>
+          </div>
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>抖音 · SINOFLIVE</span><span>00:01:12</span></div>
         </div>
-        <i class="marks" aria-hidden="true"></i>
-        <div class="bar"><span>抖音 · SINOFLIVE</span><span>00:01:12</span></div>
-      </div>
-      <div class="clip-body">
-        <div class="clip-no">01 / 短视频运营</div>
-        <div class="clip-title">抖音爆款短视频 · 单条 180w 播放</div>
-        <div class="clip-meta">独立运营 @SinOfLive · 粉丝 2200+</div>
-        <p class="clip-desc">账号选题、拍摄、剪辑、发布与评论区运营全部独立完成。单条视频播放 180w+、点赞 7.6w、转发 3.1w——在粉丝量不足 3000 的账号上跑出的爆款，验证的是内容钩子与节奏把控，而非平台流量红利。</p>
-        <div class="tags"><span class="tag">全流程独立</span><span class="tag">选题策划</span><span class="tag">数据敏感</span></div>
-        <a class="btn" href="https://www.douyin.com/video/7325731312386575666" target="_blank" rel="noopener">观看视频 →</a>
-      </div>
-    </div>
-
-    <div class="clip">
-      <div class="frame" style="--tint-a:#E3DAD3;--tint-b:#F7F3EE">
-        <div class="tc-top">00:00:00:00</div>
-        <div class="rec">LIVE</div>
-        <div class="inner">
-          <div class="big">地下8英里<br>十五年 · 最终章</div>
-          <div class="small">EP10 · FINAL</div>
+        <div class="clip-body">
+          <div class="clip-no">01 / 短视频运营</div>
+          <h3 class="clip-title">抖音爆款短视频 · 单条 180w 播放</h3>
+          <div class="clip-meta">独立运营 @SinOfLive · 粉丝 2200+</div>
+          <p class="clip-desc">账号选题、拍摄、剪辑、发布与评论区运营全部独立完成。单条视频播放 180w+、点赞 7.6w、转发 3.1w——在粉丝量不足 3000 的账号上跑出的爆款，验证的是内容钩子与节奏把控，而非平台流量红利。</p>
+          <div class="tags"><span class="tag">全流程独立</span><span class="tag">选题策划</span><span class="tag">数据敏感</span></div>
+          <a class="btn" href="https://www.douyin.com/video/7325731312386575666" target="_blank" rel="noopener">观看视频 →</a>
         </div>
-        <i class="marks" aria-hidden="true"></i>
-        <div class="bar"><span>LIVE · 赛事剪辑</span><span>00:24:06</span></div>
-      </div>
-      <div class="clip-body">
-        <div class="clip-no">02 / Live 内容</div>
-        <div class="clip-title">《EP10：地下8英里 十五年 最终章》</div>
-        <div class="clip-meta">西安顽态地尚 · Live 内容运营实习 · 2025.11–2026.01</div>
-        <p class="clip-desc">负责「地下八英里」Hip-Hop 赛事 IP 的线上内容运营与剪辑：现场多机位素材筛选、快节奏成片剪辑、线上渠道分发。实习期间协助完成 5000 人比赛场馆售罄的赛季落地。</p>
-        <div class="tags"><span class="tag">多机位剪辑</span><span class="tag">快节奏</span><span class="tag">赛事 IP 运营</span></div>
-        <a class="btn" href="https://www.bilibili.com/video/av116962462074953/" target="_blank" rel="noopener">观看视频 →</a>
-      </div>
-    </div>
+      </article>
 
-    <div class="clip">
-      <div class="frame" style="--tint-a:#D6DFE7;--tint-b:#F0F4F7">
-        <div class="tc-top">00:00:00:00</div>
-        <div class="rec">AWARD</div>
-        <div class="inner">
-          <div class="big">画惊千年<br>赴梦华</div>
-          <div class="small">国赛铜奖 · 2025</div>
+      <article class="clip reveal">
+        <div class="frame" style="--tint-a:#E3DAD3;--tint-b:#F7F3EE">
+          <div class="tc-top">00:00:00:00</div>
+          <div class="rec">LIVE</div>
+          <div class="inner">
+            <div class="big">地下8英里<br>十五年 · 最终章</div>
+            <div class="small">EP10 · FINAL</div>
+          </div>
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>LIVE · 赛事剪辑</span><span>00:24:06</span></div>
         </div>
-        <i class="marks" aria-hidden="true"></i>
-        <div class="bar"><span>短片 · 国赛铜奖</span><span>00:05:30</span></div>
-      </div>
-      <div class="clip-body">
-        <div class="clip-no">03 / 创意短片</div>
-        <div class="clip-title">《画惊千年赴梦华》</div>
-        <div class="clip-meta">2025「外研社·国才杯」全国大学生外语能力大赛 · 英语组短视频赛项 · 国赛铜奖</div>
-        <p class="clip-desc">团队五人创作的英语短片，从校赛一等奖一路打进国赛拿下铜奖。负责影片剪辑，把控全片叙事节奏与画面情绪。</p>
-        <div class="tags"><span class="tag">叙事剪辑</span><span class="tag">国赛获奖</span><span class="tag">团队协作</span></div>
-        <a class="btn" href="https://www.bilibili.com/video/BV1cFJ9zQEpF/" target="_blank" rel="noopener">观看视频 →</a>
-      </div>
-    </div>
-
-    <div class="clip">
-      <div class="frame" style="--tint-a:#E5DFCF;--tint-b:#F7F4EC">
-        <div class="tc-top">00:00:00:00</div>
-        <div class="rec">DOC</div>
-        <div class="inner">
-          <div class="big">传承之味</div>
-          <div class="small">开封非遗 · 花生糕</div>
+        <div class="clip-body">
+          <div class="clip-no">02 / Live 内容</div>
+          <h3 class="clip-title">《EP10：地下8英里 十五年 最终章》</h3>
+          <div class="clip-meta">西安顽态地尚 · Live 内容运营实习 · 2025.11–2026.01</div>
+          <p class="clip-desc">负责「地下八英里」Hip-Hop 赛事 IP 的线上内容运营与剪辑：现场多机位素材筛选、快节奏成片剪辑、线上渠道分发。实习期间协助完成 5000 人比赛场馆售罄的赛季落地。</p>
+          <div class="tags"><span class="tag">多机位剪辑</span><span class="tag">快节奏</span><span class="tag">赛事 IP 运营</span></div>
+          <a class="btn" href="https://www.bilibili.com/video/av116962462074953/" target="_blank" rel="noopener">观看视频 →</a>
         </div>
-        <i class="marks" aria-hidden="true"></i>
-        <div class="bar"><span>纪录片 · 独立拍摄剪辑</span><span>00:08:14</span></div>
-      </div>
-      <div class="clip-body">
-        <div class="clip-no">04 / 非遗纪录</div>
-        <div class="clip-title">《传承之味》系列 · 花生糕制作技艺传承人</div>
-        <div class="clip-meta">河南大学「鲁广雄奖学金」实践成果三等奖 ·「青春豫有引力」二等奖</div>
-        <p class="clip-desc">独立负责拍摄与剪辑：走进开封老作坊，用镜头记录花生糕制作技艺与传承人的对话。作品先后获校级社会实践成果奖与省级征集活动奖项。</p>
-        <div class="tags"><span class="tag">独立拍摄</span><span class="tag">纪实叙事</span><span class="tag">采访</span></div>
-        <a class="btn" href="https://www.bilibili.com/video/BV1sLb4eUEoK/" target="_blank" rel="noopener">观看视频 →</a>
-      </div>
-    </div>
+      </article>
 
-    <div class="clip">
-      <div class="frame video">
-        <video controls playsinline preload="metadata"
-               poster="works/memport-oral-720p.jpg"
-               src="works/memport-oral-720p.mp4"
-               aria-label="忆港 MemPort 数字人口播片，一张自拍照生成，49 秒"></video>
-      </div>
-      <div class="clip-body">
-        <div class="clip-no">05 / 数字人口播</div>
-        <div class="clip-title">忆港 MemPort · 数字人口播片</div>
-        <div class="clip-meta">一张自拍照起片 · 1920×1080 / 49 秒 · 口播 + 界面实录 · 站内可直接播放</div>
-        <p class="clip-desc">全程没有开机拍摄：只提供一张自拍照和一段口播稿，口型、表情、镜头一起交给数字人平台生成，剩下的脚本结构、界面实录、动态排版字幕、剪辑调色到双比例封面自己完成。三段结构——先用「换一个 AI 就要重新讲一遍自己」把痛点说穿，再切界面实录演示那六个 MCP 工具怎么把事实、偏好、项目分别存下来，最后用「免费 600 次 / 月」收尾。重点不是「会用 AI 生成视频」，是没有摄影条件也能稳定产出口播片：对一个人做产品内容来说，这是能持续跑的产能。</p>
-        <div class="tags"><span class="tag">数字人</span><span class="tag">一张照片起片</span><span class="tag">界面实录</span><span class="tag">单人全流程</span></div>
-        <a class="btn" href="https://weixin.qq.com/sph/ARUJYEBdKI" target="_blank" rel="noopener">视频号已发布版本 →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 全平台作品集 ── -->
-  <section>
-    <div class="sec-head">
-      <h2>全平台作品集<span class="en">FULL PORTFOLIO</span></h2>
-      <span class="tc">REEL 03 / 12 ITEMS</span>
-    </div>
-    <p class="sec-note">完整作品库（抖音 / B站 / 独立短片），与上方精选互为补充。视频下方「网盘观看」跳转至百度网盘对应素材；B站成片附直链可在线播放。</p>
-    <div style="margin-top:24px">
-      <a class="btn" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">完整作品集 · 百度网盘（提取码 0317）→</a>
-    </div>
-
-    <div class="list-group">
-      <div class="lg-head"><h3>抖音 · SinOfLive 个人号</h3><span class="chip">独立运营</span></div>
-      <div class="rows">
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">话题向短视频「离开他了就不能再爱他了吗？」</div>
-          <div class="m">抖音个人号 · 26.7MB</div>
-          <div class="x">选题、拍摄、剪辑与发布独立完成。情绪向叙事 + 卡点节奏，复用账号爆款方法论。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">说唱点评「这些 RAPPER 真…」</div>
-          <div class="m">抖音个人号 · 8.1MB</div>
-          <div class="x">对嘻哈内容的 reaction / 点评向剪辑，强网感、快节奏，贴合个人号 Hip-Hop 定位。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">音乐剪辑「黄子韬进来听 · 你的耳环是我的书…」</div>
-          <div class="m">抖音个人号 · 19.8MB</div>
-          <div class="x">以音乐驱动的卡点混剪，展示对音频情绪与画面匹配的处理能力。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">赛事热点「马赫 mood 加盟《中国新说唱》！」</div>
-          <div class="m">抖音个人号 · 12.3MB</div>
-          <div class="x">借赛事热点做即时内容，体现对行业动态的敏感与快速出片能力。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="list-group">
-      <div class="lg-head"><h3>抖音 · 地下 8 英里｜终幕后 官方号</h3><span class="chip">赛事 IP 物料</span></div>
-      <div class="rows">
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">艺人物料「JD《Restart》：技术和现…」</div>
-          <div class="m">官方号 · 7.1MB</div>
-          <div class="x">围绕赛事艺人 JD 的短视频物料，突出技术流表达，调性统一服务于 IP 形象。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">幕后花絮「不在安排之中的环节…」</div>
-          <div class="m">官方号 · 5.1MB</div>
-          <div class="x">捕捉排练 / 后台的意外瞬间，用真实感增强粉丝连接，是艺人宣传常用内容类型。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">现场纪实「突发情况打断了现场…」</div>
-          <div class="m">官方号 · 6.3MB</div>
-          <div class="x">保留现场突发片段并做情绪化剪辑，体现对 Live 内容叙事与节奏的把控。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="list-group">
-      <div class="lg-head"><h3>B站 · 地下 8 英里官方频道</h3><span class="chip">长视频 / 物料</span></div>
-      <div class="rows">
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">40 秒人物群像物料</div>
-          <div class="m">官方频道 · 5.7MB</div>
-          <div class="x">调性统一的人物群像快剪，展示艺人随拍与物料产出的标准化能力，可直接复用于宣发。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-        <a class="row" href="https://www.bilibili.com/video/BV1T9g66RETs/" target="_blank" rel="noopener">
-          <div class="t">说唱纪实真人秀 ·《地下 8 英里 十五年 最终章》</div>
-          <div class="m">官方频道 · 长片</div>
-          <div class="x">赛事 IP 长视频成片，体现长线叙事剪辑与 Live 内容运营能力（对应精选 02）。</div>
-          <div class="open">B站观看 →</div>
-        </a>
-        <a class="row" href="https://www.bilibili.com/video/BV1W2V868Ey8/" target="_blank" rel="noopener">
-          <div class="t">说唱纪实真人秀 ·《走起来 EP1：你是谁》</div>
-          <div class="m">官方频道 · 长片</div>
-          <div class="x">人物向纪实 EP，从选题到成片全流程参与，展现对艺人内容的深度挖掘。</div>
-          <div class="open">B站观看 →</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="list-group">
-      <div class="lg-head"><h3>独立获奖短片</h3><span class="chip">校赛 / 国赛</span></div>
-      <div class="rows">
-        <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
-          <div class="t">《传承之味》· 花生糕制作技艺传承人</div>
-          <div class="m">非遗纪录片 · 43.5MB</div>
-          <div class="x">独立拍摄 + 剪辑，记录开封非遗花生糕与传承人对话。获「青春豫有引力」二等奖、鲁广雄奖学金实践三等奖。</div>
-          <div class="open">网盘观看 →</div>
-        </a>
-        <a class="row" href="https://www.bilibili.com/video/BV1cFJ9zQEpF/" target="_blank" rel="noopener">
-          <div class="t">《画惊千年赴梦华》</div>
-          <div class="m">英语短片 · 国赛铜奖</div>
-          <div class="x">团队五人创作的英语短视频，从校赛一等奖打进 2025 外研社·国才杯国赛拿下铜奖。负责影片剪辑（对应精选 03）。</div>
-          <div class="open">B站观看 →</div>
-        </a>
-      </div>
-    </div>
-
-    <p class="note">说明：画惊千年（352MB）、说唱纪实长片（348–670MB）等超大文件超出 GitHub Pages 单文件上限，统一走平台 / 网盘观看；如需网页内直接播放小体积作品，可将其单独上传至仓库 <code>works/</code> 目录后嵌入。</p>
-  </section>
-
-  <!-- ── AIGC ── -->
-  <section>
-    <div class="sec-head">
-      <h2>AIGC 短片<span class="en">AIGC FILMS</span></h2>
-      <span class="tc">REEL 04 / 01 SET</span>
-    </div>
-    <p class="sec-note">即梦 / 可灵 / Coze 生成素材 + 实拍，进 Pr / Ae 完成剪辑。成片与工程素材统一存于百度网盘。</p>
-    <div style="margin-top:24px">
-      <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">AIGC 短片作品集 · 百度网盘（提取码 0317）→</a>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head">
-      <h2>AIGC 工作流<span class="en">AI × EDITING</span></h2>
-      <span class="tc">PROCESS</span>
-    </div>
-    <p class="sec-note">不是「会用 AI 工具」，而是把 AI 嵌进生产环节的真实工作流。</p>
-    <div class="cards">
-      <div class="card">
-        <h3>即梦 AI × 可灵 AI <span>· 素材生产</span></h3>
-        <p>用文生图 / 图生视频补齐实拍拿不到的空镜与转场素材，生成的片段直接进 Pr 时间线，缩短前期素材准备周期。</p>
-      </div>
-      <div class="card">
-        <h3>Coze <span>· 自动化剪辑工作流</span></h3>
-        <p>基于 Coze 搭建剪辑辅助工作流：批量字幕处理、素材整理与粗剪辅助，把重复劳动交给 Agent。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 经历与奖项 ── -->
-  <section>
-    <div class="sec-head">
-      <h2>经历与奖项<span class="en">EXPERIENCE &amp; AWARDS</span></h2>
-      <span class="tc">CREDITS</span>
-    </div>
-    <div class="cols">
-      <div>
-        <div class="exp">
-          <div class="t">西安顽态地尚影视文化传播有限公司</div>
-          <div class="d">Live 内容运营 · 实习 · 2025.11–2026.01</div>
-          <div class="x">「地下八英里」赛事 IP 线上内容运营：内容剪辑、渠道分发，协助 5000 人比赛场馆售罄。</div>
+      <article class="clip reveal">
+        <div class="frame" style="--tint-a:#D6DFE7;--tint-b:#F0F4F7">
+          <div class="tc-top">00:00:00:00</div>
+          <div class="rec">AWARD</div>
+          <div class="inner">
+            <div class="big">画惊千年<br>赴梦华</div>
+            <div class="small">国赛铜奖 · 2025</div>
+          </div>
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>短片 · 国赛铜奖</span><span>00:05:30</span></div>
         </div>
-        <div class="exp">
-          <div class="t">抖音账号 @SinOfLive</div>
-          <div class="d">独立运营 · 至今</div>
-          <div class="x">粉丝 2200+，单条爆款播放 180w+、点赞 7.6w、转发 3.1w。</div>
+        <div class="clip-body">
+          <div class="clip-no">03 / 创意短片</div>
+          <h3 class="clip-title">《画惊千年赴梦华》</h3>
+          <div class="clip-meta">2025「外研社·国才杯」全国大学生外语能力大赛 · 英语组短视频赛项 · 国赛铜奖</div>
+          <p class="clip-desc">团队五人创作的英语短片，从校赛一等奖一路打进国赛拿下铜奖。负责影片剪辑，把控全片叙事节奏与画面情绪。</p>
+          <div class="tags"><span class="tag">叙事剪辑</span><span class="tag">国赛获奖</span><span class="tag">团队协作</span></div>
+          <a class="btn" href="https://www.bilibili.com/video/BV1cFJ9zQEpF/" target="_blank" rel="noopener">观看视频 →</a>
+        </div>
+      </article>
+
+      <article class="clip reveal">
+        <div class="frame" style="--tint-a:#E5DFCF;--tint-b:#F7F4EC">
+          <div class="tc-top">00:00:00:00</div>
+          <div class="rec">DOC</div>
+          <div class="inner">
+            <div class="big">传承之味</div>
+            <div class="small">开封非遗 · 花生糕</div>
+          </div>
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>纪录片 · 独立拍摄剪辑</span><span>00:08:14</span></div>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">04 / 非遗纪录</div>
+          <h3 class="clip-title">《传承之味》系列 · 花生糕制作技艺传承人</h3>
+          <div class="clip-meta">河南大学「鲁广雄奖学金」实践成果三等奖 ·「青春豫有引力」二等奖</div>
+          <p class="clip-desc">独立负责拍摄与剪辑：走进开封老作坊，用镜头记录花生糕制作技艺与传承人的对话。作品先后获校级社会实践成果奖与省级征集活动奖项。</p>
+          <div class="tags"><span class="tag">独立拍摄</span><span class="tag">纪实叙事</span><span class="tag">采访</span></div>
+          <a class="btn" href="https://www.bilibili.com/video/BV1sLb4eUEoK/" target="_blank" rel="noopener">观看视频 →</a>
+        </div>
+      </article>
+
+      <article class="clip reveal">
+        <div class="frame video">
+          <video controls playsinline preload="metadata"
+                 poster="works/memport-oral-720p.jpg"
+                 src="works/memport-oral-720p.mp4"
+                 aria-label="忆港 MemPort 数字人口播片，一张自拍照生成，49 秒"></video>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">05 / 数字人口播</div>
+          <h3 class="clip-title">忆港 MemPort · 数字人口播片</h3>
+          <div class="clip-meta">一张自拍照起片 · 1920×1080 / 49 秒 · 口播 + 界面实录 · 站内可直接播放</div>
+          <p class="clip-desc">全程没有开机拍摄：只提供一张自拍照和一段口播稿，口型、表情、镜头一起交给数字人平台生成，剩下的脚本结构、界面实录、动态排版字幕、剪辑调色到双比例封面自己完成。三段结构——先用「换一个 AI 就要重新讲一遍自己」把痛点说穿，再切界面实录演示那六个 MCP 工具怎么把事实、偏好、项目分别存下来，最后用「免费 600 次 / 月」收尾。重点不是「会用 AI 生成视频」，是没有摄影条件也能稳定产出口播片：对一个人做产品内容来说，这是能持续跑的产能。</p>
+          <div class="tags"><span class="tag">数字人</span><span class="tag">一张照片起片</span><span class="tag">界面实录</span><span class="tag">单人全流程</span></div>
+          <a class="btn" href="https://weixin.qq.com/sph/ARUJYEBdKI" target="_blank" rel="noopener">视频号已发布版本 →</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ── 全平台作品集 ── -->
+    <section id="full" class="reveal">
+      <div class="sec-head">
+        <h2>全平台作品集<span class="en">FULL PORTFOLIO</span></h2>
+        <span class="tc">REEL 03 / 12 ITEMS</span>
+      </div>
+      <p class="sec-note">完整作品库（抖音 / B站 / 独立短片），与上方精选互为补充。视频下方「网盘观看」跳转至百度网盘对应素材；B站成片附直链可在线播放。</p>
+      <div style="margin-top:24px">
+        <a class="btn" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">完整作品集 · 百度网盘（提取码 0317）→</a>
+      </div>
+
+      <div class="list-group reveal">
+        <div class="lg-head"><h3>抖音 · SinOfLive 个人号</h3><span class="chip">独立运营</span></div>
+        <div class="rows">
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">话题向短视频「离开他了就不能再爱他了吗？」</div>
+            <div class="m">抖音个人号 · 26.7MB</div>
+            <div class="x">选题、拍摄、剪辑与发布独立完成。情绪向叙事 + 卡点节奏，复用账号爆款方法论。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">说唱点评「这些 RAPPER 真…」</div>
+            <div class="m">抖音个人号 · 8.1MB</div>
+            <div class="x">对嘻哈内容的 reaction / 点评向剪辑，强网感、快节奏，贴合个人号 Hip-Hop 定位。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">音乐剪辑「黄子韬进来听 · 你的耳环是我的书…」</div>
+            <div class="m">抖音个人号 · 19.8MB</div>
+            <div class="x">以音乐驱动的卡点混剪，展示对音频情绪与画面匹配的处理能力。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">赛事热点「马赫 mood 加盟《中国新说唱》！」</div>
+            <div class="m">抖音个人号 · 12.3MB</div>
+            <div class="x">借赛事热点做即时内容，体现对行业动态的敏感与快速出片能力。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
         </div>
       </div>
-      <div>
-        <div class="award"><span>「外研社·国才杯」全国大学生外语能力大赛 · 国赛铜奖</span><span class="yr">2025</span></div>
-        <div class="award"><span>河南大学英语文化节英语短视频大赛 · 一等奖</span><span class="yr">2025</span></div>
-        <div class="award"><span>「青春豫有引力」作品征集 · 二等奖</span><span class="yr">2024</span></div>
-        <div class="award"><span>「鲁广雄奖学金」暑期社会实践优秀成果 · 三等奖</span><span class="yr">2024</span></div>
-        <div class="award"><span>「豫有引力青年说」讲思政课公开课 · 三等奖</span><span class="yr">2024</span></div>
-      </div>
-    </div>
-  </section>
 
-  <section>
-    <div class="sec-head">
-      <h2>工具链<span class="en">TOOLKIT</span></h2>
-      <span class="tc">STACK</span>
-    </div>
-    <div class="skills">
-      <span class="skill">Premiere Pro</span><span class="skill">After Effects</span><span class="skill">剪映专业版</span><span class="skill">Logic Pro X</span><span class="skill">即梦 AI</span><span class="skill">可灵 AI</span><span class="skill">Coze</span>
-    </div>
-  </section>
+      <div class="list-group reveal">
+        <div class="lg-head"><h3>抖音 · 地下 8 英里｜终幕后 官方号</h3><span class="chip">赛事 IP 物料</span></div>
+        <div class="rows">
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">艺人物料「JD《Restart》：技术和现…」</div>
+            <div class="m">官方号 · 7.1MB</div>
+            <div class="x">围绕赛事艺人 JD 的短视频物料，突出技术流表达，调性统一服务于 IP 形象。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">幕后花絮「不在安排之中的环节…」</div>
+            <div class="m">官方号 · 5.1MB</div>
+            <div class="x">捕捉排练 / 后台的意外瞬间，用真实感增强粉丝连接，是艺人宣传常用内容类型。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">现场纪实「突发情况打断了现场…」</div>
+            <div class="m">官方号 · 6.3MB</div>
+            <div class="x">保留现场突发片段并做情绪化剪辑，体现对 Live 内容叙事与节奏的把控。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="list-group reveal">
+        <div class="lg-head"><h3>B站 · 地下 8 英里官方频道</h3><span class="chip">长视频 / 物料</span></div>
+        <div class="rows">
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">40 秒人物群像物料</div>
+            <div class="m">官方频道 · 5.7MB</div>
+            <div class="x">调性统一的人物群像快剪，展示艺人随拍与物料产出的标准化能力，可直接复用于宣发。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
+          <a class="row" href="https://www.bilibili.com/video/BV1T9g66RETs/" target="_blank" rel="noopener">
+            <div class="t">说唱纪实真人秀 ·《地下 8 英里 十五年 最终章》</div>
+            <div class="m">官方频道 · 长片</div>
+            <div class="x">赛事 IP 长视频成片，体现长线叙事剪辑与 Live 内容运营能力（对应精选 02）。</div>
+            <div class="open">B站观看 →</div>
+          </a>
+          <a class="row" href="https://www.bilibili.com/video/BV1W2V868Ey8/" target="_blank" rel="noopener">
+            <div class="t">说唱纪实真人秀 ·《走起来 EP1：你是谁》</div>
+            <div class="m">官方频道 · 长片</div>
+            <div class="x">人物向纪实 EP，从选题到成片全流程参与，展现对艺人内容的深度挖掘。</div>
+            <div class="open">B站观看 →</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="list-group reveal">
+        <div class="lg-head"><h3>独立获奖短片</h3><span class="chip">校赛 / 国赛</span></div>
+        <div class="rows">
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">《传承之味》· 花生糕制作技艺传承人</div>
+            <div class="m">非遗纪录片 · 43.5MB</div>
+            <div class="x">独立拍摄 + 剪辑，记录开封非遗花生糕与传承人对话。获「青春豫有引力」二等奖、鲁广雄奖学金实践三等奖。</div>
+            <div class="open">网盘观看 →</div>
+          </a>
+          <a class="row" href="https://www.bilibili.com/video/BV1cFJ9zQEpF/" target="_blank" rel="noopener">
+            <div class="t">《画惊千年赴梦华》</div>
+            <div class="m">英语短片 · 国赛铜奖</div>
+            <div class="x">团队五人创作的英语短视频，从校赛一等奖打进 2025 外研社·国才杯国赛拿下铜奖。负责影片剪辑（对应精选 03）。</div>
+            <div class="open">B站观看 →</div>
+          </a>
+        </div>
+      </div>
+
+      <p class="note">说明：画惊千年（352MB）、说唱纪实长片（348–670MB）等超大文件超出 GitHub Pages 单文件上限，统一走平台 / 网盘观看；如需网页内直接播放小体积作品，可将其单独上传至仓库 <code>works/</code> 目录后嵌入。</p>
+    </section>
+
+    <!-- ── AIGC ── -->
+    <section id="aigc" class="reveal">
+      <div class="sec-head">
+        <h2>AIGC 短片<span class="en">AIGC FILMS</span></h2>
+        <span class="tc">REEL 04 / 01 SET</span>
+      </div>
+      <p class="sec-note">即梦 / 可灵 / Coze 生成素材 + 实拍，进 Pr / Ae 完成剪辑。成片与工程素材统一存于百度网盘。</p>
+      <div style="margin-top:24px">
+        <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">AIGC 短片作品集 · 百度网盘（提取码 0317）→</a>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="sec-head">
+        <h2>AIGC 工作流<span class="en">AI × EDITING</span></h2>
+        <span class="tc">PROCESS</span>
+      </div>
+      <p class="sec-note">不是「会用 AI 工具」，而是把 AI 嵌进生产环节的真实工作流。</p>
+      <div class="cards" style="grid-template-columns:1fr 1fr">
+        <div class="card">
+          <div class="status">INPUT → MATERIAL</div>
+          <h3>即梦 AI × 可灵 AI <span>· 素材生产</span></h3>
+          <p>用文生图 / 图生视频补齐实拍拿不到的空镜与转场素材，生成的片段直接进 Pr 时间线，缩短前期素材准备周期。</p>
+        </div>
+        <div class="card">
+          <div class="status">REPEAT → AGENT</div>
+          <h3>Coze <span>· 自动化剪辑工作流</span></h3>
+          <p>基于 Coze 搭建剪辑辅助工作流：批量字幕处理、素材整理与粗剪辅助，把重复劳动交给 Agent。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 经历与奖项 ── -->
+    <section id="experience" class="reveal">
+      <div class="sec-head">
+        <h2>经历与奖项<span class="en">EXPERIENCE &amp; AWARDS</span></h2>
+        <span class="tc">CREDITS</span>
+      </div>
+      <div class="cols">
+        <div>
+          <div class="exp">
+            <div class="t">西安顽态地尚影视文化传播有限公司</div>
+            <div class="d">Live 内容运营 · 实习 · 2025.11–2026.01</div>
+            <div class="x">「地下八英里」赛事 IP 线上内容运营：内容剪辑、渠道分发，协助 5000 人比赛场馆售罄。</div>
+          </div>
+          <div class="exp">
+            <div class="t">抖音账号 @SinOfLive</div>
+            <div class="d">独立运营 · 至今</div>
+            <div class="x">粉丝 2200+，单条爆款播放 180w+、点赞 7.6w、转发 3.1w。</div>
+          </div>
+        </div>
+        <div>
+          <div class="award"><span>「外研社·国才杯」全国大学生外语能力大赛 · 国赛铜奖</span><span class="yr">2025</span></div>
+          <div class="award"><span>河南大学英语文化节英语短视频大赛 · 一等奖</span><span class="yr">2025</span></div>
+          <div class="award"><span>「青春豫有引力」作品征集 · 二等奖</span><span class="yr">2024</span></div>
+          <div class="award"><span>「鲁广雄奖学金」暑期社会实践优秀成果 · 三等奖</span><span class="yr">2024</span></div>
+          <div class="award"><span>「豫有引力青年说」讲思政课公开课 · 三等奖</span><span class="yr">2024</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="sec-head">
+        <h2>工具链<span class="en">TOOLKIT</span></h2>
+        <span class="tc">STACK</span>
+      </div>
+      <div class="skills">
+        <span class="skill">Premiere Pro</span><span class="skill">After Effects</span><span class="skill">剪映专业版</span><span class="skill">Logic Pro X</span><span class="skill">即梦 AI</span><span class="skill">可灵 AI</span><span class="skill">Coze</span>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <span>刘峻豪 · 作品集 · 更新于 2026.11</span>
-    <span>139-3022-5656 · 1027615061@qq.com</span>
+    <span>刘峻豪 · 作品集 · 更新于 2026.11 · <a href="about/">说明书版本</a></span>
+    <span>139-3022-5656 · <a href="mailto:1027615061@qq.com">1027615061@qq.com</a></span>
   </footer>
-
 </div>
+
+<script>
+(function(){
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 顶部阅读进度
+  var progress = document.querySelector('.scroll-progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    progress.style.width = p + '%';
+  }
+  updateProgress();
+  addEventListener('scroll', updateProgress, {passive:true});
+
+  // 顶部时间码：轻微跑帧，强化“剪辑台”氛围
+  var ruler = document.querySelector('.ruler');
+  var frame = 0;
+  if (!reduced && ruler){
+    setInterval(function(){
+      frame = (frame + 1) % 24;
+      var pad = function(n){ return String(n).padStart(2,'0'); };
+      var now = new Date();
+      ruler.setAttribute('data-tc', 'TC ' + pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds()) + ':' + pad(frame));
+    }, 1000/24);
+  }
+
+  // 入场 reveal
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || reduced){
+    els.forEach(function(e){ e.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:0.08});
+    els.forEach(function(e){ io.observe(e); });
+  }
+
+  // 导航当前区高亮
+  var links = [].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var i = secs.indexOf(en.target);
+        if (i < 0) return;
+        links.forEach(function(l){ l.classList.remove('active'); });
+        links[i].classList.add('active');
+      });
+    }, {rootMargin:'-28% 0px -58% 0px', threshold:0.01});
+    secs.forEach(function(s){ spy.observe(s); });
+  }
+
+  // 一键复制邮箱
+  var copyBtn = document.querySelector('.copy-mail');
+  var tip = document.querySelector('.copy-tip');
+  if (copyBtn){
+    copyBtn.addEventListener('click', function(){
+      var email = copyBtn.getAttribute('data-email');
+      function done(){ tip.textContent = '已复制'; setTimeout(function(){ tip.textContent=''; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(email).then(done).catch(function(){ fallback(); });
+      } else fallback();
+      function fallback(){
+        var input = document.createElement('input');
+        input.value = email;
+        document.body.appendChild(input);
+        input.select();
+        try { document.execCommand('copy'); done(); } catch(e) { tip.textContent = email; }
+        document.body.removeChild(input);
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
