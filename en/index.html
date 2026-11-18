@@ -255,6 +255,7 @@
   .clip-title{font-size:clamp(1.12rem,2.5vw,1.34rem);font-weight:800;margin:8px 0 6px;line-height:1.4}
   .clip-meta{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-bottom:14px}
   .clip-desc{font-size:14px;color:var(--ink-2);line-height:1.8}
+  .clip-note{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.02em;line-height:1.75;margin:-6px 0 14px;padding-left:9px;border-left:2px solid var(--accent-dim)}
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim);border:1px solid var(--line);padding:4px 9px;border-radius:2px;background:rgba(251,249,244,.54)}
 
@@ -342,9 +343,9 @@
     <a class="brand" href="#top" aria-label="Back to top"><b>●</b> SINOFLIVE / PORTFOLIO</a>
     <div class="nav-links">
       <a href="#products">Products</a>
+      <a href="#aigc">AIGC</a>
       <a href="#works">Selected Works</a>
       <a href="#full">Full Library</a>
-      <a href="#aigc">AIGC</a>
       <a href="../about/" hreflang="zh-CN">中文</a>
     </div>
     <a class="nav-cta" href="mailto:1027615061@qq.com">Contact me →</a>
@@ -421,11 +422,56 @@
       </div>
     </section>
 
+    <!-- ── AIGC ── -->
+    <section id="aigc" class="reveal">
+      <div class="sec-head">
+        <h2>AIGC Films<span class="en">GENERATED + SHOT</span></h2>
+        <span class="tc">REEL 02 / 02 CLIPS</span>
+      </div>
+      <p class="sec-note">Jimeng / Kling / Coze generate the assets, live footage fills the rest, then everything is cut in Premiere and After Effects, with voice-over through MiniMax. Finished films and project files live in Baidu Netdisk.</p>
+
+      <article class="clip reveal">
+        <div class="frame video">
+          <video controls playsinline preload="metadata"
+                 poster="../works/shousheng-720p.jpg"
+                 src="../works/shousheng-720p.mp4"
+                 aria-label="Capturing Sound, an AIGC short following a recordist through the night city, 58 seconds"></video>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">AIGC 01 / Sound-led story</div>
+          <h3 class="clip-title">《收声》· Capturing Sound</h3>
+          <div class="clip-meta">1280×720 / 58s · MiniMax voice-over · Plays on this page</div>
+          <p class="clip-desc">Someone walks the night city with a tape recorder: pushing a bike beneath the old city wall, the steam of a night market, rain on a tin roof, a slow pendulum clock, cassettes in the darkroom, late traffic, then the wind on the rooftop. Sound is the through-line — capturing it becomes a way of holding onto a stretch of time that is quietly disappearing.</p>
+          <div class="tags"><span class="tag">AI-generated shots</span><span class="tag">Sound-led narrative</span><span class="tag">MiniMax voice-over</span></div>
+        </div>
+      </article>
+
+      <article class="clip reveal">
+        <div class="frame still">
+          <img src="../works/youxiaoqi-1080p.jpg" alt="Shelf Life still: a man reaching toward a holographic sphere">
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>AIGC · 1080P</span><span>00:00:45</span></div>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">AIGC 02 / Concept short</div>
+          <h3 class="clip-title">《有效期》· Shelf Life</h3>
+          <div class="clip-meta">1920×1080 / 45s · MiniMax narration · 185MB, watch on Netdisk</div>
+          <p class="clip-desc">Two days before 20 November, a life account is down to 1,200 experience points — enough to redeem one success, one fortune, or one rewritten past. After trying every option, the film lands on a single line: what actually expires is not the points, but the time you never spent on purpose.</p>
+          <div class="tags"><span class="tag">AI-generated shots</span><span class="tag">Concept narrative</span><span class="tag">MiniMax narration</span></div>
+          <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">Watch on Netdisk (code 0317) →</a>
+        </div>
+      </article>
+
+      <div style="margin-top:24px">
+        <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">AIGC film collection · Baidu Netdisk (code 0317) →</a>
+      </div>
+    </section>
+
     <!-- ── Selected works ── -->
     <section id="works" class="reveal">
       <div class="sec-head">
         <h2>Selected Works<span class="en">FIVE CLIPS</span></h2>
-        <span class="tc">REEL 02 / 05 CLIPS</span>
+        <span class="tc">REEL 03 / 05 CLIPS</span>
       </div>
       <p class="sec-note">Ordered by data → live editing → narrative → digital human. Each entry keeps only the one point that proves the skill.</p>
 
@@ -451,13 +497,9 @@
       </article>
 
       <article class="clip reveal">
-        <div class="frame" style="--tint-a:#E3DAD3;--tint-b:#F7F3EE">
+        <div class="frame cover" style="background-image:url('../works/cover-ep10.jpg')">
           <div class="tc-top">00:00:00:00</div>
           <div class="rec">LIVE</div>
-          <div class="inner">
-            <div class="big">Underground 8 Miles<br>15 Years · Final Chapter</div>
-            <div class="small">EP10 · FINAL</div>
-          </div>
           <i class="marks" aria-hidden="true"></i>
           <div class="bar"><span>LIVE · EVENT EDIT</span><span>00:24:06</span></div>
         </div>
@@ -465,6 +507,7 @@
           <div class="clip-no">02 / Live content</div>
           <h3 class="clip-title">EP10: Underground 8 Miles · 15 Years · Final Chapter</h3>
           <div class="clip-meta">Xi'an Wantai Dishang Film · Live content ops intern · Nov 2025 – Jan 2026</div>
+          <div class="clip-note">Note: the "EP9" badge on the official Bilibili cover was a labelling mistake when the thumbnail was made — the video is EP10, the final chapter.</div>
           <p class="clip-desc">Online content operations and editing for the Underground 8 Miles hip-hop event IP: selecting from multi-cam live footage, cutting fast-paced deliverables, and distributing across channels. During the internship I helped the season land a sold-out 5,000-seat arena.</p>
           <div class="tags"><span class="tag">Multicam editing</span><span class="tag">Fast cuts</span><span class="tag">Event IP ops</span></div>
           <a class="btn" href="https://www.bilibili.com/video/av116962462074953/" target="_blank" rel="noopener">Watch video →</a>
@@ -527,7 +570,7 @@
     <section id="full" class="reveal">
       <div class="sec-head">
         <h2>Full Library<span class="en">ALL PLATFORMS</span></h2>
-        <span class="tc">REEL 03 / 12 ITEMS</span>
+        <span class="tc">REEL 04 / 12 ITEMS</span>
       </div>
       <p class="sec-note">The complete library (Douyin / Bilibili / independent shorts), complementing the selection above. "Watch on Baidu" opens the matching file in Baidu Netdisk; Bilibili links play in place.</p>
       <div style="margin-top:24px">
@@ -631,51 +674,6 @@
       </div>
 
       <p class="note">Note: oversized files (the short film at 352MB, documentary features at 348–670MB) exceed the GitHub Pages per-file limit, so they stream from the platforms or Baidu Netdisk. Small pieces can be dropped into the repository's <code>works/</code> folder to play inline.</p>
-    </section>
-
-    <!-- ── AIGC ── -->
-    <section id="aigc" class="reveal">
-      <div class="sec-head">
-        <h2>AIGC Films<span class="en">GENERATED + SHOT</span></h2>
-        <span class="tc">REEL 04 / 02 CLIPS</span>
-      </div>
-      <p class="sec-note">Jimeng / Kling / Coze generate the assets, live footage fills the rest, then everything is cut in Premiere and After Effects, with voice-over through MiniMax. Finished films and project files live in Baidu Netdisk.</p>
-
-      <article class="clip reveal">
-        <div class="frame video">
-          <video controls playsinline preload="metadata"
-                 poster="../works/shousheng-720p.jpg"
-                 src="../works/shousheng-720p.mp4"
-                 aria-label="Capturing Sound, an AIGC short following a recordist through the night city, 58 seconds"></video>
-        </div>
-        <div class="clip-body">
-          <div class="clip-no">AIGC 01 / Sound-led story</div>
-          <h3 class="clip-title">《收声》· Capturing Sound</h3>
-          <div class="clip-meta">1280×720 / 58s · MiniMax voice-over · Plays on this page</div>
-          <p class="clip-desc">Someone walks the night city with a tape recorder: pushing a bike beneath the old city wall, the steam of a night market, rain on a tin roof, a slow pendulum clock, cassettes in the darkroom, late traffic, then the wind on the rooftop. Sound is the through-line — capturing it becomes a way of holding onto a stretch of time that is quietly disappearing.</p>
-          <div class="tags"><span class="tag">AI-generated shots</span><span class="tag">Sound-led narrative</span><span class="tag">MiniMax voice-over</span></div>
-        </div>
-      </article>
-
-      <article class="clip reveal">
-        <div class="frame still">
-          <img src="../works/youxiaoqi-1080p.jpg" alt="Shelf Life still: a man reaching toward a holographic sphere">
-          <i class="marks" aria-hidden="true"></i>
-          <div class="bar"><span>AIGC · 1080P</span><span>00:00:45</span></div>
-        </div>
-        <div class="clip-body">
-          <div class="clip-no">AIGC 02 / Concept short</div>
-          <h3 class="clip-title">《有效期》· Shelf Life</h3>
-          <div class="clip-meta">1920×1080 / 45s · MiniMax narration · 185MB, watch on Netdisk</div>
-          <p class="clip-desc">Two days before 20 November, a life account is down to 1,200 experience points — enough to redeem one success, one fortune, or one rewritten past. After trying every option, the film lands on a single line: what actually expires is not the points, but the time you never spent on purpose.</p>
-          <div class="tags"><span class="tag">AI-generated shots</span><span class="tag">Concept narrative</span><span class="tag">MiniMax narration</span></div>
-          <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">Watch on Netdisk (code 0317) →</a>
-        </div>
-      </article>
-
-      <div style="margin-top:24px">
-        <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">AIGC film collection · Baidu Netdisk (code 0317) →</a>
-      </div>
     </section>
 
     <section class="reveal">

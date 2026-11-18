@@ -254,6 +254,7 @@
   .clip-title{font-size:clamp(1.12rem,2.5vw,1.34rem);font-weight:800;margin:8px 0 6px;line-height:1.4}
   .clip-meta{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-bottom:14px}
   .clip-desc{font-size:14px;color:var(--ink-2);line-height:1.8}
+  .clip-note{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.02em;line-height:1.75;margin:-6px 0 14px;padding-left:9px;border-left:2px solid var(--accent-dim)}
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim);border:1px solid var(--line);padding:4px 9px;border-radius:2px;background:rgba(251,249,244,.54)}
 
@@ -341,9 +342,9 @@
     <a class="brand" href="#top" aria-label="回到顶部"><b>●</b> SINOFLIVE / PORTFOLIO</a>
     <div class="nav-links">
       <a href="#products">AI 产品</a>
+      <a href="#aigc">AIGC</a>
       <a href="#works">代表作品</a>
       <a href="#full">完整作品</a>
-      <a href="#aigc">AIGC</a>
       <a href="about/">说明书</a>
       <a href="en/" hreflang="en" lang="en">EN</a>
     </div>
@@ -421,11 +422,56 @@
       </div>
     </section>
 
+    <!-- ── AIGC ── -->
+    <section id="aigc" class="reveal">
+      <div class="sec-head">
+        <h2>AIGC 短片<span class="en">AIGC FILMS</span></h2>
+        <span class="tc">REEL 02 / 02 CLIPS</span>
+      </div>
+      <p class="sec-note">即梦 / 可灵 / Coze 生成素材 + 实拍，进 Pr / Ae 完成剪辑，配音走 MiniMax。成片与工程素材统一存于百度网盘。</p>
+
+      <article class="clip reveal">
+        <div class="frame video">
+          <video controls playsinline preload="metadata"
+                 poster="works/shousheng-720p.jpg"
+                 src="works/shousheng-720p.mp4"
+                 aria-label="《收声》AIGC 短片：录音师走夜城收声，全长 58 秒"></video>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">AIGC 01 / 声音叙事</div>
+          <h3 class="clip-title">《收声》</h3>
+          <div class="clip-meta">1280×720 / 58 秒 · MiniMax 配音 · 站内可直接播放</div>
+          <p class="clip-desc">一个揣着录音机走夜城的人：城墙下推车、夜市蒸汽、铁皮屋顶的雨、老钟摆、暗房里的磁带、深夜车流，最后停在楼顶的风里。全片用「收声」把一座城市正在消失的声音串成一条线，收尾落在一句「也是收一段，正在消逝的时光」。</p>
+          <div class="tags"><span class="tag">AI 生成画面</span><span class="tag">声音叙事</span><span class="tag">MiniMax 配音</span></div>
+        </div>
+      </article>
+
+      <article class="clip reveal">
+        <div class="frame still">
+          <img src="works/youxiaoqi-1080p.jpg" alt="《有效期》AIGC 短片剧照：人物在全息球体前伸手">
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>AIGC · 1080P</span><span>00:00:45</span></div>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">AIGC 02 / 概念短片</div>
+          <h3 class="clip-title">《有效期》</h3>
+          <div class="clip-meta">1920×1080 / 45 秒 · MiniMax 旁白 · 185MB 走网盘观看</div>
+          <p class="clip-desc">距离 11 月 20 日只剩两天，生命账户里剩 1200 点体验积分，可以兑换一次成功、一段财富，或者一个被改写的过去。把能选的都选过一遍之后，落点是那句「真正会过期的不是积分，是没被认真使用的时间」。</p>
+          <div class="tags"><span class="tag">AI 生成画面</span><span class="tag">概念叙事</span><span class="tag">MiniMax 旁白</span></div>
+          <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">网盘观看（提取码 0317）→</a>
+        </div>
+      </article>
+
+      <div style="margin-top:24px">
+        <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">AIGC 短片作品集 · 百度网盘（提取码 0317）→</a>
+      </div>
+    </section>
+
     <!-- ── 代表作品 ── -->
     <section id="works" class="reveal">
       <div class="sec-head">
         <h2>代表作品<span class="en">SELECTED WORKS</span></h2>
-        <span class="tc">REEL 02 / 05 CLIPS</span>
+        <span class="tc">REEL 03 / 05 CLIPS</span>
       </div>
       <p class="sec-note">按数据 → Live 剪辑 → 叙事 → 数字人排序。每个作品只保留一个最能证明能力的点。</p>
 
@@ -451,13 +497,9 @@
       </article>
 
       <article class="clip reveal">
-        <div class="frame" style="--tint-a:#E3DAD3;--tint-b:#F7F3EE">
+        <div class="frame cover" style="background-image:url('works/cover-ep10.jpg')">
           <div class="tc-top">00:00:00:00</div>
           <div class="rec">LIVE</div>
-          <div class="inner">
-            <div class="big">地下8英里<br>十五年 · 最终章</div>
-            <div class="small">EP10 · FINAL</div>
-          </div>
           <i class="marks" aria-hidden="true"></i>
           <div class="bar"><span>LIVE · 赛事剪辑</span><span>00:24:06</span></div>
         </div>
@@ -465,6 +507,7 @@
           <div class="clip-no">02 / Live 内容</div>
           <h3 class="clip-title">《EP10：地下8英里 十五年 最终章》</h3>
           <div class="clip-meta">西安顽态地尚 · Live 内容运营实习 · 2025.11–2026.01</div>
+          <div class="clip-note">注：B 站官方封面图上的「EP9」是当时做封面图时标错了，视频本身是 EP10 最终章。</div>
           <p class="clip-desc">负责「地下八英里」Hip-Hop 赛事 IP 的线上内容运营与剪辑：现场多机位素材筛选、快节奏成片剪辑、线上渠道分发。实习期间协助完成 5000 人比赛场馆售罄的赛季落地。</p>
           <div class="tags"><span class="tag">多机位剪辑</span><span class="tag">快节奏</span><span class="tag">赛事 IP 运营</span></div>
           <a class="btn" href="https://www.bilibili.com/video/av116962462074953/" target="_blank" rel="noopener">观看视频 →</a>
@@ -527,7 +570,7 @@
     <section id="full" class="reveal">
       <div class="sec-head">
         <h2>全平台作品集<span class="en">FULL PORTFOLIO</span></h2>
-        <span class="tc">REEL 03 / 12 ITEMS</span>
+        <span class="tc">REEL 04 / 12 ITEMS</span>
       </div>
       <p class="sec-note">完整作品库（抖音 / B站 / 独立短片），与上方精选互为补充。视频下方「网盘观看」跳转至百度网盘对应素材；B站成片附直链可在线播放。</p>
       <div style="margin-top:24px">
@@ -631,51 +674,6 @@
       </div>
 
       <p class="note">说明：画惊千年（352MB）、说唱纪实长片（348–670MB）等超大文件超出 GitHub Pages 单文件上限，统一走平台 / 网盘观看；如需网页内直接播放小体积作品，可将其单独上传至仓库 <code>works/</code> 目录后嵌入。</p>
-    </section>
-
-    <!-- ── AIGC ── -->
-    <section id="aigc" class="reveal">
-      <div class="sec-head">
-        <h2>AIGC 短片<span class="en">AIGC FILMS</span></h2>
-        <span class="tc">REEL 04 / 02 CLIPS</span>
-      </div>
-      <p class="sec-note">即梦 / 可灵 / Coze 生成素材 + 实拍，进 Pr / Ae 完成剪辑，配音走 MiniMax。成片与工程素材统一存于百度网盘。</p>
-
-      <article class="clip reveal">
-        <div class="frame video">
-          <video controls playsinline preload="metadata"
-                 poster="works/shousheng-720p.jpg"
-                 src="works/shousheng-720p.mp4"
-                 aria-label="《收声》AIGC 短片：录音师走夜城收声，全长 58 秒"></video>
-        </div>
-        <div class="clip-body">
-          <div class="clip-no">AIGC 01 / 声音叙事</div>
-          <h3 class="clip-title">《收声》</h3>
-          <div class="clip-meta">1280×720 / 58 秒 · MiniMax 配音 · 站内可直接播放</div>
-          <p class="clip-desc">一个揣着录音机走夜城的人：城墙下推车、夜市蒸汽、铁皮屋顶的雨、老钟摆、暗房里的磁带、深夜车流，最后停在楼顶的风里。全片用「收声」把一座城市正在消失的声音串成一条线，收尾落在一句「也是收一段，正在消逝的时光」。</p>
-          <div class="tags"><span class="tag">AI 生成画面</span><span class="tag">声音叙事</span><span class="tag">MiniMax 配音</span></div>
-        </div>
-      </article>
-
-      <article class="clip reveal">
-        <div class="frame still">
-          <img src="works/youxiaoqi-1080p.jpg" alt="《有效期》AIGC 短片剧照：人物在全息球体前伸手">
-          <i class="marks" aria-hidden="true"></i>
-          <div class="bar"><span>AIGC · 1080P</span><span>00:00:45</span></div>
-        </div>
-        <div class="clip-body">
-          <div class="clip-no">AIGC 02 / 概念短片</div>
-          <h3 class="clip-title">《有效期》</h3>
-          <div class="clip-meta">1920×1080 / 45 秒 · MiniMax 旁白 · 185MB 走网盘观看</div>
-          <p class="clip-desc">距离 11 月 20 日只剩两天，生命账户里剩 1200 点体验积分，可以兑换一次成功、一段财富，或者一个被改写的过去。把能选的都选过一遍之后，落点是那句「真正会过期的不是积分，是没被认真使用的时间」。</p>
-          <div class="tags"><span class="tag">AI 生成画面</span><span class="tag">概念叙事</span><span class="tag">MiniMax 旁白</span></div>
-          <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">网盘观看（提取码 0317）→</a>
-        </div>
-      </article>
-
-      <div style="margin-top:24px">
-        <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">AIGC 短片作品集 · 百度网盘（提取码 0317）→</a>
-      </div>
     </section>
 
     <section class="reveal">
