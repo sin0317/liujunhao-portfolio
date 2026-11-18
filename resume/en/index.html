@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liu Junhao · Résumé · Video Editor / AIGC / AI Products</title>
+<meta name="description" content="One-page résumé of Liu Junhao (sin): video editing, AIGC and AI product practice. PDF download available.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F4F1EA'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23AE3A24'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#15140F;
+    --ink-2:#3D392F;
+    --dim:#625D52;
+    --faint:#8A8478;
+    --line:#D7D0BF;
+    --line-soft:#E7E1D2;
+    --accent:#AE3A24;
+    --paper:#FBF9F4;
+    --serif:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,Georgia,serif;
+    --sans:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    --mono:"SF Mono","JetBrains Mono",Consolas,"Courier New",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:#E8E3D7;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:9.4pt;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toolbar{
+    position:sticky;top:0;z-index:9;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:10px clamp(14px,4vw,28px);
+    background:rgba(251,249,244,.94);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(8px);
+    font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--dim);
+  }
+  .toolbar a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .toolbar a:hover{color:var(--accent);border-color:var(--accent)}
+  .toolbar .hint{color:var(--faint)}
+
+  .sheet{
+    width:210mm;min-height:297mm;
+    margin:16px auto 40px;
+    padding:14mm 15mm 12mm;
+    background:var(--paper);
+    box-shadow:0 24px 60px -40px rgba(21,20,15,.5);
+    position:relative;
+  }
+
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-bottom:1.5pt solid var(--ink);padding-bottom:5pt}
+  h1{font-family:var(--serif);font-size:18.5pt;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+  h1 em{font-style:normal;color:var(--accent)}
+  .role{margin-top:3pt;font-size:9.2pt;font-weight:600;color:var(--ink-2)}
+  .role span{color:var(--faint);font-weight:400;margin:0 5pt}
+  .contact{font-family:var(--mono);font-size:8.4pt;color:var(--dim);text-align:right;line-height:1.9;white-space:nowrap}
+  .contact b{color:var(--faint);font-weight:400;margin-right:4pt}
+
+  .intent{margin-top:4pt;font-family:var(--mono);font-size:8.2pt;color:var(--accent);letter-spacing:.03em}
+
+  .summary{margin-top:6pt;font-size:9pt;color:var(--ink-2);line-height:1.54}
+  .summary strong{color:var(--ink);font-weight:700;background:linear-gradient(transparent 68%,rgba(174,58,36,.15) 68%);padding:0 .08em}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:7pt;border-top:.8pt solid var(--ink);border-bottom:.8pt solid var(--line-soft)}
+  .stat{padding:4pt 8pt 4pt 0;border-right:.8pt solid var(--line-soft)}
+  .stat:last-child{border-right:none;padding-right:0}
+  .stat .n{font-family:var(--mono);font-size:12pt;font-weight:600;line-height:1.15;letter-spacing:-.02em}
+  .stat .n i{font-style:normal;color:var(--accent);font-size:.68em;vertical-align:.1em;margin-left:1pt}
+  .stat .l{font-size:8pt;color:var(--dim);margin-top:1pt}
+
+  section{margin-top:5.5pt}
+  h2{
+    font-family:var(--serif);font-size:10.2pt;font-weight:700;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:7pt;border-bottom:.8pt solid var(--line);padding-bottom:2pt;margin-bottom:3.5pt;
+  }
+  h2 .en{font-family:var(--mono);font-size:7.2pt;letter-spacing:.18em;color:var(--faint);font-weight:400;text-transform:uppercase}
+
+  .item{display:grid;grid-template-columns:1fr auto;gap:0 10pt;padding:2.2pt 0;break-inside:avoid}
+  .item + .item{border-top:.6pt dotted var(--line-soft)}
+  .item .t{font-size:9.4pt;font-weight:700;line-height:1.4}
+  .item .t .tag{font-family:var(--mono);font-size:7pt;color:var(--accent);font-weight:600;letter-spacing:.06em;margin-right:5pt}
+  .item .d{font-family:var(--mono);font-size:7.6pt;color:var(--faint);white-space:nowrap;letter-spacing:.02em}
+  .item .x{grid-column:1/-1;font-size:8.8pt;color:var(--ink-2);line-height:1.5;margin-top:1pt}
+  .item .x b{font-weight:600;color:var(--ink)}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14pt}
+  .two section{margin-top:0}
+
+  .kline{display:flex;gap:8pt;font-size:8.8pt;color:var(--ink-2);line-height:1.55}
+  .kline .k{font-family:var(--mono);font-size:8pt;color:var(--faint);min-width:3.6em;padding-top:1pt}
+  .kline + .kline{margin-top:2pt}
+
+  .foot{
+    margin-top:5.5pt;border-top:.8pt solid var(--ink);padding-top:3.5pt;
+    display:flex;justify-content:space-between;gap:10pt;
+    font-family:var(--mono);font-size:7.6pt;color:var(--faint);letter-spacing:.03em;
+  }
+
+  @page{size:A4;margin:0}
+  @media print{
+    body{background:#fff}
+    .toolbar{display:none}
+    .sheet{width:auto;min-height:0;margin:0;padding:13mm 15mm 11mm;box-shadow:none;background:#fff;zoom:.93}
+    a{color:inherit;text-decoration:none}
+    .item{break-inside:avoid}
+  }
+  @media (max-width:760px){
+    .sheet{width:auto;min-height:0;margin:12px;padding:22px 18px 26px}
+    .head{flex-direction:column;align-items:flex-start;gap:8px}
+    .contact{text-align:left;white-space:normal}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat{border-right:none;border-bottom:.8pt solid var(--line-soft);padding:6pt 0}
+    .two{grid-template-columns:1fr;gap:0}
+    .two section:last-child{margin-top:10pt}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span>Résumé · one page · print or save as PDF</span>
+  <span class="hint">
+    <a href="liu-junhao-resume-en.pdf" download>Download PDF</a>
+    &nbsp;·&nbsp;
+    <a href="../">中文</a>
+    &nbsp;·&nbsp;
+    <a href="../../en/">Portfolio</a>
+  </span>
+</div>
+
+<main class="sheet">
+
+  <header class="head">
+    <div>
+      <h1>Liu Junhao<em>.</em></h1>
+      <div class="role">Video Editor<span>·</span>AIGC<span>·</span>AI Product Builder<span>·</span>Douyin @SinOfLive</div>
+    </div>
+    <div class="contact">
+      <b>TEL</b>+86 139-3022-5656<br>
+      <b>MAIL</b>1027615061@qq.com<br>
+      <b>WECHAT</b>mercylago01
+    </div>
+  </header>
+
+  <div class="intent">Seeking: video editing / content operations / AI product operations　·　Henan University, Class of 2027　·　Available from Dec 2026</div>
+
+  <p class="summary">
+    I write, mix and edit my own rap MVs end to end — <strong>rhythm is the baseline skill</strong>. I ran online content for the Underground 8 Miles live-event IP and helped sell out a 5,000-seat arena. I embed Jimeng / Kling / Coze into a real editing workflow, and I have shipped four AI products on my own.
+  </p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">1.8<i>M</i></div><div class="l">Views on one post</div></div>
+    <div class="stat"><div class="n">76<i>k</i></div><div class="l">Likes on one post</div></div>
+    <div class="stat"><div class="n">31<i>k</i></div><div class="l">Shares on one post</div></div>
+    <div class="stat"><div class="n">5,000<i>seats</i></div><div class="l">Arena sold out · contributed</div></div>
+  </div>
+
+  <section>
+    <h2>Experience <span class="en">Work</span></h2>
+    <div class="item">
+      <div class="t">Xi'an Wantai Dishang Film &amp; Culture <span class="tag">INTERN</span></div>
+      <div class="d">Nov 2025 — Jan 2026</div>
+      <div class="x">Live content operations for the Underground 8 Miles hip-hop event IP: selecting from multi-cam live footage, cutting fast-paced deliverables, distributing across channels. Helped the season land a <b>sold-out 5,000-seat arena</b>.</div>
+    </div>
+    <div class="item">
+      <div class="t">Douyin @SinOfLive <span class="tag">SOLO</span></div>
+      <div class="d">Ongoing</div>
+      <div class="x">Topic selection, shooting, editing, publishing and comment moderation, all solo. 2,200+ followers; one post reached <b>1.8M views, 76k likes and 31k shares</b> from an account under 3,000 followers.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>AI Products <span class="en">Shipped</span></h2>
+    <div class="item">
+      <div class="t">MemPort <span class="tag">LIVE</span></div>
+      <div class="d">Cross-tool memory layer</div>
+      <div class="x">Payathon 2026 entry. MCP-native integration for Claude Code / Cursor and other agents: hybrid retrieval plus context packing, so you never reintroduce yourself when switching tools.</div>
+    </div>
+    <div class="item">
+      <div class="t">Finals Quiz <span class="tag">PAID USERS</span></div>
+      <div class="d">AI exam-prep platform</div>
+      <div class="x">Turns past papers and notes into drills, with a wrong-answer book, shared question sets and a 72-hour pre-exam report. Full free-trial → ¥9.9 buyout loop.</div>
+    </div>
+    <div class="item">
+      <div class="t">SkillPay skills × 2 <span class="tag">ON SALE</span></div>
+      <div class="d">Alipay · ¥20 / ¥50</div>
+      <div class="x">An 8-bit pixel rap MV generator and a digital-human talking-head pipeline. Both passed Alipay's AI payment security scan and have real paid orders.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Works <span class="en">Film</span></h2>
+    <div class="item">
+      <div class="t">EP10: Underground 8 Miles · 15 Years · Final Chapter</div>
+      <div class="d">Live edit · 24:06</div>
+      <div class="x">Feature-length event IP piece; multicam selection and fast-paced assembly.</div>
+    </div>
+    <div class="item">
+      <div class="t">"A Thousand Years Painted" <span class="tag">NATIONAL BRONZE</span></div>
+      <div class="d">2025 FLTRP · ETIC Cup</div>
+      <div class="x">English short by a team of five, from university 1st prize to a national bronze. I edited the film and controlled narrative pacing.</div>
+    </div>
+    <div class="item">
+      <div class="t">"Taste of Heritage" · the peanut-cake artisan</div>
+      <div class="d">Heritage documentary</div>
+      <div class="x">Shot and edited solo in a Kaifeng workshop; provincial collection 2nd prize, university practice 3rd prize.</div>
+    </div>
+  </section>
+
+  <div class="two">
+    <section>
+      <h2>Awards <span class="en">Honors</span></h2>
+      <div class="kline"><span class="k">2025</span><span>FLTRP · ETIC Cup National English Competition · National Bronze</span></div>
+      <div class="kline"><span class="k">2025</span><span>Henan University English Festival · Short-video 1st Prize</span></div>
+      <div class="kline"><span class="k">2024</span><span>"Youth, Henan" collection · 2nd Prize</span></div>
+      <div class="kline"><span class="k">2024</span><span>Lu Guangxiong Scholarship practice award · 3rd Prize</span></div>
+    </section>
+    <section>
+      <h2>Skills <span class="en">Toolkit</span></h2>
+      <div class="kline"><span class="k">Edit</span><span>Premiere Pro, After Effects, CapCut Pro, colour grading</span></div>
+      <div class="kline"><span class="k">Music</span><span>Logic Pro X (writing / composing / mixing)</span></div>
+      <div class="kline"><span class="k">AIGC</span><span>Jimeng, Kling, Coze workflow orchestration</span></div>
+      <div class="kline"><span class="k">Other</span><span>Short-video strategy, community and event execution, performance-agent licence</span></div>
+    </section>
+  </div>
+
+  <div class="foot">
+    <span>Portfolio sin0317.github.io/liujunhao-portfolio/en/</span>
+    <span>+86 139-3022-5656 · 1027615061@qq.com</span>
+  </div>
+
+</main>
+</body>
+</html>

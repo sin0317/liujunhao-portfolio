@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>刘峻豪 · 简历 · 视频剪辑 / AIGC / AI 产品</title>
+<meta name="description" content="刘峻豪（sin）一页纸简历：视频剪辑、AIGC、AI 产品实践。可直接下载 PDF。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F4F1EA'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23AE3A24'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#15140F;
+    --ink-2:#3D392F;
+    --dim:#625D52;
+    --faint:#8A8478;
+    --line:#D7D0BF;
+    --line-soft:#E7E1D2;
+    --accent:#AE3A24;
+    --paper:#FBF9F4;
+    --serif:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,Georgia,serif;
+    --sans:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    --mono:"SF Mono","JetBrains Mono",Consolas,"Courier New",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:#E8E3D7;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:9.6pt;
+    line-height:1.54;
+    -webkit-font-smoothing:antialiased;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  .toolbar{
+    position:sticky;top:0;z-index:9;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:10px clamp(14px,4vw,28px);
+    background:rgba(251,249,244,.94);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(8px);
+    font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--dim);
+  }
+  .toolbar a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  .toolbar a:hover{color:var(--accent);border-color:var(--accent)}
+  .toolbar .hint{color:var(--faint)}
+
+  .sheet{
+    width:210mm;min-height:297mm;
+    margin:16px auto 40px;
+    padding:14mm 15mm 12mm;
+    background:var(--paper);
+    box-shadow:0 24px 60px -40px rgba(21,20,15,.5);
+    position:relative;
+  }
+
+  /* 报头 */
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-bottom:1.5pt solid var(--ink);padding-bottom:5pt}
+  h1{font-family:var(--serif);font-size:19pt;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+  h1 em{font-style:normal;color:var(--accent)}
+  .role{margin-top:3pt;font-size:9.4pt;font-weight:600;color:var(--ink-2)}
+  .role span{color:var(--faint);font-weight:400;margin:0 5pt}
+  .contact{font-family:var(--mono);font-size:8.6pt;color:var(--dim);text-align:right;line-height:1.9;white-space:nowrap}
+  .contact b{color:var(--faint);font-weight:400;margin-right:4pt}
+
+  .intent{
+    margin-top:4pt;font-family:var(--mono);font-size:8.4pt;color:var(--accent);
+    letter-spacing:.03em;
+  }
+
+  /* 摘要 */
+  .summary{margin-top:6pt;font-size:9.2pt;color:var(--ink-2);line-height:1.56;max-width:100%}
+  .summary strong{color:var(--ink);font-weight:700;background:linear-gradient(transparent 68%,rgba(174,58,36,.15) 68%);padding:0 .08em}
+
+  /* 关键数据 */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:7pt;border-top:.8pt solid var(--ink);border-bottom:.8pt solid var(--line-soft)}
+  .stat{padding:4pt 8pt 4pt 0;border-right:.8pt solid var(--line-soft)}
+  .stat:last-child{border-right:none;padding-right:0}
+  .stat .n{font-family:var(--mono);font-size:12pt;font-weight:600;line-height:1.15;letter-spacing:-.02em}
+  .stat .n i{font-style:normal;color:var(--accent);font-size:.68em;vertical-align:.1em;margin-left:1pt}
+  .stat .l{font-size:8.2pt;color:var(--dim);margin-top:1pt}
+
+  /* 章节 */
+  section{margin-top:6pt}
+  h2{
+    font-family:var(--serif);font-size:10.6pt;font-weight:700;letter-spacing:.02em;
+    display:flex;align-items:baseline;gap:7pt;border-bottom:.8pt solid var(--line);padding-bottom:2pt;margin-bottom:4pt;
+  }
+  h2 .en{font-family:var(--mono);font-size:7.4pt;letter-spacing:.18em;color:var(--faint);font-weight:400;text-transform:uppercase}
+
+  /* 条目 */
+  .item{display:grid;grid-template-columns:1fr auto;gap:0 10pt;padding:2.4pt 0;break-inside:avoid}
+  .item + .item{border-top:.6pt dotted var(--line-soft)}
+  .item .t{font-size:9.6pt;font-weight:700;line-height:1.42}
+  .item .t .tag{font-family:var(--mono);font-size:7.2pt;color:var(--accent);font-weight:600;letter-spacing:.06em;margin-right:5pt}
+  .item .d{font-family:var(--mono);font-size:7.8pt;color:var(--faint);white-space:nowrap;letter-spacing:.02em}
+  .item .x{grid-column:1/-1;font-size:9pt;color:var(--ink-2);line-height:1.55;margin-top:1pt}
+  .item .x b{font-weight:600;color:var(--ink)}
+
+  /* 双栏 */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14pt}
+  .two section{margin-top:0}
+
+  .plain{font-size:9.2pt;color:var(--ink-2);line-height:1.6}
+  .kline{display:flex;gap:8pt;font-size:9.2pt;color:var(--ink-2);line-height:1.62}
+  .kline .k{font-family:var(--mono);font-size:8.2pt;color:var(--faint);min-width:4.4em;padding-top:1pt}
+  .kline + .kline{margin-top:2pt}
+
+  .foot{
+    margin-top:6pt;border-top:.8pt solid var(--ink);padding-top:3.5pt;
+    display:flex;justify-content:space-between;gap:10pt;
+    font-family:var(--mono);font-size:7.8pt;color:var(--faint);letter-spacing:.03em;
+  }
+
+  @page{size:A4;margin:0}
+  @media print{
+    body{background:#fff;font-size:9.6pt}
+    .toolbar{display:none}
+    .sheet{width:auto;min-height:0;margin:0;padding:13mm 15mm 11mm;box-shadow:none;background:#fff;zoom:.93}
+    a{color:inherit;text-decoration:none}
+    .item{break-inside:avoid}
+  }
+  @media (max-width:760px){
+    .sheet{width:auto;min-height:0;margin:12px;padding:22px 18px 26px}
+    .head{flex-direction:column;align-items:flex-start;gap:8px}
+    .contact{text-align:left;white-space:normal}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat{border-right:none;border-bottom:.8pt solid var(--line-soft);padding:6pt 0}
+    .two{grid-template-columns:1fr;gap:0}
+    .two section:last-child{margin-top:11pt}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span>简历 · 一页纸 · 可直接打印 / 存为 PDF</span>
+  <span class="hint">
+    <a href="liu-junhao-resume-zh.pdf" download>下载 PDF</a>
+    &nbsp;·&nbsp;
+    <a href="en/">English</a>
+    &nbsp;·&nbsp;
+    <a href="../">返回作品集</a>
+  </span>
+</div>
+
+<main class="sheet">
+
+  <header class="head">
+    <div>
+      <h1>刘峻豪<em>.</em></h1>
+      <div class="role">视频剪辑<span>·</span>AIGC<span>·</span>AI 产品实践<span>·</span>抖音 @SinOfLive</div>
+    </div>
+    <div class="contact">
+      <b>TEL</b>139-3022-5656<br>
+      <b>MAIL</b>1027615061@qq.com<br>
+      <b>WECHAT</b>mercylago01
+    </div>
+  </header>
+
+  <div class="intent">求职意向：视频剪辑 / 内容运营 / AI 产品运营　·　河南大学 2027 届　·　可 2026 年 12 月起实习</div>
+
+  <p class="summary">
+    从说唱 MV 的作词、混音到剪辑全流程独立完成，<strong>节奏感是基本功</strong>；在「地下八英里」赛事 IP 做过 Live 线上内容运营，协助 5000 人场馆售罄；把即梦 / 可灵 / Coze 嵌进真实剪辑工作流，并独立上线 4 款 AI 产品。
+  </p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">180<i>w+</i></div><div class="l">单条最高播放</div></div>
+    <div class="stat"><div class="n">7.6<i>w</i></div><div class="l">单条点赞</div></div>
+    <div class="stat"><div class="n">3.1<i>w</i></div><div class="l">单条转发</div></div>
+    <div class="stat"><div class="n">5000<i>人</i></div><div class="l">赛事场馆售罄 · 协助</div></div>
+  </div>
+
+  <section>
+    <h2>经历 <span class="en">Experience</span></h2>
+    <div class="item">
+      <div class="t">西安顽态地尚影视文化传播有限公司 <span class="tag">实习</span></div>
+      <div class="d">2025.11 — 2026.01</div>
+      <div class="x">「地下八英里」Hip-Hop 赛事 IP · Live 内容运营：现场多机位素材筛选、快节奏成片剪辑、线上渠道分发；实习期协助完成 <b>5000 人比赛场馆售罄</b>的赛季落地。</div>
+    </div>
+    <div class="item">
+      <div class="t">抖音账号 @SinOfLive <span class="tag">独立运营</span></div>
+      <div class="d">至今</div>
+      <div class="x">选题、拍摄、剪辑、发布与评论区运营全部独立完成。粉丝 2200+，单条视频 <b>播放 180w+、点赞 7.6w、转发 3.1w</b>——在粉丝不足 3000 的账号上跑出的爆款。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>AI 产品与项目 <span class="en">Products</span></h2>
+    <div class="item">
+      <div class="t">MemPort 忆港 <span class="tag">已上线</span></div>
+      <div class="d">Agent 跨工具记忆层</div>
+      <div class="x">PAYATHON 2026 作品。MCP 原生接入 Claude Code / Cursor 等多 Agent，混合检索 + 上下文打包，换工具无需重新自我介绍。</div>
+    </div>
+    <div class="item">
+      <div class="t">期末刷题站 <span class="tag">已跑通付费</span></div>
+      <div class="d">AI 刷题平台</div>
+      <div class="x">原卷解析 + 笔记自动出题，含错题本、题集广场与考前冲刺报告；接入账号登录与支付，跑通「免费试用 → ¥9.9 买断」闭环。</div>
+    </div>
+    <div class="item">
+      <div class="t">SkillPay 付费技能 × 2 <span class="tag">在售</span></div>
+      <div class="d">支付宝 · ¥20 / ¥50</div>
+      <div class="x">8bit 像素说唱 MV 生成器、数字人口播片全流程；均通过 AI 付安全扫描并已产生真实订单。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>代表作品 <span class="en">Selected Works</span></h2>
+    <div class="item">
+      <div class="t">《EP10：地下8英里 十五年 最终章》</div>
+      <div class="d">Live 剪辑 · 24:06</div>
+      <div class="x">赛事 IP 长视频成片，多机位筛选与快节奏成片剪辑。</div>
+    </div>
+    <div class="item">
+      <div class="t">《画惊千年赴梦华》 <span class="tag">国赛铜奖</span></div>
+      <div class="d">2025 外研社·国才杯</div>
+      <div class="x">五人团队英语短片，从校赛一等奖打进国赛；负责全片剪辑与叙事节奏。</div>
+    </div>
+    <div class="item">
+      <div class="t">《传承之味》· 花生糕技艺传承人</div>
+      <div class="d">非遗纪录片</div>
+      <div class="x">独立拍摄与剪辑，开封老作坊纪实；获省级征集二等奖、校级实践三等奖。</div>
+    </div>
+  </section>
+
+  <div class="two">
+    <section>
+      <h2>荣誉 <span class="en">Awards</span></h2>
+      <div class="kline"><span class="k">2025</span><span>「外研社·国才杯」短视频赛项 · 国赛铜奖</span></div>
+      <div class="kline"><span class="k">2025</span><span>河南大学英语文化节短视频大赛 · 一等奖</span></div>
+      <div class="kline"><span class="k">2024</span><span>「青春豫有引力」作品征集 · 二等奖</span></div>
+      <div class="kline"><span class="k">2024</span><span>鲁广雄奖学金社会实践 · 三等奖</span></div>
+    </section>
+    <section>
+      <h2>技能 <span class="en">Skills</span></h2>
+      <div class="kline"><span class="k">剪辑</span><span>Premiere Pro、After Effects、剪映专业版、调色</span></div>
+      <div class="kline"><span class="k">音乐</span><span>Logic Pro X（作词 / 作曲 / 混音）</span></div>
+      <div class="kline"><span class="k">AIGC</span><span>即梦、可灵、Coze 工作流编排</span></div>
+      <div class="kline"><span class="k">其他</span><span>短视频选题投放、社群与活动执行、演出经纪人证</span></div>
+    </section>
+  </div>
+
+  <div class="foot">
+    <span>作品集 sin0317.github.io/liujunhao-portfolio</span>
+    <span>139-3022-5656 · 1027615061@qq.com</span>
+  </div>
+
+</main>
+</body>
+</html>
