@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liu Junhao (sin) · Video Editor / AIGC / AI Products</title>
+<meta name="description" content="Portfolio of Liu Junhao (sin): short-form video operations, live event editing, AIGC films and AI product practice. A content maker who actually ships with AI.">
+<meta name="theme-color" content="#F4F1EA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F4F1EA'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23AE3A24'/%3E%3C/svg%3E">
+<meta property="og:title" content="Liu Junhao (sin) · Video Editor / AIGC / AI Products">
+<meta property="og:description" content="1.8M views on a single post, live-event content ops for Underground 8 Miles, 4 AI products you can try.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sin0317.github.io/liujunhao-portfolio/en/">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="zh-CN" href="https://sin0317.github.io/liujunhao-portfolio/">
+<link rel="alternate" hreflang="en" href="https://sin0317.github.io/liujunhao-portfolio/en/">
+<link rel="alternate" hreflang="x-default" href="https://sin0317.github.io/liujunhao-portfolio/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "刘峻豪",
+  "alternateName": "sin",
+  "url": "https://sin0317.github.io/liujunhao-portfolio/en/",
+  "email": "mailto:1027615061@qq.com",
+  "telephone": "+86-139-3022-5656",
+  "jobTitle": "Video Editor / AIGC / AI Product Builder",
+  "affiliation": "Henan University",
+  "sameAs": [
+    "https://github.com/sin0317"
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#F4F1EA;
+    --bg-soft:#FBF9F4;
+    --panel:#ECE8DD;
+    --panel-2:#E4DFD2;
+    --ink:#15140F;
+    --ink-2:#3D392F;
+    --dim:#625D52;
+    --faint:#857F72;
+    --line:#D7D0BF;
+    --line-soft:#E5DFCF;
+    --accent:#AE3A24;
+    --accent-2:#D9573B;
+    --accent-dim:#C47A62;
+    --shadow:0 24px 60px -42px rgba(21,20,15,.55);
+    --serif:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,Georgia,serif;
+    --sans:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    --mono:"SF Mono","JetBrains Mono",Consolas,"Courier New",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:
+      radial-gradient(circle at 18% 0%,rgba(174,58,36,.075),transparent 34%),
+      radial-gradient(circle at 92% 18%,rgba(21,20,15,.045),transparent 30%),
+      linear-gradient(180deg,#F7F4ED 0%,var(--bg) 38%,#EFEADF 100%);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.34;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+  ::selection{background:var(--ink);color:var(--bg-soft)}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  .skip-link{position:absolute;left:16px;top:-48px;z-index:100;background:var(--ink);color:var(--bg-soft);padding:8px 12px;font-family:var(--mono);font-size:12px;transition:top .2s}
+  .skip-link:focus{top:12px}
+  .scroll-progress{position:fixed;left:0;top:0;height:2px;width:0;background:var(--accent);z-index:90}
+
+  /* ── 顶部时间码 / 导航 ── */
+  .ruler{
+    position:relative;height:34px;border-bottom:1px solid var(--line);
+    background:
+      repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 24px),
+      repeating-linear-gradient(90deg,#B9B1A0 0 1px,transparent 1px 120px);
+    background-size:100% 8px,100% 14px;
+    background-position:0 100%,0 100%;
+    background-repeat:repeat-x;
+  }
+  .ruler::after{
+    content:attr(data-tc);position:absolute;left:clamp(20px,5vw,48px);top:2px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);
+  }
+  .nav{
+    position:sticky;top:0;z-index:80;
+    background:rgba(244,241,234,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(215,208,191,.82);
+  }
+  .nav-inner{min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--dim);white-space:nowrap}
+  .brand b{color:var(--accent);font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:clamp(14px,2.4vw,28px);font-size:13px;color:var(--dim)}
+  .nav-links a{position:relative;padding:6px 0;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--accent);transition:right .24s ease}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  .nav-links a:hover::after,.nav-links a.active::after{right:0}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    border:1px solid var(--ink);color:var(--ink);padding:8px 12px;border-radius:2px;
+    transition:background .2s,color .2s,border-color .2s;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--bg-soft)}
+
+  /* ── Hero ── */
+  .hero{position:relative;padding:clamp(54px,9vw,104px) 0 clamp(38px,6vw,64px);overflow:hidden}
+  .hero::before{
+    content:"SIN";position:absolute;right:-.08em;top:-.24em;
+    font-family:var(--serif);font-size:clamp(10rem,28vw,24rem);font-weight:700;line-height:1;
+    color:transparent;-webkit-text-stroke:1px rgba(21,20,15,.075);letter-spacing:-.08em;pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);
+    margin-bottom:18px;text-transform:uppercase;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+  h1{
+    max-width:16ch;
+    font-family:var(--serif);
+    font-size:clamp(3.1rem,8vw,6.4rem);font-weight:700;line-height:.98;
+    letter-spacing:-.045em;
+  }
+  h1 em{font-style:normal;color:var(--accent)}
+  .hero-sub{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-weight:600;font-size:clamp(.98rem,2.2vw,1.16rem)}
+  .hero-sub .dot{width:4px;height:4px;border-radius:50%;background:var(--accent-dim);display:inline-block}
+  .hero-sub .sub{color:var(--dim);font-weight:400;font-family:var(--mono);font-size:.82em;letter-spacing:.04em}
+  .bio{margin-top:26px;max-width:64ch;font-size:clamp(.94rem,1.9vw,1.02rem);color:var(--ink-2)}
+  .bio strong{color:var(--ink);font-weight:700;background:linear-gradient(transparent 66%,rgba(174,58,36,.14) 66%);padding:0 .08em}
+  .hero-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:42px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    border:1px solid var(--accent);color:var(--accent);
+    padding:10px 16px;border-radius:2px;background:transparent;cursor:pointer;
+    transition:transform .2s,background .2s,color .2s,border-color .2s,box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 24px -18px rgba(174,58,36,.55)}
+  .btn.primary{background:var(--accent);color:var(--bg-soft);border-color:var(--accent)}
+  .btn.primary:hover{background:var(--ink);border-color:var(--ink);color:var(--bg-soft)}
+  .btn.ghost{border-color:var(--line);color:var(--dim)}
+  .btn.ghost:hover{background:var(--panel);color:var(--ink);border-color:var(--accent-dim);box-shadow:none}
+  .contacts{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim)}
+  .contacts a{border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+  .contacts a:hover{border-color:var(--accent);color:var(--accent)}
+  .contacts b{color:var(--faint);font-weight:400;margin-right:7px}
+  .copy-mail{border:none;background:transparent;padding:0;color:var(--dim);font:inherit;cursor:pointer;border-bottom:1px solid var(--line)}
+  .copy-mail:hover{color:var(--accent);border-color:var(--accent)}
+  .copy-tip{color:var(--accent);min-width:5em}
+
+  /* ── 数据 ── */
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:2px solid var(--ink);border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(251,249,244,.56),rgba(251,249,244,0));
+  }
+  .stat{position:relative;padding:26px 18px 24px 0;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat::after{content:"";position:absolute;left:0;top:-2px;height:2px;width:0;background:var(--accent);transition:width .45s ease}
+  .stat:hover::after{width:100%}
+  .stat .num{font-family:var(--mono);font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:600;letter-spacing:-.02em;line-height:1}
+  .stat .num i{font-style:normal;color:var(--accent);font-size:.7em;vertical-align:.12em;margin-left:2px}
+  .stat .lab{font-size:12px;color:var(--dim);margin-top:9px;letter-spacing:.04em}
+
+  /* ── 章节 ── */
+  main section{margin-top:clamp(58px,7.8vw,92px);scroll-margin-top:84px}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:14px}
+  h2{font-family:var(--serif);font-size:clamp(1.35rem,3vw,1.8rem);font-weight:700;letter-spacing:-.02em}
+  h2 .en{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.24em;color:var(--faint);margin-top:7px;font-weight:400}
+  .tc{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.08em;white-space:nowrap}
+  .sec-note{font-size:13.5px;color:var(--dim);margin-top:16px;max-width:66ch}
+
+  /* ── 产品卡 ── */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  .card{
+    position:relative;overflow:hidden;
+    background:rgba(251,249,244,.76);border:1px solid var(--line);padding:clamp(22px,3vw,28px);
+    display:flex;flex-direction:column;min-height:224px;
+    transition:transform .22s,background .22s,border-color .22s,box-shadow .22s;
+  }
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .24s}
+  .card:hover{transform:translateY(-3px);background:var(--bg-soft);border-color:var(--accent-dim);box-shadow:var(--shadow)}
+  .card:hover::before{transform:scaleY(1)}
+  .card .status{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--accent);margin-bottom:14px}
+  .card h3{font-size:15px;font-weight:800;line-height:1.45}
+  .card h3 span{color:var(--faint);font-weight:400;font-size:.88em}
+  .card p{font-size:13.5px;color:var(--ink-2);margin-top:10px;flex:1;line-height:1.75}
+  .card .go{margin-top:16px;margin-bottom:2px;font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.05em}
+  .card:hover .go{text-decoration:underline}
+
+  /* ── 作品：看片台上的画格 ── */
+  .clip{
+    display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:clamp(22px,4vw,44px);
+    padding:clamp(30px,4.2vw,44px) 0 clamp(36px,4.8vw,52px);border-bottom:1px solid var(--line);
+  }
+  .clip:first-of-type{border-top:none}
+  .frame{
+    position:relative;aspect-ratio:16/9;overflow:hidden;
+    background:var(--bg-soft);border:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(21,20,15,.04),0 18px 38px -28px rgba(21,20,15,.42);
+    transition:transform .24s,box-shadow .24s,border-color .24s;
+  }
+  .clip:hover .frame{transform:translateY(-3px);border-color:var(--accent-dim);box-shadow:0 26px 54px -34px rgba(21,20,15,.58)}
+  .frame::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(142deg,var(--tint-a) 0%,var(--tint-b) 62%,var(--tint-b) 100%);
+  }
+  .frame::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 0 70px rgba(21,20,15,.06);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+  .frame .inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px;z-index:1}
+  .frame .tc-top{position:absolute;top:12px;left:24px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:rgba(21,20,15,.66)}
+  .frame .rec{position:absolute;top:12px;right:24px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);display:flex;align-items:center;gap:5px}
+  .frame .rec::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(174,58,36,.12)}
+  .frame .big{font-family:var(--serif);font-size:clamp(1.25rem,2.8vw,1.72rem);font-weight:700;line-height:1.18;letter-spacing:.01em;color:var(--ink)}
+  .frame .num-big{font-family:var(--mono);font-size:clamp(1.55rem,3.6vw,2.15rem);font-weight:600;letter-spacing:-.03em;color:var(--ink)}
+  .frame .small{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:rgba(21,20,15,.72);margin-top:10px}
+  .frame .marks{position:absolute;inset:9px;z-index:2;pointer-events:none}
+  .frame .marks::before,.frame .marks::after{content:"";position:absolute;width:9px;height:9px;border:1px solid rgba(21,20,15,.38)}
+  .frame .marks::before{top:0;left:0;border-right:none;border-bottom:none}
+  .frame .marks::after{bottom:0;right:0;border-left:none;border-top:none}
+  .frame .bar{position:absolute;left:0;right:0;bottom:0;height:24px;border-top:1px solid rgba(21,20,15,.12);background:rgba(251,249,244,.76);font-family:var(--mono);font-size:12px;color:rgba(21,20,15,.72);display:flex;align-items:center;justify-content:space-between;padding:0 10px}
+  .frame.video{background:#000;box-shadow:0 1px 0 rgba(21,20,15,.04),0 18px 38px -22px rgba(21,20,15,.64)}
+  .frame.video::before,.frame.video::after{display:none}
+  .frame.video video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+  .clip-body{min-width:0;padding-bottom:6px}
+  .clip-no{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent)}
+  .clip-title{font-size:clamp(1.12rem,2.5vw,1.34rem);font-weight:800;margin:8px 0 6px;line-height:1.4}
+  .clip-meta{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-bottom:14px}
+  .clip-desc{font-size:14px;color:var(--ink-2);line-height:1.8}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--dim);border:1px solid var(--line);padding:4px 9px;border-radius:2px;background:rgba(251,249,244,.54)}
+
+  /* ── 列表 ── */
+  .list-group{margin-top:34px}
+  .lg-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+  .lg-head h3{font-size:14px;font-weight:800}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);border:1px solid var(--accent-dim);padding:2px 7px;border-radius:2px}
+  .rows{border-top:1px solid var(--line)}
+  .row{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:16px 2px;border-bottom:1px solid var(--line-soft);transition:background .18s,padding-left .18s}
+  .row:hover{background:rgba(236,232,221,.72);padding-left:10px}
+  .row .t{font-size:13.8px;font-weight:700;grid-column:1}
+  .row .x{font-size:12.8px;color:var(--dim);grid-column:1;line-height:1.72}
+  .row .m{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap;grid-row:1;grid-column:2;text-align:right;letter-spacing:.05em}
+  .row .open{grid-row:2;grid-column:2;font-family:var(--mono);font-size:12px;color:var(--accent);text-align:right;white-space:nowrap}
+  .row:hover .open{text-decoration:underline}
+
+  /* ── 两栏 ── */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);margin-top:28px}
+  .exp{padding:18px 0;border-bottom:1px solid var(--line-soft)}
+  .exp:first-child{padding-top:4px}
+  .exp:last-child{border-bottom:none}
+  .exp .t{font-size:14px;font-weight:800}
+  .exp .d{font-family:var(--mono);font-size:12px;color:var(--faint);letter-spacing:.04em;margin-top:3px}
+  .exp .x{font-size:13px;color:var(--dim);margin-top:7px;line-height:1.72}
+  .award{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line-soft);font-size:13px;color:var(--ink-2)}
+  .award:first-child{padding-top:4px}
+  .award:last-child{border-bottom:none}
+  .award .yr{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap}
+  .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+  .skill{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim);border:1px solid var(--line);padding:7px 13px;border-radius:2px;background:rgba(251,249,244,.66);transition:border-color .2s,color .2s,transform .2s}
+  .skill:hover{border-color:var(--accent-dim);color:var(--ink);transform:translateY(-1px)}
+  .note{font-size:12.5px;color:var(--faint);margin-top:22px;line-height:1.8;max-width:72ch}
+  .note code{font-family:var(--mono);font-size:12px;color:var(--dim);background:var(--panel);padding:1px 5px}
+
+  footer{
+    margin-top:clamp(70px,10vw,116px);border-top:2px solid var(--ink);
+    padding:26px 0 64px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--faint);
+  }
+  footer a{color:var(--dim);border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--accent);border-color:var(--accent)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .72s cubic-bezier(.16,1,.3,1),transform .72s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-delay="1"]{transition-delay:.08s}.reveal[data-delay="2"]{transition-delay:.14s}.reveal[data-delay="3"]{transition-delay:.2s}
+
+  @media (max-width:920px){
+    .cards{grid-template-columns:1fr 1fr}
+    .clip{grid-template-columns:1fr;gap:20px}
+  }
+  @media (max-width:760px){
+    .nav-links{display:none}
+    .hero::before{font-size:12rem;right:-.22em;top:-.12em}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat{border-right:none;border-bottom:1px solid var(--line);padding:20px 0}
+    .stat:nth-child(odd){border-right:1px solid var(--line);padding-right:16px}
+    .cards{grid-template-columns:1fr}
+    .cols{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+    .row .m{grid-row:auto;grid-column:1;text-align:left}
+    .row .open{grid-row:auto;grid-column:1;text-align:left}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media print{
+    body{background:#fff;color:#000}
+    body::before,.nav,.scroll-progress,.ruler,.btn,.copy-mail{display:none!important}
+    .frame{box-shadow:none;break-inside:avoid}
+    section{break-inside:avoid}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="ruler" data-tc="TC 00:00:00:00" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Site navigation">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Back to top"><b>●</b> SINOFLIVE / PORTFOLIO</a>
+    <div class="nav-links">
+      <a href="#products">Products</a>
+      <a href="#works">Selected Works</a>
+      <a href="#full">Full Library</a>
+      <a href="#aigc">AIGC</a>
+      <a href="../about/" hreflang="zh-CN">中文</a>
+    </div>
+    <a class="nav-cta" href="mailto:1027615061@qq.com">Contact me →</a>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+  <header class="hero">
+    <div class="eyebrow">Open for internship · Class of 2027</div>
+    <h1>Liu Junhao<em>.</em></h1>
+    <div class="hero-sub">
+      <span>Video Editor</span><span class="dot"></span>
+      <span>AIGC</span><span class="dot"></span>
+      <span>AI Product Builder</span>
+      <span class="sub">Douyin @SinOfLive · Henan University</span>
+    </div>
+    <p class="bio">
+      I write, mix and edit my own rap MVs end to end — <strong>rhythm is the baseline skill</strong>. I ran online content for the Underground 8 Miles live event IP, and I embed Jimeng / Kling / Coze deep into a real editing workflow. <strong>I'm an editor who works with AI, not just an editor.</strong>
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="mailto:1027615061@qq.com">Email me →</a>
+      <a class="btn" href="#works">See selected works</a>
+      <a class="btn ghost" href="#products">Try my products</a>
+    </div>
+    <div class="contacts" aria-label="Contact">
+      <span><b>TEL</b>139-3022-5656</span>
+      <span><b>MAIL</b><button class="copy-mail" type="button" data-email="1027615061@qq.com">1027615061@qq.com</button></span>
+      <span><b>DY</b>SinOfLive</span>
+      <span class="copy-tip" aria-live="polite"></span>
+    </div>
+  </header>
+
+  <div class="stats reveal" aria-label="Key numbers">
+    <div class="stat"><div class="num">1.8<i>M</i></div><div class="lab">Views on a single post</div></div>
+    <div class="stat"><div class="num">76<i>k</i></div><div class="lab">Likes on a single post</div></div>
+    <div class="stat"><div class="num">31<i>k</i></div><div class="lab">Shares on a single post</div></div>
+    <div class="stat"><div class="num">5,000<i> seats</i></div><div class="lab">Arena sold out · contributed</div></div>
+  </div>
+
+  <main id="main">
+    <!-- ── Products ── -->
+    <section id="products" class="reveal">
+      <div class="sec-head">
+        <h2>AI Products<span class="en">SHIPPED &amp; LIVE</span></h2>
+        <span class="tc">REEL 01 / 04 ITEMS</span>
+      </div>
+      <p class="sec-note">Product skills that grew out of being a creator: I build it, I ship it, I sell it. Click a card to try.</p>
+      <div class="cards">
+        <a class="card reveal" href="https://memport-memory.app.workbuddy.host/?sharecode=O25VJSU3QC" target="_blank" rel="noopener">
+          <div class="status">LIVE · PAYATHON 2026</div>
+          <h3>MemPort <span>· Cross-tool memory layer for agents</span></h3>
+          <p>MCP-native integration for Claude Code / Cursor and other agents. Hybrid retrieval plus context packing, so you never reintroduce yourself when you switch tools. Live.</p>
+          <div class="go">Try it →</div>
+        </a>
+        <a class="card reveal" data-delay="1" href="https://finals-quiz.app.workbuddy.host/?sharecode=LKWARVTOI6" target="_blank" rel="noopener">
+          <div class="status">LIVE · PAID USERS</div>
+          <h3>Finals Quiz <span>· AI exam-prep platform</span></h3>
+          <p>Turns past papers and notes into drills, with a wrong-answer book, shared question sets and a 72-hour pre-exam report. Full free-trial → ¥9.9 buyout payment loop.</p>
+          <div class="go">Try it →</div>
+        </a>
+        <a class="card reveal" data-delay="2" href="https://github.com/sin0317" target="_blank" rel="noopener">
+          <div class="status">OPEN SOURCE</div>
+          <h3>Debate Arena <span>· Zhihu card battle game</span></h3>
+          <p>Built in 24 hours for Zhihu Hackathon 2026: a full-stack card battle game with 72 opinion cards, an LLM interface reserved and offline mock mode by default.</p>
+          <div class="go">GitHub →</div>
+        </a>
+        <a class="card reveal" data-delay="3" href="https://skillpay.alipay.com/shelf/product?productId=P0806000211809850&amp;merchantId=2088342180612670" target="_blank" rel="noopener">
+          <div class="status">ON SALE × 2</div>
+          <h3>SkillPay tools <span>× 2</span></h3>
+          <p>Two paid skills listed on Alipay SkillPay: an 8-bit pixel rap MV generator (¥20) and a full digital-human talking-head pipeline (¥50). Both passed Alipay's AI payment security scan.</p>
+          <div class="go">Buy inside Alipay →</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── Selected works ── -->
+    <section id="works" class="reveal">
+      <div class="sec-head">
+        <h2>Selected Works<span class="en">FIVE CLIPS</span></h2>
+        <span class="tc">REEL 02 / 05 CLIPS</span>
+      </div>
+      <p class="sec-note">Ordered by data → live editing → narrative → digital human. Each entry keeps only the one point that proves the skill.</p>
+
+      <article class="clip reveal">
+        <div class="frame" style="--tint-a:#E7DED2;--tint-b:#F7F3EA">
+          <div class="tc-top">00:00:00:00</div>
+          <div class="rec">ON AIR</div>
+          <div class="inner">
+            <div class="num-big">1,800,000</div>
+            <div class="small">VIEWS</div>
+          </div>
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>DOUYIN · SINOFLIVE</span><span>00:01:12</span></div>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">01 / Short-form video</div>
+          <h3 class="clip-title">Viral Douyin video · 1.8M views on one post</h3>
+          <div class="clip-meta">Solo-run account @SinOfLive · 2,200+ followers</div>
+          <p class="clip-desc">Topic selection, shooting, editing, publishing and comment moderation, all done alone. One post hit 1.8M views, 76k likes and 31k shares — from an account with under 3,000 followers. That result came from hook design and pacing, not from platform traffic luck.</p>
+          <div class="tags"><span class="tag">End-to-end solo</span><span class="tag">Topic planning</span><span class="tag">Data-driven</span></div>
+          <a class="btn" href="https://www.douyin.com/video/7325731312386575666" target="_blank" rel="noopener">Watch video →</a>
+        </div>
+      </article>
+
+      <article class="clip reveal">
+        <div class="frame" style="--tint-a:#E3DAD3;--tint-b:#F7F3EE">
+          <div class="tc-top">00:00:00:00</div>
+          <div class="rec">LIVE</div>
+          <div class="inner">
+            <div class="big">Underground 8 Miles<br>15 Years · Final Chapter</div>
+            <div class="small">EP10 · FINAL</div>
+          </div>
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>LIVE · EVENT EDIT</span><span>00:24:06</span></div>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">02 / Live content</div>
+          <h3 class="clip-title">EP10: Underground 8 Miles · 15 Years · Final Chapter</h3>
+          <div class="clip-meta">Xi'an Wantai Dishang Film · Live content ops intern · Nov 2025 – Jan 2026</div>
+          <p class="clip-desc">Online content operations and editing for the Underground 8 Miles hip-hop event IP: selecting from multi-cam live footage, cutting fast-paced deliverables, and distributing across channels. During the internship I helped the season land a sold-out 5,000-seat arena.</p>
+          <div class="tags"><span class="tag">Multicam editing</span><span class="tag">Fast cuts</span><span class="tag">Event IP ops</span></div>
+          <a class="btn" href="https://www.bilibili.com/video/av116962462074953/" target="_blank" rel="noopener">Watch video →</a>
+        </div>
+      </article>
+
+      <article class="clip reveal">
+        <div class="frame" style="--tint-a:#D6DFE7;--tint-b:#F0F4F7">
+          <div class="tc-top">00:00:00:00</div>
+          <div class="rec">AWARD</div>
+          <div class="inner">
+            <div class="big">A Thousand Years<br>Painted</div>
+            <div class="small">NATIONAL BRONZE · 2025</div>
+          </div>
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>SHORT FILM · NATIONAL BRONZE</span><span>00:05:30</span></div>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">03 / Creative short film</div>
+          <h3 class="clip-title">"A Thousand Years Painted"</h3>
+          <div class="clip-meta">2025 FLTRP · ETIC Cup National English Competition · Short-video track · National Bronze</div>
+          <p class="clip-desc">An English-language short film made by a team of five, from first prize at the university round all the way to a national bronze. I edited the film and controlled the narrative pacing and emotional arc across the whole piece.</p>
+          <div class="tags"><span class="tag">Narrative editing</span><span class="tag">National award</span><span class="tag">Teamwork</span></div>
+          <a class="btn" href="https://www.bilibili.com/video/BV1cFJ9zQEpF/" target="_blank" rel="noopener">Watch video →</a>
+        </div>
+      </article>
+
+      <article class="clip reveal">
+        <div class="frame" style="--tint-a:#E5DFCF;--tint-b:#F7F4EC">
+          <div class="tc-top">00:00:00:00</div>
+          <div class="rec">DOC</div>
+          <div class="inner">
+            <div class="big">Taste of Heritage</div>
+            <div class="small">KAIFENG · PEANUT CAKE</div>
+          </div>
+          <i class="marks" aria-hidden="true"></i>
+          <div class="bar"><span>DOCUMENTARY · SHOT &amp; CUT SOLO</span><span>00:08:14</span></div>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">04 / Intangible heritage doc</div>
+          <h3 class="clip-title">"Taste of Heritage" series · The peanut-cake artisan</h3>
+          <div class="clip-meta">Henan University "Lu Guangxiong Scholarship" practice award (3rd) · "Youth, Henan" collection (2nd)</div>
+          <p class="clip-desc">Shot and edited solo: I went into an old workshop in Kaifeng and filmed the craft of making peanut cake, in conversation with the artisan who keeps it alive. The piece went on to win a university-level practice award and a provincial collection award.</p>
+          <div class="tags"><span class="tag">Solo shooting</span><span class="tag">Documentary narrative</span><span class="tag">Interview</span></div>
+          <a class="btn" href="https://www.bilibili.com/video/BV1sLb4eUEoK/" target="_blank" rel="noopener">Watch video →</a>
+        </div>
+      </article>
+
+      <article class="clip reveal">
+        <div class="frame video">
+          <video controls playsinline preload="metadata"
+                 poster="../works/memport-oral-720p.jpg"
+                 src="../works/memport-oral-720p.mp4"
+                 aria-label="MemPort digital-human talking-head video, generated from a single selfie, 49 seconds"></video>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">05 / Digital human</div>
+          <h3 class="clip-title">MemPort · Digital-human talking-head video</h3>
+          <div class="clip-meta">One selfie as the source · 1920×1080 / 49s · Voice-over + screen capture · Plays right here</div>
+          <p class="clip-desc">No camera was ever switched on: I supplied one selfie and a script, and the lip sync, facial expression and framing were generated by a digital-human platform. Everything else was mine — script structure, screen recording, animated typography, edit, grade and both cover ratios. Three beats: open by naming the pain ("switch AI tools and you explain yourself all over again"), cut to the screen capture showing how six MCP tools store facts, preferences and projects separately, then close on "600 free calls per month." The point isn't "I can generate video with AI" — it's that a talking-head video can be produced consistently without any filming setup, which is what makes product content sustainable for a one-person team.</p>
+          <div class="tags"><span class="tag">Digital human</span><span class="tag">One-photo source</span><span class="tag">Screen capture</span><span class="tag">Solo pipeline</span></div>
+          <a class="btn" href="https://weixin.qq.com/sph/ARUJYEBdKI" target="_blank" rel="noopener">Published on WeChat Channels →</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ── Full library ── -->
+    <section id="full" class="reveal">
+      <div class="sec-head">
+        <h2>Full Library<span class="en">ALL PLATFORMS</span></h2>
+        <span class="tc">REEL 03 / 12 ITEMS</span>
+      </div>
+      <p class="sec-note">The complete library (Douyin / Bilibili / independent shorts), complementing the selection above. "Watch on Baidu" opens the matching file in Baidu Netdisk; Bilibili links play in place.</p>
+      <div style="margin-top:24px">
+        <a class="btn" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">Full portfolio · Baidu Netdisk (code 0317) →</a>
+      </div>
+
+      <div class="list-group reveal">
+        <div class="lg-head"><h3>Douyin · @SinOfLive (personal)</h3><span class="chip">Solo-run</span></div>
+        <div class="rows">
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">Topic short: "Can you still love him after leaving?"</div>
+            <div class="m">Personal account · 26.7MB</div>
+            <div class="x">Topic, shooting, edit and publishing all solo. Emotional narrative cut to the beat — the viral method reused.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">Rap commentary: "These RAPPERS really…"</div>
+            <div class="m">Personal account · 8.1MB</div>
+            <div class="x">Reaction / commentary edit on hip-hop content. Strong internet feel, fast pacing, on-brand for the account.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">Music edit: "Huang Zitao, listen — your earring is my book…"</div>
+            <div class="m">Personal account · 19.8MB</div>
+            <div class="x">Music-driven beat-cut montage, showing how I match audio emotion to picture.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">Scene news: "Maher Mood joins The Rap of China!"</div>
+            <div class="m">Personal account · 12.3MB</div>
+            <div class="x">Same-day content built on a trending scene moment — industry awareness plus fast turnaround.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="list-group reveal">
+        <div class="lg-head"><h3>Douyin · Underground 8 Miles official</h3><span class="chip">Event IP assets</span></div>
+        <div class="rows">
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">Artist asset: "JD, Restart — technique and presence…"</div>
+            <div class="m">Official account · 7.1MB</div>
+            <div class="x">Short-form asset around event artist JD, leaning into technical rap, consistent with the IP's tone.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">Backstage: "The part nobody scheduled…"</div>
+            <div class="m">Official account · 5.1MB</div>
+            <div class="x">Off-script rehearsal and backstage moments; authenticity that builds fan connection — a standard artist-promo format.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">On-site: "Something interrupted the show…"</div>
+            <div class="m">Official account · 6.3MB</div>
+            <div class="x">Kept the unplanned moment and cut it for emotion — control of live narrative and pacing.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="list-group reveal">
+        <div class="lg-head"><h3>Bilibili · Underground 8 Miles official channel</h3><span class="chip">Long-form / assets</span></div>
+        <div class="rows">
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">40-second artist group portrait</div>
+            <div class="m">Official channel · 5.7MB</div>
+            <div class="x">Fast-cut group portrait with a consistent tone — standardised artist asset output, ready for reuse in promo.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+          <a class="row" href="https://www.bilibili.com/video/BV1T9g66RETs/" target="_blank" rel="noopener">
+            <div class="t">Rap documentary: "Underground 8 Miles · 15 Years · Final Chapter"</div>
+            <div class="m">Official channel · Feature</div>
+            <div class="x">Feature-length event IP piece — long-form narrative editing and live content operations (see selection 02).</div>
+            <div class="open">Watch on Bilibili →</div>
+          </a>
+          <a class="row" href="https://www.bilibili.com/video/BV1W2V868Ey8/" target="_blank" rel="noopener">
+            <div class="t">Rap documentary: "Walk It Up EP1: Who Are You"</div>
+            <div class="m">Official channel · Feature</div>
+            <div class="x">Character-driven documentary episode; involved from topic to final cut, digging deeper into artist stories.</div>
+            <div class="open">Watch on Bilibili →</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="list-group reveal">
+        <div class="lg-head"><h3>Award-winning shorts</h3><span class="chip">University / national</span></div>
+        <div class="rows">
+          <a class="row" href="https://pan.baidu.com/s/1IFXwcZJRAIQI4TYpxfPDqw?pwd=0317" target="_blank" rel="noopener">
+            <div class="t">"Taste of Heritage" · the peanut-cake artisan</div>
+            <div class="m">Heritage documentary · 43.5MB</div>
+            <div class="x">Shot and edited solo in Kaifeng. Won a provincial collection 2nd prize and a university practice 3rd prize.</div>
+            <div class="open">Watch on Baidu →</div>
+          </a>
+          <a class="row" href="https://www.bilibili.com/video/BV1cFJ9zQEpF/" target="_blank" rel="noopener">
+            <div class="t">"A Thousand Years Painted"</div>
+            <div class="m">English short · National Bronze</div>
+            <div class="x">English-language short by a team of five, from university 1st prize to a 2025 FLTRP · ETIC national bronze. I edited it (see selection 03).</div>
+            <div class="open">Watch on Bilibili →</div>
+          </a>
+        </div>
+      </div>
+
+      <p class="note">Note: oversized files (the short film at 352MB, documentary features at 348–670MB) exceed the GitHub Pages per-file limit, so they stream from the platforms or Baidu Netdisk. Small pieces can be dropped into the repository's <code>works/</code> folder to play inline.</p>
+    </section>
+
+    <!-- ── AIGC ── -->
+    <section id="aigc" class="reveal">
+      <div class="sec-head">
+        <h2>AIGC Films<span class="en">GENERATED + SHOT</span></h2>
+        <span class="tc">REEL 04 / 01 SET</span>
+      </div>
+      <p class="sec-note">Jimeng / Kling / Coze generate the assets, live footage fills the rest, then everything is cut in Premiere and After Effects. Finished films and project files live in Baidu Netdisk.</p>
+      <div style="margin-top:24px">
+        <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">AIGC film collection · Baidu Netdisk (code 0317) →</a>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="sec-head">
+        <h2>AIGC Workflow<span class="en">AI × EDITING</span></h2>
+        <span class="tc">PROCESS</span>
+      </div>
+      <p class="sec-note">Not "I know AI tools" — AI embedded in the actual production chain.</p>
+      <div class="cards" style="grid-template-columns:1fr 1fr">
+        <div class="card">
+          <div class="status">INPUT → MATERIAL</div>
+          <h3>Jimeng × Kling <span>· asset generation</span></h3>
+          <p>Text-to-image and image-to-video fill the establishing shots and transitions I cannot shoot, and the generated clips drop straight onto the Premiere timeline, shortening prep time.</p>
+        </div>
+        <div class="card">
+          <div class="status">REPEAT → AGENT</div>
+          <h3>Coze <span>· automated editing flow</span></h3>
+          <p>An editing-assist workflow built in Coze: batch subtitle handling, asset sorting and rough-cut support — repetitive labour handed to an agent.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Experience & awards ── -->
+    <section id="experience" class="reveal">
+      <div class="sec-head">
+        <h2>Experience &amp; Awards<span class="en">CREDITS</span></h2>
+        <span class="tc">CREDITS</span>
+      </div>
+      <div class="cols">
+        <div>
+          <div class="exp">
+            <div class="t">Xi'an Wantai Dishang Film &amp; Culture</div>
+            <div class="d">Live content ops · Intern · Nov 2025 – Jan 2026</div>
+            <div class="x">Online content ops for the Underground 8 Miles event IP: editing, channel distribution, and help landing a sold-out 5,000-seat venue.</div>
+          </div>
+          <div class="exp">
+            <div class="t">Douyin account @SinOfLive</div>
+            <div class="d">Solo-run · ongoing</div>
+            <div class="x">2,200+ followers; one post reached 1.8M views, 76k likes and 31k shares.</div>
+          </div>
+        </div>
+        <div>
+          <div class="award"><span>FLTRP · ETIC Cup National English Competition · National Bronze</span><span class="yr">2025</span></div>
+          <div class="award"><span>Henan University English Culture Festival · Short-video 1st Prize</span><span class="yr">2025</span></div>
+          <div class="award"><span>"Youth, Henan" collection · 2nd Prize</span><span class="yr">2024</span></div>
+          <div class="award"><span>"Lu Guangxiong Scholarship" summer practice · 3rd Prize</span><span class="yr">2024</span></div>
+          <div class="award"><span>"Youth, Henan" public lecture series · 3rd Prize</span><span class="yr">2024</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="sec-head">
+        <h2>Toolkit<span class="en">STACK</span></h2>
+        <span class="tc">STACK</span>
+      </div>
+      <div class="skills">
+        <span class="skill">Premiere Pro</span><span class="skill">After Effects</span><span class="skill">CapCut Pro</span><span class="skill">Logic Pro X</span><span class="skill">Jimeng AI</span><span class="skill">Kling AI</span><span class="skill">Coze</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Liu Junhao · Portfolio · Updated Nov 2026 · <a href="../">中文版</a></span>
+    <span>139-3022-5656 · <a href="mailto:1027615061@qq.com">1027615061@qq.com</a></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 顶部阅读进度
+  var progress = document.querySelector('.scroll-progress');
+  function updateProgress(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    progress.style.width = p + '%';
+  }
+  updateProgress();
+  addEventListener('scroll', updateProgress, {passive:true});
+
+  // 顶部时间码：轻微跑帧，强化“剪辑台”氛围
+  var ruler = document.querySelector('.ruler');
+  var frame = 0;
+  if (!reduced && ruler){
+    setInterval(function(){
+      frame = (frame + 1) % 24;
+      var pad = function(n){ return String(n).padStart(2,'0'); };
+      var now = new Date();
+      ruler.setAttribute('data-tc', 'TC ' + pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds()) + ':' + pad(frame));
+    }, 1000/24);
+  }
+
+  // 入场 reveal
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || reduced){
+    els.forEach(function(e){ e.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:0.08});
+    els.forEach(function(e){ io.observe(e); });
+  }
+
+  // 导航当前区高亮
+  var links = [].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var i = secs.indexOf(en.target);
+        if (i < 0) return;
+        links.forEach(function(l){ l.classList.remove('active'); });
+        links[i].classList.add('active');
+      });
+    }, {rootMargin:'-28% 0px -58% 0px', threshold:0.01});
+    secs.forEach(function(s){ spy.observe(s); });
+  }
+
+  // 一键复制邮箱
+  var copyBtn = document.querySelector('.copy-mail');
+  var tip = document.querySelector('.copy-tip');
+  if (copyBtn){
+    copyBtn.addEventListener('click', function(){
+      var email = copyBtn.getAttribute('data-email');
+      function done(){ tip.textContent = 'Copied'; setTimeout(function(){ tip.textContent=''; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(email).then(done).catch(function(){ fallback(); });
+      } else fallback();
+      function fallback(){
+        var input = document.createElement('input');
+        input.value = email;
+        document.body.appendChild(input);
+        input.select();
+        try { document.execCommand('copy'); done(); } catch(e) { tip.textContent = email; }
+        document.body.removeChild(input);
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
