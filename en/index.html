@@ -242,6 +242,14 @@
   .frame.still::before,.frame.still::after{display:none}
   .frame.still img{display:block;width:100%;height:100%;object-fit:cover}
   .frame.still .bar{border-top:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.56);color:rgba(255,255,255,.88)}
+  .frame.cover{background-size:cover;background-position:center;background-repeat:no-repeat;box-shadow:0 1px 0 rgba(21,20,15,.04),0 18px 38px -22px rgba(21,20,15,.64)}
+  .frame.cover::before{background:linear-gradient(180deg,rgba(10,10,12,.08) 0%,rgba(10,10,12,.02) 42%,rgba(10,10,12,.58) 100%)}
+  .frame.cover .tc-top{color:#fff;background:rgba(0,0,0,.42);padding:2px 7px;border-radius:2px;letter-spacing:.08em}
+  .frame.cover .rec{background:rgba(0,0,0,.42);padding:2px 7px 2px 6px;border-radius:2px;color:#ff8a72}
+  .frame.cover .bar{border-top:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.52);color:rgba(255,255,255,.88)}
+  .frame.cover .inner{align-items:flex-start;text-align:left;justify-content:flex-end;padding:20px 22px 40px}
+  .frame.cover .num-big{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  .frame.cover .small{color:rgba(255,255,255,.92)}
   .clip-body{min-width:0;padding-bottom:6px}
   .clip-no{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent)}
   .clip-title{font-size:clamp(1.12rem,2.5vw,1.34rem);font-weight:800;margin:8px 0 6px;line-height:1.4}
@@ -422,7 +430,7 @@
       <p class="sec-note">Ordered by data → live editing → narrative → digital human. Each entry keeps only the one point that proves the skill.</p>
 
       <article class="clip reveal">
-        <div class="frame" style="--tint-a:#E7DED2;--tint-b:#F7F3EA">
+        <div class="frame cover" style="background-image:url('../works/cover-douyin.jpg')">
           <div class="tc-top">00:00:00:00</div>
           <div class="rec">ON AIR</div>
           <div class="inner">
@@ -464,13 +472,9 @@
       </article>
 
       <article class="clip reveal">
-        <div class="frame" style="--tint-a:#D6DFE7;--tint-b:#F0F4F7">
+        <div class="frame cover" style="background-image:url('../works/cover-huajing.jpg')">
           <div class="tc-top">00:00:00:00</div>
           <div class="rec">AWARD</div>
-          <div class="inner">
-            <div class="big">A Thousand Years<br>Painted</div>
-            <div class="small">NATIONAL BRONZE · 2025</div>
-          </div>
           <i class="marks" aria-hidden="true"></i>
           <div class="bar"><span>SHORT FILM · NATIONAL BRONZE</span><span>00:05:30</span></div>
         </div>
@@ -485,13 +489,9 @@
       </article>
 
       <article class="clip reveal">
-        <div class="frame" style="--tint-a:#E5DFCF;--tint-b:#F7F4EC">
+        <div class="frame cover" style="background-image:url('../works/cover-chuancheng.jpg')">
           <div class="tc-top">00:00:00:00</div>
           <div class="rec">DOC</div>
-          <div class="inner">
-            <div class="big">Taste of Heritage</div>
-            <div class="small">KAIFENG · PEANUT CAKE</div>
-          </div>
           <i class="marks" aria-hidden="true"></i>
           <div class="bar"><span>DOCUMENTARY · SHOT &amp; CUT SOLO</span><span>00:08:14</span></div>
         </div>
