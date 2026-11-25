@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy1.outputs.page_url || steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,6 +29,16 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+      # push 触发的第一次部署经常失败（Pages 环境还没从上一次部署里释放干净），
+      # 手动 rerun 必成功。与其让人盯着再点一次，不如这里自动重试一遍。
       - name: Deploy to GitHub Pages
+        id: deploy1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait before retry
+        if: steps.deploy1.outcome == 'failure'
+        run: sleep 15
+      - name: Deploy to GitHub Pages (retry)
         id: deployment
+        if: steps.deploy1.outcome == 'failure'
         uses: actions/deploy-pages@v4
