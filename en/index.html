@@ -343,6 +343,7 @@
     <a class="brand" href="#top" aria-label="Back to top"><b>●</b> SINOFLIVE / PORTFOLIO</a>
     <div class="nav-links">
       <a href="#products">Products</a>
+      <a href="#tools">Tools</a>
       <a href="#aigc">AIGC</a>
       <a href="#works">Selected Works</a>
       <a href="#full">Full Library</a>
@@ -391,7 +392,7 @@
     <section id="products" class="reveal">
       <div class="sec-head">
         <h2>AI Products<span class="en">SHIPPED &amp; LIVE</span></h2>
-        <span class="tc">REEL 01 / 04 ITEMS</span>
+        <span class="tc">REEL 01 / 05 ITEMS</span>
       </div>
       <p class="sec-note">Product skills that grew out of being a creator: I build it, I ship it, I sell it. Click a card to try.</p>
       <div class="cards">
@@ -419,6 +420,59 @@
           <p>Two paid skills listed on Alipay SkillPay: an 8-bit pixel rap MV generator (¥20) and a full digital-human talking-head pipeline (¥50). Both passed Alipay's AI payment security scan.</p>
           <div class="go">Buy inside Alipay →</div>
         </a>
+        <a class="card reveal" data-delay="4" href="https://github.com/sin0317/xiaojimao-pet" target="_blank" rel="noopener">
+          <div class="status">OPEN SOURCE · WINDOWS</div>
+          <h3>Xiaojimao Pet <span>· A desktop companion</span></h3>
+          <p>Counts down to the end of your workday, and shows at a glance whether your AI agents are running or stuck waiting on you. Always on the desktop without stealing focus; all data stays local. Electron + TypeScript, MIT licensed, with an installable Windows build.</p>
+          <div class="go">GitHub →</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── Tools ── -->
+    <section id="tools" class="reveal">
+      <div class="sec-head">
+        <h2>Tools<span class="en">BUILT FOR MYSELF</span></h2>
+        <span class="tc">REEL 02 / 06 ITEMS</span>
+      </div>
+      <p class="sec-note">All written because I needed them, and all in my own daily use — not practice projects.</p>
+      <div class="cards">
+        <a class="card reveal" href="https://github.com/sin0317/henu-cli" target="_blank" rel="noopener">
+          <div class="status">OPEN SOURCE · npm</div>
+          <h3>henu-cli <span>· Campus services CLI</span></h3>
+          <p>A command-line tool for Henan University campus services, built for AI agents: timetable and next class, empty classrooms, grades and GPA, degree plans, library seats. Never stores passwords — login reuses your browser profile — and every command returns structured JSON. Ships with CI and 17 test suites.</p>
+          <div class="go">GitHub →</div>
+        </a>
+        <div class="card reveal" data-delay="1">
+          <div class="status">TOOL · IN DAILY USE</div>
+          <h3>ShotSheet <span>· Storyboard as edit script</span></h3>
+          <p>Treats the storyboard as the edit script itself — one sheet, one film; change the sheet and the cut rebuilds. Skips the step of digging thirty clips out of a downloads folder and lining them up on a timeline by hand.</p>
+          <div class="go">Runs locally</div>
+        </div>
+        <div class="card reveal" data-delay="2">
+          <div class="status">SECURITY · IN DAILY USE</div>
+          <h3>Secret Guard <span>· A gate before every commit</span></h3>
+          <p>A zero-dependency Node script that scans repos for credentials and can hook into pre-commit to stop them reaching version control. It exists because a private key once sat in a public repo for 27 days without a single gate firing.</p>
+          <div class="go">Runs locally</div>
+        </div>
+        <div class="card reveal" data-delay="3">
+          <div class="status">WEB · PIECE</div>
+          <h3>Take Your Meds <span>· So the ones far away can relax</span></h3>
+          <p>A medication reminder built for an older relative: dose, time, and whether today's pill has been taken, all on one screen. No instructions needed.</p>
+          <div class="go">Runs locally</div>
+        </div>
+        <a class="card reveal" data-delay="4" href="https://github.com/sin0317/youtube-floating-mini" target="_blank" rel="noopener">
+          <div class="status">OPEN SOURCE · USERSCRIPT</div>
+          <h3>YouTube Floating Mini <span>· Userscript</span></h3>
+          <p>Pops a draggable, resizable mini player once the video scrolls out of view. Single file, no external dependencies, no CDN — drop it into Tampermonkey and it works.</p>
+          <div class="go">GitHub →</div>
+        </a>
+        <div class="card reveal" data-delay="5">
+          <div class="status">TEMPLATE · IN DAILY USE</div>
+          <h3>Pixel MV Template <span>· Swap the song, get a new film</span></h3>
+          <p>The reusable skeleton behind “The Chosen”: scenes, characters and timeline are all parameterised, so a new track only needs a new project.json. Already backs a character library of eight.</p>
+          <div class="go">Runs locally</div>
+        </div>
       </div>
     </section>
 
@@ -426,7 +480,7 @@
     <section id="aigc" class="reveal">
       <div class="sec-head">
         <h2>AIGC Films<span class="en">GENERATED + SHOT</span></h2>
-        <span class="tc">REEL 02 / 02 CLIPS</span>
+        <span class="tc">REEL 03 / 03 CLIPS</span>
       </div>
       <p class="sec-note">Jimeng / Kling / Coze generate the assets, live footage fills the rest, then everything is cut in Premiere and After Effects, with voice-over through MiniMax. Finished films and project files live in Baidu Netdisk.</p>
 
@@ -462,6 +516,23 @@
         </div>
       </article>
 
+      <article class="clip reveal">
+        <div class="frame video">
+          <video controls playsinline preload="metadata"
+                 poster="../works/shenxuan-cover.jpg"
+                 src="../works/shenxuan-720p.mp4"
+                 aria-label="The Chosen, 8-bit pixel lyric video: a 19-second excerpt from SASIOVERLXRD, playing inline"></video>
+        </div>
+        <div class="clip-body">
+          <div class="clip-no">AIGC 03 / PIXEL MV</div>
+          <h3 class="clip-title">“The Chosen” · 8-bit pixel lyric video</h3>
+          <div class="clip-meta">720×960 / 19s / 14 scenes · plays inline</div>
+          <p class="clip-desc">A pixel lyric video for SASIOVERLXRD's “The Chosen”. Nineteen seconds, eight lines, fourteen scenes — room, town, stage, hill, garage, store, tunnel, pool, shore, alley, car, hotel, kitchen, road. Red carries the whole film as its accent; the cover title sits bottom-right so it clears the highlight on the face.</p>
+          <p class="clip-desc">The frames aren't drawn by hand: a pixel scene generator I wrote lays the timeline out against a 182 BPM grid. I checked 42 cut points against the beat — worst drift 10.8 ms, median 0.2 ms.</p>
+          <div class="tags"><span class="tag">8-bit pixel</span><span class="tag">Beat-synced</span><span class="tag">Solo end-to-end</span></div>
+        </div>
+      </article>
+
       <div style="margin-top:24px">
         <a class="btn" href="https://pan.baidu.com/s/1_KrzeZP3AAE9kTkHsoolfA?pwd=0317" target="_blank" rel="noopener">AIGC film collection · Baidu Netdisk (code 0317) →</a>
       </div>
@@ -471,7 +542,7 @@
     <section id="works" class="reveal">
       <div class="sec-head">
         <h2>Selected Works<span class="en">FIVE CLIPS</span></h2>
-        <span class="tc">REEL 03 / 05 CLIPS</span>
+        <span class="tc">REEL 04 / 05 CLIPS</span>
       </div>
       <p class="sec-note">Ordered by data → live editing → narrative → digital human. Each entry keeps only the one point that proves the skill.</p>
 
@@ -570,7 +641,7 @@
     <section id="full" class="reveal">
       <div class="sec-head">
         <h2>Full Library<span class="en">ALL PLATFORMS</span></h2>
-        <span class="tc">REEL 04 / 12 ITEMS</span>
+        <span class="tc">REEL 05 / 12 ITEMS</span>
       </div>
       <p class="sec-note">The complete library (Douyin / Bilibili / independent shorts), complementing the selection above. "Watch on Baidu" opens the matching file in Baidu Netdisk; Bilibili links play in place.</p>
       <div style="margin-top:24px">
