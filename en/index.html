@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#F4F1EA">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F4F1EA'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23AE3A24'/%3E%3C/svg%3E">
 <meta property="og:title" content="Liu Junhao (sin) · Video Editor / AIGC / AI Products">
-<meta property="og:description" content="1.8M views on a single post, live-event content ops for Underground 8 Miles, 4 AI products you can try.">
+<meta property="og:description" content="1.8M views on a single post, live-event content ops for Underground 8 Miles, and five products I built and shipped.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sin0317.github.io/liujunhao-portfolio/en/">
 <meta property="og:locale" content="en_US">
@@ -183,7 +183,14 @@
   .sec-note{font-size:13.5px;color:var(--dim);margin-top:16px;max-width:66ch}
 
   /* ── 产品卡 ── */
-  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .anchor-alias{position:relative;top:-84px;display:block;height:0}
+  .group-head{display:flex;align-items:center;gap:14px;margin-top:34px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em}
+  .group-head .gh-label{color:var(--ink);font-weight:600}
+  .group-head .gh-line{flex:1;height:1px;background:var(--line)}
+  .group-head .gh-note{color:var(--faint);white-space:nowrap}
+  .group-head+.cards{margin-top:16px}
   .card{
     position:relative;overflow:hidden;
     background:rgba(251,249,244,.76);border:1px solid var(--line);padding:clamp(22px,3vw,28px);
@@ -309,6 +316,7 @@
   }
   @media (max-width:760px){
     .nav-links{display:none}
+    .group-head .gh-note{display:none}
     .hero::before{font-size:12rem;right:-.22em;top:-.12em}
     .stats{grid-template-columns:1fr 1fr}
     .stat{border-right:none;border-bottom:1px solid var(--line);padding:20px 0}
@@ -342,12 +350,11 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="Back to top"><b>●</b> SINOFLIVE / PORTFOLIO</a>
     <div class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#tools">Tools</a>
+      <a href="#products">Products &amp; Tools</a>
       <a href="#aigc">AIGC</a>
       <a href="#works">Selected Works</a>
       <a href="#full">Full Library</a>
-      <a href="../about/" hreflang="zh-CN">中文</a>
+      <a href="../" hreflang="zh-CN">中文</a>
     </div>
     <a class="nav-cta" href="mailto:1027615061@qq.com">Contact me →</a>
   </div>
@@ -388,13 +395,20 @@
   </div>
 
   <main id="main">
-    <!-- ── Products ── -->
+    <!-- ── Products & Tools ── -->
     <section id="products" class="reveal">
+      <span id="tools" class="anchor-alias" aria-hidden="true"></span>
       <div class="sec-head">
-        <h2>AI Products<span class="en">SHIPPED &amp; LIVE</span></h2>
-        <span class="tc">REEL 01 / 05 ITEMS</span>
+        <h2>Products &amp; Tools<span class="en">SHIPPED · SOLD · SELF-BUILT</span></h2>
+        <span class="tc">REEL 01 / 11 ITEMS</span>
       </div>
-      <p class="sec-note">Product skills that grew out of being a creator: I build it, I ship it, I sell it. Click a card to try.</p>
+      <p class="sec-note">Product skills that grew out of being a creator: I build it, I ship it, I sell it. Top is live or on sale; bottom is what I wrote for myself and still use daily — none of them practice projects.</p>
+
+      <div class="group-head">
+        <span class="gh-label">LIVE / ON SALE</span>
+        <span class="gh-line" aria-hidden="true"></span>
+        <span class="gh-note">SHIPPED PRODUCTS</span>
+      </div>
       <div class="cards">
         <a class="card reveal" href="https://memport-memory.app.workbuddy.host/?sharecode=O25VJSU3QC" target="_blank" rel="noopener">
           <div class="status">LIVE · PAYATHON 2026</div>
@@ -427,15 +441,12 @@
           <div class="go">GitHub →</div>
         </a>
       </div>
-    </section>
 
-    <!-- ── Tools ── -->
-    <section id="tools" class="reveal">
-      <div class="sec-head">
-        <h2>Tools<span class="en">BUILT FOR MYSELF</span></h2>
-        <span class="tc">REEL 02 / 06 ITEMS</span>
+      <div class="group-head">
+        <span class="gh-label">BUILT FOR MYSELF</span>
+        <span class="gh-line" aria-hidden="true"></span>
+        <span class="gh-note">TOOLS IN DAILY USE</span>
       </div>
-      <p class="sec-note">All written because I needed them, and all in my own daily use — not practice projects.</p>
       <div class="cards">
         <a class="card reveal" href="https://github.com/sin0317/henu-cli" target="_blank" rel="noopener">
           <div class="status">OPEN SOURCE · npm</div>
@@ -480,7 +491,7 @@
     <section id="aigc" class="reveal">
       <div class="sec-head">
         <h2>AIGC Films<span class="en">GENERATED + SHOT</span></h2>
-        <span class="tc">REEL 03 / 03 CLIPS</span>
+        <span class="tc">REEL 02 / 03 CLIPS</span>
       </div>
       <p class="sec-note">Jimeng / Kling / Coze generate the assets, live footage fills the rest, then everything is cut in Premiere and After Effects, with voice-over through MiniMax. Finished films and project files live in Baidu Netdisk.</p>
 
@@ -542,7 +553,7 @@
     <section id="works" class="reveal">
       <div class="sec-head">
         <h2>Selected Works<span class="en">FIVE CLIPS</span></h2>
-        <span class="tc">REEL 04 / 05 CLIPS</span>
+        <span class="tc">REEL 03 / 05 CLIPS</span>
       </div>
       <p class="sec-note">Ordered by data → live editing → narrative → digital human. Each entry keeps only the one point that proves the skill.</p>
 
@@ -641,7 +652,7 @@
     <section id="full" class="reveal">
       <div class="sec-head">
         <h2>Full Library<span class="en">ALL PLATFORMS</span></h2>
-        <span class="tc">REEL 05 / 12 ITEMS</span>
+        <span class="tc">REEL 04 / 12 ITEMS</span>
       </div>
       <p class="sec-note">The complete library (Douyin / Bilibili / independent shorts), complementing the selection above. "Watch on Baidu" opens the matching file in Baidu Netdisk; Bilibili links play in place.</p>
       <div style="margin-top:24px">

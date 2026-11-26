@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#F4F1EA">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F4F1EA'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%23AE3A24'/%3E%3C/svg%3E">
 <meta property="og:title" content="刘峻豪 sin · 视频剪辑 / AIGC / AI 产品实践">
-<meta property="og:description" content="单条 180w+ 播放、地下 8 英里赛事内容运营、4 个可体验 AI 产品。">
+<meta property="og:description" content="单条 180w+ 播放、地下 8 英里赛事内容运营、5 个自己上线的产品与工具。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sin0317.github.io/liujunhao-portfolio/">
 <link rel="alternate" hreflang="zh-CN" href="https://sin0317.github.io/liujunhao-portfolio/">
@@ -182,7 +182,14 @@
   .sec-note{font-size:13.5px;color:var(--dim);margin-top:16px;max-width:66ch}
 
   /* ── 产品卡 ── */
-  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .anchor-alias{position:relative;top:-84px;display:block;height:0}
+  .group-head{display:flex;align-items:center;gap:14px;margin-top:34px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em}
+  .group-head .gh-label{color:var(--ink);font-weight:600}
+  .group-head .gh-line{flex:1;height:1px;background:var(--line)}
+  .group-head .gh-note{color:var(--faint);white-space:nowrap}
+  .group-head+.cards{margin-top:16px}
   .card{
     position:relative;overflow:hidden;
     background:rgba(251,249,244,.76);border:1px solid var(--line);padding:clamp(22px,3vw,28px);
@@ -308,6 +315,7 @@
   }
   @media (max-width:760px){
     .nav-links{display:none}
+    .group-head .gh-note{display:none}
     .hero::before{font-size:12rem;right:-.22em;top:-.12em}
     .stats{grid-template-columns:1fr 1fr}
     .stat{border-right:none;border-bottom:1px solid var(--line);padding:20px 0}
@@ -341,8 +349,7 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="回到顶部"><b>●</b> SINOFLIVE / PORTFOLIO</a>
     <div class="nav-links">
-      <a href="#products">AI 产品</a>
-      <a href="#tools">开发工具</a>
+      <a href="#products">产品与工具</a>
       <a href="#aigc">AIGC</a>
       <a href="#works">代表作品</a>
       <a href="#full">完整作品</a>
@@ -388,13 +395,20 @@
   </div>
 
   <main id="main">
-    <!-- ── AI 产品 ── -->
+    <!-- ── 产品与工具 ── -->
     <section id="products" class="reveal">
+      <span id="tools" class="anchor-alias" aria-hidden="true"></span>
       <div class="sec-head">
-        <h2>AI 产品<span class="en">AI PRODUCTS</span></h2>
-        <span class="tc">REEL 01 / 05 ITEMS</span>
+        <h2>产品与工具<span class="en">PRODUCTS &amp; TOOLS</span></h2>
+        <span class="tc">REEL 01 / 11 ITEMS</span>
       </div>
-      <p class="sec-note">从内容创作者长出来的产品能力：自己搭、自己上线、自己卖。点击卡片可体验。</p>
+      <p class="sec-note">从内容创作者长出来的产品能力：自己搭、自己上线、自己卖。上面是上线和在售的；下面都是先有需求才写的，自己在用，不是练手项目。</p>
+
+      <div class="group-head">
+        <span class="gh-label">上线 / 在售</span>
+        <span class="gh-line" aria-hidden="true"></span>
+        <span class="gh-note">LIVE · ON SALE · OPEN SOURCE</span>
+      </div>
       <div class="cards">
         <a class="card reveal" href="https://memport-memory.app.workbuddy.host/?sharecode=O25VJSU3QC" target="_blank" rel="noopener">
           <div class="status">LIVE · PAYATHON 2026</div>
@@ -427,15 +441,12 @@
           <div class="go">GitHub →</div>
         </a>
       </div>
-    </section>
 
-    <!-- ── 开发工具 ── -->
-    <section id="tools" class="reveal">
-      <div class="sec-head">
-        <h2>开发工具<span class="en">TOOLS &amp; EXPERIMENTS</span></h2>
-        <span class="tc">REEL 02 / 05 ITEMS</span>
+      <div class="group-head">
+        <span class="gh-label">自用工具</span>
+        <span class="gh-line" aria-hidden="true"></span>
+        <span class="gh-note">BUILT FOR MYSELF · IN DAILY USE</span>
       </div>
-      <p class="sec-note">都是先有需求才写的，自己在用，不是练手项目。</p>
       <div class="cards">
         <a class="card reveal" href="https://github.com/sin0317/henu-cli" target="_blank" rel="noopener">
           <div class="status">OPEN SOURCE · npm</div>
@@ -480,7 +491,7 @@
     <section id="aigc" class="reveal">
       <div class="sec-head">
         <h2>AIGC 短片<span class="en">AIGC FILMS</span></h2>
-        <span class="tc">REEL 03 / 03 CLIPS</span>
+        <span class="tc">REEL 02 / 03 CLIPS</span>
       </div>
       <p class="sec-note">即梦 / 可灵 / Coze 生成素材 + 实拍，进 Pr / Ae 完成剪辑，配音走 MiniMax。成片与工程素材统一存于百度网盘。</p>
 
@@ -542,7 +553,7 @@
     <section id="works" class="reveal">
       <div class="sec-head">
         <h2>代表作品<span class="en">SELECTED WORKS</span></h2>
-        <span class="tc">REEL 04 / 05 CLIPS</span>
+        <span class="tc">REEL 03 / 05 CLIPS</span>
       </div>
       <p class="sec-note">按数据 → Live 剪辑 → 叙事 → 数字人排序。每个作品只保留一个最能证明能力的点。</p>
 
@@ -641,7 +652,7 @@
     <section id="full" class="reveal">
       <div class="sec-head">
         <h2>全平台作品集<span class="en">FULL PORTFOLIO</span></h2>
-        <span class="tc">REEL 05 / 12 ITEMS</span>
+        <span class="tc">REEL 04 / 12 ITEMS</span>
       </div>
       <p class="sec-note">完整作品库（抖音 / B站 / 独立短片），与上方精选互为补充。视频下方「网盘观看」跳转至百度网盘对应素材；B站成片附直链可在线播放。</p>
       <div style="margin-top:24px">
